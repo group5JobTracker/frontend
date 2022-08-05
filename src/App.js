@@ -1,20 +1,16 @@
-
 import './styles/App.css';
 
 //Component
 import Nav from './components/Nav';
+import LandingPage from './components/LandingPage';
 
 
 
 function App() {
   return (
-    <>
-      <div>
-        <Nav />
-        <h1>TRAKR</h1>
-
-      </div>
-    </>
+    <main>
+      <LandingPage />
+    </main>
   );
 }
 
