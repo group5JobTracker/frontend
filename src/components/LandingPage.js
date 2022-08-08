@@ -1,3 +1,6 @@
+//Library
+import { Link } from "react-router-dom";
+
 const LandingPage = () => {
     return (
         <>
