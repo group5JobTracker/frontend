@@ -1,5 +1,6 @@
 //Library
 import { Link } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 const LandingPage = () => {
     return (

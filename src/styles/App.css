@@ -334,3 +334,7 @@ p {
   display: -ms-flexbox;
   display: flex;
 }
+
+label {
+  color: blueviolet;
+}

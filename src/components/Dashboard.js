@@ -1,7 +1,11 @@
+import CreateNewApplication from "./CreateNewApplication"
+import Nav from "./Nav"
+
 function Dashboard() {
     return (
         <div>
-            <p>HEllo</p>
+            <Nav />
+            <CreateNewApplication />
 
         </div>
     )
