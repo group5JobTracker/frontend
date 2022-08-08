@@ -16,7 +16,7 @@ function Nav() {
                 <li>
                     <form action="Submit">
                         <label htmlFor="search" >Search</label>
-                        <input type="text" id="search" placeholder="Search" />
+                        <input type="search" id="search" placeholder="Search" />
                     </form>
                 </li>
                 <li><button>Create</button></li>
