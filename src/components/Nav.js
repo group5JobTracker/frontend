@@ -1,21 +1,21 @@
 function Nav() {
     return (
-        <div className="navBar wrapper">
+        <div className="navBar">
             <ul className="viewBtns">
                 <li>
-                    <p>Card View</p>
+                    <button>Card View</button>
                 </li>
                 <li>
-                    <p>List View</p>
+                    <button>List View</button>
                 </li>
                 <li>
-                    <p>Board View</p>
+                    <button>Board View</button>
                 </li>
             </ul>
             <ul className="controlBtns">
                 <li>
                     <form action="Submit">
-                        <label htmlFor="search" >Search</label>
+                        <label htmlFor="search" className="sr-only" >Search</label>
                         <input type="search" id="search" placeholder="Search" />
                     </form>
                 </li>

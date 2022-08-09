@@ -5,6 +5,7 @@
 
 html {
     font-size: 125%;
+    background-color: $backgroundPageColor;
 }
 
 .wrapper {
@@ -29,13 +30,17 @@ a {
     font-weight: bold;
     // padding: 10px;
 
-    &:hover,
-    &:focus {
-        color: #d84823;
-        // background-color: #dda15e;
-    }
+    // &:hover,
+    // &:focus {
+    //     color: #d84823;
+    //     // background-color: #dda15e;
+    // }
 }
 
-.bottom {
-    font-weight: bold;
+button {
+    cursor: pointer;
 }
+
+// .bottom {
+//     font-weight: bold;
+// }
