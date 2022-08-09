@@ -1,69 +1,87 @@
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
 function CreateNewApplication() {
     return (
         <div className="wrapper">
-            <form action="">
-                <fieldset className="topHeader">
+            {/* <div className="formContainer"> */}
+            <form className="formContainer">
+
+                <div className="headerForm">
                     <h3>Job Title</h3>
                     <h4>Company</h4>
                     <h5>Location</h5>
 
-                    <button className="saveApplication">Save</button>
+                    <button className="saveApplication">Save <FontAwesomeIcon icon={faFloppyDisk} /></button>
+                </div>
 
-                </fieldset>
+                <div className="bottomForm">
+                    <div className="bottomLeftForm">
+                        <div className="inputForm">
 
-                <fieldset className="leftInput">
+                            <div className="inputLeftForm">
+                                <label htmlFor="status">Status</label>
+                                <select name="statusOfApplication" id="status">
+                                    <option value="needToApply">Need to Apply</option>
+                                    <option value="applied">Applied</option>
+                                    <option value="screened">Screened</option>
+                                    <option value="interviewSet">Interview Set</option>
+                                    <option value="rejected">Rejected</option>
+                                    <option value="accepted">Accepted</option>
+                                </select>
 
-                    <label htmlFor="status">Status</label>
-                    <select name="statusOfApplication" id="status">
-                        <option value="needToApply">Need to Apply</option>
-                        <option value="applied">Applied</option>
-                        <option value="screened">Screened</option>
-                        <option value="interviewSet">Interview Set</option>
-                        <option value="rejected">Rejected</option>
-                        <option value="accepted">Accepted</option>
-                    </select>
+                                <label htmlFor="dateApplied">Date Applied</label>
+                                <input type="text" id="dateApplied" placeholder="MM/DD/YYYY" />
 
-                    <label htmlFor="labels">Labels</label>
+                                <label htmlFor="contact">Contact</label>
+                                <input type="email" id="contact" placeholder="youremail@email.com" />
+                            </div>
 
-                    <label htmlFor="dataApplied">Data Applied</label>
-                    <input type="text" id="dataApplied" placeholder="MM/DD/YYYY" />
+                            <div className="inputRightForm">
+                                <label htmlFor="labels">Labels</label>
 
-                    <label htmlFor="cardColor">Card Color</label>
-                    <select name="cardColor" id="cardColor">
-                        <option value="red">Red</option>
-                        <option value="orange">Orange</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="green">Green</option>
-                        <option value="blue">Blue</option>
-                        <option value="blueviolet">Blueviolet</option>
-                        <option value="purple">Purple</option>
-                        <option value="pink">Pink</option>
-                    </select>
+                                <label htmlFor="cardColor">Card Color</label>
+                                <select name="cardColor" id="cardColor">
+                                    <option value="red">Red</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="green">Green</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="blueviolet">Blueviolet</option>
+                                    <option value="purple">Purple</option>
+                                    <option value="pink">Pink</option>
+                                </select>
+                                <label htmlFor="alerts">Reminder Alerts
+                                    <input type="checkbox" />
+                                    <span className="slider"></span>
+                                </label>
+                            </div>
 
-                    <label htmlFor="contact">Contact</label>
-                    <input type="email" id="contact" placeholder="youremail@email.com" />
+                        </div>
 
-                    <label htmlFor="alerts">Reminder Alerts
-                        <input type="checkbox" />
-                        <span className="slider"></span>
-                    </label>
+                        <div className="noteForm">
+                            <label htmlFor="notes">Notes</label>
+                            <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
 
-                    <label htmlFor="notes">Notes</label>
-                    <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+                    <div className="bottomRightForm">
+                        <div className="inputForm">
+                            <label htmlFor="jobLink">Application Link</label>
+                            <input type="text" id="jobLink" placeholder="https//:...." />
+                        </div>
 
-                </fieldset>
+                        <div className="noteForm">
+                            <label htmlFor="jobDescription">Job Description</label>
+                            <textarea name="jobDescription" id="jobDescription" cols="30" rows="10"></textarea>
+                        </div>
 
-                <fieldset className="rightInput">
-                    <label htmlFor="jobLink">Application Link</label>
-                    <input type="text" id="jobLink" placeholder="https//:...." />
+                    </div>
 
-                    <label htmlFor="jobDescription">Job Description</label>
-                    <textarea name="jobDescription" id="jobDescription" cols="30" rows="10"></textarea>
+                </div>
 
-                </fieldset>
             </form>
+            {/* </div> */}
 
         </div>
     )
