@@ -2,7 +2,7 @@
 
 function CreateNewApplication() {
     return (
-        <div >
+        <div className="wrapper">
             <form action="">
                 <fieldset className="topHeader">
                     <h3>Job Title</h3>

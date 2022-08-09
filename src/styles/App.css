@@ -276,6 +276,7 @@ html {
 
 html {
   font-size: 125%;
+  background-color: #1A1E4A;
 }
 
 .wrapper {
@@ -299,40 +300,89 @@ a {
   display: inline-block;
   font-weight: bold;
 }
-a:hover, a:focus {
-  color: #d84823;
-}
 
-.bottom {
-  font-weight: bold;
+button {
+  cursor: pointer;
 }
 
 h1 {
-  color: green;
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.5rem;
 }
 
 p {
-  font-size: 24px;
-  color: red;
+  font-size: 1rem;
+}
+
+.dashboardStyle {
+  background-color: #1A1E4A;
 }
 
 .navBar {
+  height: 4rem;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.navBar button {
+  border: none;
+  background-color: #1A1E4A;
+  color: #FFFFFF;
+}
+.navBar button:hover {
+  border-bottom: 1px solid white;
 }
 .navBar .viewBtns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 30%;
+  height: 1.75rem;
 }
 .navBar .controlBtns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 1.75rem;
+}
+.navBar .controlBtns input {
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
 }
 
 label {
