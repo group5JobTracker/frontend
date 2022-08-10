@@ -9,7 +9,7 @@ import { faBarsSort, faBarsFilter, faPen } from "@fortawesome/free-regular-svg-i
 import CreateNewApplication from "./CreateNewApplication";
 
 
-function Nav({ newApplicPopup }) {
+function Nav() {
 
     const [newApplic, setNewApplic] = useState(false)
 
@@ -23,31 +23,36 @@ function Nav({ newApplicPopup }) {
 
     return (
         <nav className="navBar">
-            <ul className="viewBtns">
-                <li>
-                    <button>Card View</button>
-                </li>
-                <li>
-                    <button>List View</button>
-                </li>
-                <li>
-                    <button>Board View</button>
-                </li>
-            </ul>
-            <ul className="controlBtns">
-                <li>
-                    <form action="Submit">
-                        <label htmlFor="search" className="sr-only" >Search</label>
-                        <input type="search" id="search" placeholder="Search" />
-                    </form>
-                </li>
 
-                <li>
-                    <button onClick={(e) => handleNewApplic(e)}>Create</button>
-                    {newApplic && <CreateNewApplication />}
+            <div className="topNavBar">
 
-                </li>
+                <ul className="viewBtns">
+                    <li>
+                        <button>Card View</button>
+                    </li>
+                    <li>
+                        <button>Board View</button>
+                    </li>
+                </ul>
+                <ul className="searchCreate">
+                    <li>
+                        <form action="Submit">
+                            <label htmlFor="search" className="sr-only" >Search</label>
+                            <input type="search" id="search" placeholder="Search" />
+                        </form>
+                    </li>
 
+                    <li>
+                        <button onClick={(e) => handleNewApplic(e)}>Create</button>
+                        {newApplic && <CreateNewApplication />}
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <ul className="bottomNavBar">
                 <li>
                     <button>Sort</button>
                     {/* <form className="sortingJobs">
@@ -78,10 +83,6 @@ function Nav({ newApplicPopup }) {
                             <option value="color">Color</option>
                         </select>
                     </form> */}
-                </li>
-
-                <li>
-                    <button>Edit</button>
                 </li>
             </ul>
 

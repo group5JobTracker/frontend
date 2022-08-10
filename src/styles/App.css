@@ -340,15 +340,6 @@ p {
 .navBar {
   height: 4rem;
   color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .navBar li {
   height: 1.5rem;
@@ -361,7 +352,40 @@ p {
 .navBar button:hover {
   border-bottom: 1px solid white;
 }
-.navBar .viewBtns {
+
+.topNavBar {
+  height: 4rem;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottomNavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.searchCreate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.viewBtns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,23 +397,6 @@ p {
   text-align: center;
   width: 30%;
   height: 1.75rem;
-}
-.navBar .controlBtns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 60%;
-  height: 1.75rem;
-}
-.navBar .controlBtns input {
-  border-radius: 10px;
-  border: none;
-  padding: 5px;
 }
 
 .formContainer {
