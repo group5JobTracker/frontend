@@ -325,6 +325,10 @@ h5 {
   font-size: 1.5rem;
 }
 
+h6 {
+  font-size: 1.35rem;
+}
+
 p {
   font-size: 1rem;
 }
@@ -345,6 +349,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.navBar li {
+  height: 1.5rem;
 }
 .navBar button {
   border: none;
@@ -469,4 +476,51 @@ p {
 }
 .noteForm textarea {
   height: 100%;
+}
+
+.jobDisplayed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.cardsJob {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  min-width: calc(33.3333333333% - 10px);
+  margin: 5px;
+  background-color: #818181;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+}
+.cardsJob h4 {
+  font-size: 1.5rem;
+}
+.cardsJob h5 {
+  font-size: 1.35rem;
+}
+.cardsJob h6 {
+  font-size: 1.2rem;
+}
+.cardsJob p {
+  font-size: 0.8rem;
+}
+.cardsJob .principal {
+  margin-top: 25px;
+}
+.cardsJob .complement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 20px;
 }

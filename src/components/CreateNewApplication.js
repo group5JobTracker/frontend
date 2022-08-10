@@ -2,10 +2,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
 function CreateNewApplication() {
+
+    const userSubmitForm = (e) => {
+        e.preventdefault();
+
+        // const database = getDatabase("backend")
+        // const dbref = ref("database")
+    }
+
+    const handleUserInput = (e) => {
+        console.log(e.target.value);
+    }
+
     return (
         <div className="wrapper">
             {/* <div className="formContainer"> */}
-            <form className="formContainer">
+            <form className="formContainer" onSubmit={(e) => userSubmitForm(e)}>
 
                 <div className="headerForm">
                     <h3>Job Title</h3>
@@ -21,7 +33,7 @@ function CreateNewApplication() {
 
                             <div className="inputLeftForm">
                                 <label htmlFor="status">Status</label>
-                                <select name="statusOfApplication" id="status">
+                                <select name="statusOfApplication" id="status" onChange={(e) => handleUserInput(e)}>
                                     <option value="needToApply">Need to Apply</option>
                                     <option value="applied">Applied</option>
                                     <option value="screened">Screened</option>
@@ -31,17 +43,17 @@ function CreateNewApplication() {
                                 </select>
 
                                 <label htmlFor="dateApplied">Date Applied</label>
-                                <input type="text" id="dateApplied" placeholder="MM/DD/YYYY" />
+                                <input type="text" id="dateApplied" placeholder="MM/DD/YYYY" onChange={(e) => handleUserInput(e)} />
 
                                 <label htmlFor="contact">Contact</label>
-                                <input type="email" id="contact" placeholder="youremail@email.com" />
+                                <input type="email" id="contact" placeholder="youremail@email.com" onChange={(e) => handleUserInput(e)} />
                             </div>
 
                             <div className="inputRightForm">
                                 <label htmlFor="labels">Labels</label>
 
                                 <label htmlFor="cardColor">Card Color</label>
-                                <select name="cardColor" id="cardColor">
+                                <select name="cardColor" id="cardColor" onChange={(e) => handleUserInput(e)}>
                                     <option value="red">Red</option>
                                     <option value="orange">Orange</option>
                                     <option value="yellow">Yellow</option>
@@ -61,7 +73,7 @@ function CreateNewApplication() {
 
                         <div className="noteForm">
                             <label htmlFor="notes">Notes</label>
-                            <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+                            <textarea name="notes" id="notes" cols="30" rows="10" onChange={(e) => handleUserInput(e)}></textarea>
                         </div>
                     </div>
 
