@@ -16,7 +16,8 @@ function App() {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
 

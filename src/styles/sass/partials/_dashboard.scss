@@ -5,9 +5,11 @@
 .navBar {
     height: 4rem;
     color: $textColor;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+
+    li {
+        height: 1.5rem;
+    }
 
     button {
         border: none;
@@ -18,31 +20,77 @@
             border-bottom: 1px solid white;
         }
     }
+}
 
-    .viewBtns {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-        width: 30%;
-        height: 1.75rem;
+.topNavBar {
+    height: 4rem;
+    color: $textColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    }
+.bottomNavBar {
+    display: flex;
+}
 
-    .controlBtns {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 60%;
-        height: 1.75rem;
+.searchCreate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
 
-
-        input {
-            border-radius: 10px;
-            border: none;
-            padding: 5px;
-        }
-    }
-
+.viewBtns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    height: 1.75rem;
 
 }
+
+// .navBar {
+//     height: 4rem;
+//     color: $textColor;
+
+
+//     li {
+//         height: 1.5rem;
+//     }
+
+//     button {
+//         border: none;
+//         background-color: $backgroundPageColor;
+//         color: $textColor;
+
+//         &:hover {
+//             border-bottom: 1px solid white;
+//         }
+//     }
+
+//     .viewBtns {
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+//         text-align: center;
+//         width: 30%;
+//         height: 1.75rem;
+
+//     }
+
+//     .controlBtns {
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+//         width: 60%;
+//         height: 1.75rem;
+
+
+//         input {
+//             border-radius: 10px;
+//             border: none;
+//             padding: 5px;
+//         }
+//     }
