@@ -9,18 +9,18 @@ function Dashboard() {
 
     const [newApplic, setNewApplic] = useState(false)
 
-    const handleNewApplic = () => {
-        if (newApplic === false) {
-            setNewApplic(true)
-        } else {
-            setNewApplic(false)
-        }
-    }
+    // const handleNewApplic = () => {
+    //     if (newApplic === false) {
+    //         setNewApplic(true)
+    //     } else {
+    //         setNewApplic(false)
+    //     }
+    // }
 
     return (
         <div className="dashboardStyle wrapper">
-            <Nav handleNewApplic={() => handleNewApplic(newApplic)} />
-            {newApplic ? <CreateNewApplication newApplic={newApplic} /> : "null"}
+            <Nav setNewApplic={setNewApplic} newApplic={newApplic} />
+            {newApplic ? <CreateNewApplication /> : "null"}
             <JobIndex />
 
         </div>

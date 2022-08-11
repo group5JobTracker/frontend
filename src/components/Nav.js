@@ -10,9 +10,9 @@ import CreateNewApplication from "./CreateNewApplication";
 import Column from "./Column";
 
 
-function Nav() {
+function Nav({ setNewApplic, newApplic }) {
 
-    const [newApplic, setNewApplic] = useState(false)
+    // const [newApplic, setNewApplic] = useState(false)
     const [cardViewToggle, setCardViewToggle] = useState(false)
 
     const handleNewApplic = () => {
@@ -54,7 +54,7 @@ function Nav() {
 
                     <li className="newAppBtnContainer">
                         <button onClick={(e) => handleNewApplic(e)}><FontAwesomeIcon icon={faCirclePlus} /></button>
-                        {newApplic && <CreateNewApplication />}
+
                     </li>
 
                 </ul>

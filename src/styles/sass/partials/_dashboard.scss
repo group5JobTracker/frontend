@@ -41,7 +41,7 @@
     width: 20%;
     height: 40px;
 
-    button:hover,
+    button:active,
     :focus {
         border-bottom: 1px solid white;
     }
@@ -98,22 +98,25 @@
 
 .bottomNavBar {
     display: flex;
+    justify-content: space-between;
+
     padding-top: 15px;
     width: 30%;
 
-    li {
-        // margin-left: 10px;
-        // margin-right: 10px;
-        border: 1px solid red;
-        // width: 50px;
-    }
+    // li {
+    // margin-left: 10px;
+    // margin-right: 10px;
+    // border: 1px solid red;
+    // width: 50px;
+    // }
 
 }
 
 .columnGrid {
     display: flex;
 
+
     button {
-        margin: 5px
+        margin: 5px 10px
     }
 }
