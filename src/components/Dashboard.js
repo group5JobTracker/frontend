@@ -1,9 +1,9 @@
-
+//Libraries
+import { useState } from "react";
+//Components
 import CreateNewApplication from "./CreateNewApplication"
 import JobIndex from "./JobIndex"
 import Nav from "./Nav"
-
-import { useState } from "react";
 
 function Dashboard() {
 
@@ -19,9 +19,8 @@ function Dashboard() {
 
     return (
         <div className="dashboardStyle wrapper">
-            <Nav />
-            {/* if() */}
-            {/* <CreateNewApplication /> */}
+            <Nav handleNewApplic={() => handleNewApplic(newApplic)} />
+            {newApplic ? <CreateNewApplication newApplic={newApplic} /> : "null"}
             <JobIndex />
 
         </div>

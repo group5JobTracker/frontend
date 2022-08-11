@@ -1,96 +1,119 @@
 .dashboardStyle {
-    background-color: $backgroundPageColor;
+    background-color: $background;
 }
 
 .navBar {
-    height: 4rem;
-    color: $textColor;
+    height: 8rem;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
 
-
-    li {
-        height: 1.5rem;
-    }
+    // li {
+    //     height: 2rem;
+    // }
 
     button {
         border: none;
-        background-color: $backgroundPageColor;
-        color: $textColor;
-
-        &:hover {
-            border-bottom: 1px solid white;
-        }
+        background-color: transparent;
+        color: $white;
     }
 }
 
 .topNavBar {
-    height: 4rem;
-    color: $textColor;
+    height: 40px;
+    color: $white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
 
-.bottomNavBar {
-    display: flex;
-}
-
-.searchCreate {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+    li {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 .viewBtns {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    width: 20%;
+    height: 40px;
+
+    button:hover,
+    :focus {
+        border-bottom: 1px solid white;
+    }
+}
+
+.searchCreate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 30%;
-    height: 1.75rem;
+
+    .searchBar {
+        // border: 1px solid green;
+        width: 80%;
+        align-self: flex-end;
+        position: relative;
+
+        :active,
+        :focus {
+            width: 100%;
+        }
+
+        input {
+            border-radius: 500px;
+            border: none;
+            width: 50%;
+            padding: 7px 10px;
+            transition: all 0.8s ease-in 0.2s;
+            position: absolute;
+            right: 0px;
+        }
+
+        button {
+            color: $black;
+            position: absolute;
+            right: 0px;
+            z-index: 10;
+            padding: 15px;
+        }
+    }
+
+
+    .newAppBtnContainer {
+        // position: relative;
+        margin: 0 auto;
+
+        button {
+            font-size: 2rem;
+            color: $cardDarkBlue;
+        }
+    }
 
 }
 
-// .navBar {
-//     height: 4rem;
-//     color: $textColor;
+.bottomNavBar {
+    display: flex;
+    padding-top: 15px;
+    width: 30%;
 
+    li {
+        // margin-left: 10px;
+        // margin-right: 10px;
+        border: 1px solid red;
+        // width: 50px;
+    }
 
-//     li {
-//         height: 1.5rem;
-//     }
+}
 
-//     button {
-//         border: none;
-//         background-color: $backgroundPageColor;
-//         color: $textColor;
+.columnGrid {
+    display: flex;
 
-//         &:hover {
-//             border-bottom: 1px solid white;
-//         }
-//     }
-
-//     .viewBtns {
-//         display: flex;
-//         justify-content: space-around;
-//         align-items: center;
-//         text-align: center;
-//         width: 30%;
-//         height: 1.75rem;
-
-//     }
-
-//     .controlBtns {
-//         display: flex;
-//         justify-content: space-around;
-//         align-items: center;
-//         width: 60%;
-//         height: 1.75rem;
-
-
-//         input {
-//             border-radius: 10px;
-//             border: none;
-//             padding: 5px;
-//         }
-//     }
+    button {
+        margin: 5px
+    }
+}
