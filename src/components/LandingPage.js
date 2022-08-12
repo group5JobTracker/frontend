@@ -3,18 +3,13 @@ import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 
 const LandingPage = () => {
-    const handleLogIn = () => {
-
-    }
-
     return (
         <>
             <section>
                 <h1>Dragonfly</h1>
-                {/* <form>
+                <Link to="/dashboard">
                     <button>Log in</button>
-                </form> */}
-                <Link to="/dashboard">Log In</Link>
+                </Link>
 
             </section>
 

@@ -276,7 +276,7 @@ html {
 
 html {
   font-size: 125%;
-  background-color: #1A1E4A;
+  background-color: #12152A;
 }
 
 .wrapper {
@@ -334,28 +334,52 @@ p {
 }
 
 .dashboardStyle {
-  background-color: #1A1E4A;
+  background-color: #12152A;
 }
 
 .navBar {
-  height: 4rem;
+  height: 8rem;
   color: #FFFFFF;
-}
-.navBar li {
-  height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 30px;
 }
 .navBar button {
   border: none;
-  background-color: #1A1E4A;
+  background-color: transparent;
   color: #FFFFFF;
-}
-.navBar button:hover {
-  border-bottom: 1px solid white;
 }
 
 .topNavBar {
-  height: 4rem;
+  height: 40px;
   color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.topNavBar li {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.viewBtns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -365,38 +389,79 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 20%;
+  height: 40px;
 }
-
-.bottomNavBar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.viewBtns button:active,
+.viewBtns :focus {
+  border-bottom: 1px solid white;
 }
 
 .searchCreate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  width: 30%;
+}
+.searchCreate .searchBar {
+  width: 80%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: relative;
+}
+.searchCreate .searchBar :active,
+.searchCreate .searchBar :focus {
+  width: 100%;
+}
+.searchCreate .searchBar input {
+  border-radius: 500px;
+  border: none;
+  width: 50%;
+  padding: 7px 10px;
+  -webkit-transition: all 0.8s ease-in 0.2s;
+  transition: all 0.8s ease-in 0.2s;
+  position: absolute;
+  right: 0px;
+}
+.searchCreate .searchBar button {
+  color: #000000;
+  position: absolute;
+  right: 0px;
+  z-index: 10;
+  padding: 15px;
+}
+.searchCreate .newAppBtnContainer {
+  margin: 0 auto;
+}
+.searchCreate .newAppBtnContainer button {
+  font-size: 2rem;
+  color: #4A52FF;
 }
 
-.viewBtns {
+.bottomNavBar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 15px;
   width: 30%;
-  height: 1.75rem;
+}
+
+.columnGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.columnGrid button {
+  margin: 5px 10px;
 }
 
 .formContainer {
@@ -426,7 +491,7 @@ p {
 }
 
 .bottomForm {
-  background-color: #818181;
+  background-color: rgba(255, 255, 255, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,7 +559,6 @@ p {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 50px;
 }
 
 .cardsJob {
@@ -503,7 +567,7 @@ p {
   padding: 5px;
   min-width: calc(33.3333333333% - 10px);
   margin: 5px;
-  background-color: #818181;
+  background-color: rgba(255, 255, 255, 0.4);
   -webkit-box-flex: wrap;
       -ms-flex: wrap;
           flex: wrap;

@@ -11,7 +11,7 @@
 }
 
 .headerForm {
-    background-color: $red;
+    background-color: $cardRed;
     position: relative;
     padding: 20px;
 
@@ -24,12 +24,12 @@
         top: 10px;
         right: 10px;
         border: none;
-        background-color: $red;
+        background-color: $cardRed;
     }
 }
 
 .bottomForm {
-    background-color: $backgroundCardColor;
+    background-color: $cardColor;
     display: flex;
     padding: 20px;
 }
