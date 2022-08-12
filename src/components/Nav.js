@@ -10,10 +10,10 @@ import CreateNewApplication from "./CreateNewApplication";
 import Column from "./Column";
 
 
-function Nav({ setNewApplic, newApplic }) {
+function Nav({ setNewApplic, newApplic, cardViewToggle, setCardViewToggle }) {
 
-    // const [newApplic, setNewApplic] = useState(false)
-    const [cardViewToggle, setCardViewToggle] = useState(false)
+    const [columnToggle, setColumnToggle] = useState(true)
+    const [boardViewToggle, setBoardViewToggle] = useState(false)
 
     const handleNewApplic = () => {
         if (newApplic === false) {
@@ -23,24 +23,29 @@ function Nav({ setNewApplic, newApplic }) {
         }
     }
 
-    const handleCardView = () => {
-        if (cardViewToggle === false) {
-            setCardViewToggle(true)
-        } else {
-            setCardViewToggle(false)
-        }
+    //need to refacture this code, make it concisely
+    const handleCardViewBtn = () => {
+        setBoardViewToggle(false)
+        setCardViewToggle(true)
+        setColumnToggle(true)
     }
+
+    const handleBoardViewBtn = () => {
+        setCardViewToggle(false)
+        setColumnToggle(false)
+    }
+
 
     return (
         <nav className="navBar">
             <div className="topNavBar">
                 <ul className="viewBtns">
                     <li>
-                        <button onClick={(e) => handleCardView(e)}>Card View</button>
+                        <button onClick={(e) => handleCardViewBtn(e)}>Card View</button>
                     </li>
 
                     <li>
-                        <button>Board View</button>
+                        <button onClick={(e) => handleBoardViewBtn(e)}>Board View</button>
                     </li>
                 </ul>
 
@@ -63,7 +68,7 @@ function Nav({ setNewApplic, newApplic }) {
 
             <ul className="bottomNavBar">
                 <li>
-                    {cardViewToggle && <Column />}
+                    {columnToggle && <Column />}
 
                 </li>
 
