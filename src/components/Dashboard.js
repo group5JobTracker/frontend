@@ -15,7 +15,7 @@ function Dashboard() {
             <Nav
                 setNewApplic={setNewApplic}
                 newApplic={newApplic}
-                ardViewToggle={cardViewToggle}
+                cardViewToggle={cardViewToggle}
                 setCardViewToggle={setCardViewToggle} />
             {newApplic ? <CreateNewApplication /> : ""}
             {cardViewToggle ? <JobIndex /> : ""}
