@@ -1,8 +1,8 @@
 // import { useEffect, useState } from "react";
 // import { axios } from "axios"
-import JobOptions from "./JobOptions"
+import JobSummary from "./JobSummary"
 
-function JobIndex() {
+function JobList() {
     //make api call
     // const [jobs, setJobs] = useEffect([])
     // useEffect(() => {
@@ -27,10 +27,10 @@ function JobIndex() {
 
     return (
         <div className="jobDisplayed">
-            {jobArr.map((jobPos, i) => <JobOptions title={jobPos.title} company={jobPos.company} location={jobPos.location} dateApplied={jobPos.dateApplied} stats={jobPos.stats} index={i} />)}
+            {jobArr.map((jobPos, i) => <JobSummary title={jobPos.title} company={jobPos.company} location={jobPos.location} dateApplied={jobPos.dateApplied} stats={jobPos.stats} index={i} />)}
 
         </div>
     )
 }
 
-export default JobIndex
+export default JobList

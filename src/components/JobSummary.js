@@ -1,6 +1,4 @@
-
-
-function JobOptions({ title, company, location, dateApplied, stats, index }) {
+function JobSummary({ title, company, location, dateApplied, stats, index }) {
     return (
         <div key={index} className="cardsJob">
             <div className="principal">
@@ -19,4 +17,4 @@ function JobOptions({ title, company, location, dateApplied, stats, index }) {
     )
 }
 
-export default JobOptions
+export default JobSummary

@@ -1,8 +1,8 @@
 //Libraries
 import { useState } from "react";
 //Components
-import CreateNewApplication from "./CreateNewApplication"
-import JobIndex from "./JobIndex"
+import NewJobEntry from "./NewJobEntry"
+import JobList from "./JobList"
 import Nav from "./Nav"
 
 function Dashboard() {
@@ -11,14 +11,17 @@ function Dashboard() {
     const [cardViewToggle, setCardViewToggle] = useState(true)
 
     return (
-        <div className="dashboardStyle wrapper">
-            <Nav
-                setNewApplic={setNewApplic}
-                newApplic={newApplic}
-                cardViewToggle={cardViewToggle}
-                setCardViewToggle={setCardViewToggle} />
-            {newApplic ? <CreateNewApplication /> : ""}
-            {cardViewToggle ? <JobIndex /> : ""}
+        <div className="dashboardStyle">
+            <div className="wrapper">
+                <Nav
+                    setNewApplic={setNewApplic}
+                    newApplic={newApplic}
+                    cardViewToggle={cardViewToggle}
+                    setCardViewToggle={setCardViewToggle} />
+                {/* {newApplic ? <NewJobEntry /> : ""} */}
+                {cardViewToggle ? <JobList /> : ""}
+
+            </div>
 
         </div>
     )

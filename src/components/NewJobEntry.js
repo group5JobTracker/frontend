@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
-function CreateNewApplication() {
+function NewJobEntry() {
 
     const userSubmitForm = (e) => {
         e.preventdefault();
@@ -99,4 +99,4 @@ function CreateNewApplication() {
     )
 }
 
-export default CreateNewApplication
+export default NewJobEntry
