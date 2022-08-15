@@ -1,3 +1,4 @@
+//Colors
 $background: #12152A;
 $cardColor: rgba(255, 255, 255, 0.4);
 $cardRed: #FE5A5A;
@@ -12,3 +13,53 @@ $white: #FFFFFF;
 $black: #000000;
 $toggleGreen: #84FF4A;
 $warning: #BF3737;
+$btnHover: rgba(74, 82, 255, 0.4);
+
+//Fonts mixins
+$fontFamily: 'Inter', sans-serif;
+
+@mixin header1 ($fontSize: 2rem, $weight: bold) {
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin header2 ($fontSize: 1.5rem, $weight: bold) {
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin header3 ($fontSize: 1.5rem) {
+    font-size: $fontSize;
+}
+
+@mixin header4 ($fontSize: 1.5rem, $weight: lighter) {
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin subHeader1 ($fontSize: 1.25rem, $weight: bold) {
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin subHeader2 ($fontSize: 1.25rem) {
+    font-size: $fontSize;
+}
+
+@mixin subHeader3 ($fontSize: 1rem, $weight: bold) {
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin body ($fontSize: 1rem) {
+    font-size: $fontSize;
+}
+
+@mixin subBody1 ($fontSize: 1rem, $weight: lighter) {
+    font-size: $fontSize;
+    font-weight: $weight;
+}
+
+@mixin subBody2 ($fontSize: 0.75rem) {
+    font-size: $fontSize;
+}

@@ -275,8 +275,10 @@ html {
 }
 
 html {
-  font-size: 125%;
+  font-size: 100%;
   background-color: #12152A;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
 .wrapper {
@@ -331,6 +333,12 @@ h6 {
 
 p {
   font-size: 1rem;
+}
+
+h1,
+h2,
+p {
+  color: white;
 }
 
 .dashboardStyle {

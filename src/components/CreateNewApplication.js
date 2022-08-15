@@ -15,7 +15,7 @@ function CreateNewApplication() {
     }
 
     return (
-        <div className="wrapper">
+        <div >
             {/* <div className="formContainer"> */}
             <form className="formContainer" onSubmit={(e) => userSubmitForm(e)}>
 
