@@ -2,6 +2,17 @@
     font-family: 'Inter' !important;
 }
 
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .login-btn {
     display: flex;
     justify-content: end;
@@ -19,6 +30,8 @@
     width: 130px;
     height: 35px;
     align-items: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .signup-btn-text {
