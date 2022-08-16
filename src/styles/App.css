@@ -12412,11 +12412,15 @@ html {
 * {
   margin: 0;
   padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 html {
   font-size: 100%;
-  background-color: #12152A;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
 }
@@ -12441,10 +12445,18 @@ a {
   text-decoration: none;
   display: inline-block;
   font-weight: bold;
+  color: #FFFFFF;
+}
+a :hover {
+  opacity: 0.4;
 }
 
 button {
   cursor: pointer;
+  text-decoration: none;
+}
+button :hover {
+  opacity: 0.6;
 }
 
 h1, .h1 {
@@ -12475,15 +12487,73 @@ p {
   font-size: 1rem;
 }
 
-h1, .h1,
-h2,
-.h2,
-p {
+.landingPg {
+  background-color: #12152A;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.landingPg .wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.login-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.login-btn .login-btn-text {
+  border: 4px solid white;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  padding-bottom: 30px;
+}
+.login-btn :hover {
+  background-color: #FFFFFF;
+  color: #12152A;
+}
+
+.mainHeader_landingPAge h2, .mainHeader_landingPAge .h2 {
+  color: #FFFFFF;
+}
+
+.signup-btn-text {
+  background-color: #4d50ff;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: white;
+  border-radius: 10px;
+  width: 130px;
+  height: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.firstPage_landingPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.last-intro-text {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .dashboardStyle {
   background-color: #12152A;
+  height: 100vh;
 }
 
 .navBar {

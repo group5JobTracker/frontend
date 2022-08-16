@@ -1,13 +1,20 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 html {
     font-size: 100%;
-    background-color: $background;
+    // background-color: $background;
     font-family: $fontFamily;
-    @include body
+    @include body;
+    // margin: 0;
+    // padding: 0;
 }
 
 .wrapper {
@@ -30,8 +37,18 @@ a {
     text-decoration: none;
     display: inline-block;
     font-weight: bold;
+    color: $white;
+
+    :hover {
+        opacity: 0.4
+    }
 }
 
 button {
     cursor: pointer;
+    text-decoration: none;
+
+    :hover {
+        opacity: 0.6;
+    }
 }
