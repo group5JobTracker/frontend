@@ -1,7 +1,7 @@
 //Libraries
 import { Routes, Route } from "react-router-dom";
 //Component
-import LandingPage from './components/LandingPage';
+import LandingPage from './components/landingPage/LandingPage';
 import Dashboard from "./components/Dashboard"
 //Styles
 import './styles/App.css';
