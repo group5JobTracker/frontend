@@ -2,7 +2,9 @@
 import { Routes, Route } from "react-router-dom";
 //Component
 import LandingPage from './components/landingPage/LandingPage';
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/Dashboard";
+import SignUpPage from "./components/signUpPage/SignUpPage";
+import LoginPage from "./components/logInPage/LoginPage";
 //Styles
 import './styles/App.css';
 
@@ -11,6 +13,8 @@ function App() {
     <main>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
