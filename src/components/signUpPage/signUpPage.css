@@ -1,0 +1,98 @@
+* {
+    font-family: 'Inter' !important;
+}
+
+.pageWrapper {
+    align-items: center;
+}
+
+.signUpLogoIcon {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: column;
+    width: 327px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row !important;
+    align-content: space-between;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    background-color: #212859;
+    width: 367px;
+    border-radius: 10px !important;
+}
+
+input {
+    background-color: #353945;
+    border-radius: 5px !important;
+    height: 35px;
+    margin-bottom: 10px !important;
+    width: 100%;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.signUpBtn {
+    background-color: #4a52ff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border-radius: 10px;
+    width: 130px;
+    height: 35px;
+    align-items: center;
+    border-color: #4a52ff;
+    width: 327px;
+    margin-bottom: 10px;
+}
+
+.redirectText {
+    margin-top: 15px;
+}
+
+li {
+    color: white;
+}
+
+ul {
+    list-style: none !important;
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: "\2022";
+    color: #bf3737;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
