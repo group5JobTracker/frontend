@@ -9,7 +9,6 @@ import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free
 // import { faBarsSort, faBarsFilter, faPen } from "@fortawesome/free-regular-svg-icons";
 
 //Components
-import NewJobEntry from "./NewJobEntry";
 import Column from "./Column";
 
 function MyVerticallyCenteredModal(props) {
@@ -109,7 +108,7 @@ function MyVerticallyCenteredModal(props) {
 }
 
 
-function Nav({ setNewApplic, newApplic, cardViewToggle, setCardViewToggle }) {
+function NavBar({ setNewApplic, newApplic, cardViewToggle, setCardViewToggle }) {
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -129,6 +128,7 @@ function Nav({ setNewApplic, newApplic, cardViewToggle, setCardViewToggle }) {
         setBoardViewToggle(false)
         setCardViewToggle(true)
         setColumnToggle(true)
+
     }
 
     const handleBoardViewBtn = () => {
@@ -196,7 +196,7 @@ function Nav({ setNewApplic, newApplic, cardViewToggle, setCardViewToggle }) {
     )
 }
 
-export default Nav
+export default NavBar
 
 
 
