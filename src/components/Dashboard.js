@@ -1,9 +1,8 @@
 //Libraries
 import { useState } from "react";
 //Components
-import NewJobEntry from "./NewJobEntry"
 import JobList from "./JobList"
-import Nav from "./Nav"
+import NavBar from "./NavBar"
 
 function Dashboard() {
 
@@ -13,12 +12,11 @@ function Dashboard() {
     return (
         <div className="dashboardStyle">
             <div className="wrapper">
-                <Nav
+                <NavBar
                     setNewApplic={setNewApplic}
                     newApplic={newApplic}
                     cardViewToggle={cardViewToggle}
                     setCardViewToggle={setCardViewToggle} />
-                {/* {newApplic ? <NewJobEntry /> : ""} */}
                 {cardViewToggle ? <JobList /> : ""}
 
             </div>
