@@ -1,44 +1,102 @@
 .landingPg {
     background-color: $background;
-    // position: relative;
     height: 100vh;
-    display: flex;
 
     .wrapper {
-        align-items: center;
         position: relative;
     }
-}
 
-.login-btn {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-
-    .login-btn-text {
-        border: 4px solid white;
-        background-color: transparent;
-        border-radius: 10px;
-        width: 130px;
-        height: 40px;
-        padding-bottom: 30px;
-
-    }
-
-    :hover {
-        background-color: $white;
-        color: $background;
-    }
-}
-
-.mainHeader_landingPAge {
     h2 {
+        @include header2;
+        color: $white;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        @include body;
         color: $white;
     }
+
 }
 
+.login-btn-text {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    border: 4px solid white;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
 
+}
 
+// padding-bottom: 30px;
+
+// border: 4px solid white;
+// background-color: transparent;
+// padding-top: 5px;
+// padding-bottom: 5px;
+// color: white;
+// border-radius: 10px;
+// width: 130px;
+// height: 35px;
+// align-items: center;
+// text-decoration: none;
+// color: inherit;
+
+// }
+
+// .login-btn {
+//     position: absolute;
+//     top: 50px;
+//     right: 25px;
+
+//     :hover {
+//         background-color: $white;
+//         color: $background;
+//     }
+
+//     .login-btn-text {
+//         border: 4px solid white;
+//         background-color: transparent;
+//         border-radius: 10px;
+//         width: 130px;
+//         height: 40px;
+//         padding-bottom: 30px;
+// border: 4px solid white;
+// background-color: transparent;
+// padding-top: 5px;
+// padding-bottom: 5px;
+// color: white;
+// border-radius: 10px;
+// width: 130px;
+// height: 35px;
+// align-items: center;
+// text-decoration: none;
+// color: inherit;
+
+// }
+
+// :hover,
+// :focus-within {
+//     background-color: $white;
+//     color: $background;
+// color: #ffffff;
+// text-decoration: none;
+// cursor: pointer;
+// }
+// }
+
+.firstPage_landingPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    // margin-top: 40px;
+
+}
 
 .signup-btn-text {
     background-color: #4d50ff;
@@ -51,12 +109,7 @@
     align-items: center;
 }
 
-.firstPage_landingPage {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    // margin-top: 40px;
-}
+
 
 .last-intro-text {
     margin-top: 20px;

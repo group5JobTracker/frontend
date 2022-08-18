@@ -1,7 +1,7 @@
 //Libraries
 import { Routes, Route } from "react-router-dom";
 //Component
-import LandingPage from './components/LandingPage';
+import LandingPage from './components/landingPage/LandingPage';
 import Dashboard from "./components/Dashboard";
 import SignUpPage from "./components/signUpPage/SignUpPage";
 import LoginPage from "./components/logInPage/LoginPage";

@@ -1,0 +1,101 @@
+.pageWrapper {
+    align-items: center;
+    background-color: #12152a;
+    height: 100vh;
+
+    p {
+        color: $white;
+    }
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpLogoIcon {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: column;
+    width: 327px;
+}
+
+.row {
+    display: flex;
+    align-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+
+    li {
+        min-width: 50%;
+    }
+
+    li::before {
+        content: "\2022";
+        color: #bf3737;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+    }
+}
+
+.formContainer_LogSignIn {
+    display: flex;
+    justify-content: center;
+    background-color: #212859;
+    width: 367px;
+    border-radius: 10px !important;
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        color: $white;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    input {
+        background-color: #353945;
+        border-radius: 5px !important;
+        height: 35px;
+        margin-bottom: 10px !important;
+        width: 100%;
+        padding: 10px;
+        color: $white;
+    }
+
+    li {
+        color: $white;
+    }
+
+    ::placeholder {
+        color: $white;
+        opacity: 1;
+    }
+
+    .signUpBtn {
+        color: $white;
+        background-color: #4a52ff;
+        padding: 5px 0px;
+        margin: 15px 0px;
+        width: 130px;
+        height: 35px;
+        // align-items: center;
+        border-color: #4a52ff;
+        border-radius: 10px;
+        width: 327px;
+    }
+
+}
+
+.redirectText {
+    margin-top: 15px;
+}

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import Context from '../../context/context';
 import iconLogo from "../../imgFiles/Dragonfly-Logo-Icon-Small.svg";
-import "./signUpPage.css";
+// import "./signUpPage.css";
+
 const SignUpPage = () => {
     const navigate = useNavigate();
     const [userInfo, setUserInfo] = useState({});
@@ -17,19 +18,19 @@ const SignUpPage = () => {
         console.log(userFirstName, userLastName, userEmail, userPassword);
         console.log(userInfo);
         setUserInfo({
-            firstName : userFirstName,
-            lastName : userLastName,
-            email : userEmail,
-            password : userPassword,
-            industry : 'none'
+            firstName: userFirstName,
+            lastName: userLastName,
+            email: userEmail,
+            password: userPassword,
+            industry: 'none'
         })
     }
 
     const createNewUser = async (userData) => {
         const response = await fetch("https://dragonfly.herokuapp.com/auth/signup", {
-            method : "POST",
+            method: "POST",
             headers: {
-                "Content-Type" : "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(userData)
         })
@@ -41,34 +42,34 @@ const SignUpPage = () => {
         createNewUser(userInfo).then(data => {
             console.log(data);
             context.updateUserInfo(data)
-            
 
-            if('newUser' in data) {
+
+            if ('newUser' in data) {
                 navigate('/login');
             }
         })
-    },[userInfo])
+    }, [userInfo])
     // console.log(context.userInfo
     return (
         <div className="pageWrapper">
             <div className="center">
                 <Link to="/">
-                <img
-                    className="signUpLogoIcon"
-                    alt = "Dragonfly Logo Icon Small"
-                    src={iconLogo}
-                />
+                    <img
+                        className="signUpLogoIcon"
+                        alt="Dragonfly Logo Icon Small"
+                        src={iconLogo}
+                    />
                 </Link>
             </div>
             <div className="center">
-                <div className="formContainer center">
+                <div className="formContainer_LogSignIn center">
                     <h4>Sign up for free</h4>
                     <form onSubmit={handleSubmit}>
                         <div className="center inputFields">
-                            <input type="text" id="fname" name="fName" placeholder="   First Name"/>
-                            <input type="text" id="lname" name="lName" placeholder="   Last Name"/>
-                            <input type="text" id="email" name="email" placeholder="   Email"/>
-                            <input type="text" id="password" name="password" placeholder="   Password"/>
+                            <input type="text" id="fname" name="fName" placeholder="   First Name" />
+                            <input type="text" id="lname" name="lName" placeholder="   Last Name" />
+                            <input type="text" id="email" name="email" placeholder="   Email" />
+                            <input type="text" id="password" name="password" placeholder="   Password" />
                         </div>
                         <div>
                             <p>Password must contain</p>

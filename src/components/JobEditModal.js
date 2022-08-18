@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
-function MyVerticallyCenteredModal(props) {
+function JobEditModal(props, { setModalShow }) {
+
+    const handleClick = () => {
+        setModalShow(false);
+    }
 
     return (
         <Modal
@@ -13,14 +14,14 @@ function MyVerticallyCenteredModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Header closeButton>
+            <Modal.Header closeButton onClick={handleClick}>
                 <Modal.Title id="contained-modal-title-vcenter">
                     <div className="headerForm">
                         <h3>Job Title</h3>
                         <h4>Company</h4>
                         <h5>Location</h5>
 
-                        <button className="saveApplication">Save <FontAwesomeIcon icon={faFloppyDisk} /></button>
+                        <button className="saveApplication">Save </button>
                     </div>
                 </Modal.Title>
             </Modal.Header>
@@ -34,4 +35,4 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-export default MyVerticallyCenteredModal
+export default JobEditModal
