@@ -1,0 +1,151 @@
+.modal_style {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 70%;
+    border-radius: 20px;
+    color: $white;
+
+    textarea {
+        color: $white;
+        padding: 10px;
+    }
+}
+
+.overlay_style {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 90;
+}
+
+.headerForm {
+    background-color: $cardRed;
+    position: relative;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    h3 {
+        @include header2
+    }
+
+    h4 {
+        @include header3
+    }
+
+    h5 {
+        @include header4;
+        padding-top: 5px;
+    }
+
+    .saveApplication {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: none;
+        background-color: $cardRed;
+    }
+
+    .closeApplication {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        border: none;
+        background-color: $cardRed;
+    }
+}
+
+.bodyForm {
+    background-color: $cardDarkBlue;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+
+    textarea {
+        background-color: $background;
+        border-radius: 10px;
+        resize: none;
+    }
+
+    label {
+        margin: 10px;
+        padding: 5px;
+        color: $white;
+        display: inline-block
+    }
+
+    input {
+        // width: 50%;
+        background-color: $background;
+        border-radius: 10px;
+        height: 35px;
+        border: none;
+        margin: 10px;
+        padding: 5px 10px;
+        color: $white
+    }
+}
+
+.bodyLeft {
+    width: 50%;
+    margin-right: 10px;
+
+    .inputForm {
+        display: flex;
+    }
+
+    .inputLeft,
+    .inputRigh {
+        border: 1px solid red;
+    }
+
+    .inputLeft {
+        width: 100%;
+    }
+
+    .noteForm {
+        display: flex;
+        flex-direction: column;
+
+        textarea {
+            width: 100%;
+        }
+    }
+}
+
+
+
+.bodyRight {
+
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+
+    .rightUpperForm {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: nowrap;
+
+    }
+
+    .leftBottomForm {
+        textarea {
+            // margin-left: 10px;
+            height: 99%;
+            width: 99%;
+        }
+
+    }
+}

@@ -6,12 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 //Components
 import Column from "./Column";
-import JobEntryModal from "./JobEntryModal";
 
 
-function NavBar({ setCardViewToggle }) {
+function NavBar({ setCardViewToggle, setShowJobEntryModal }) {
 
-    const [modalShow, setModalShow] = React.useState(false);
+    // const [modalShow, setModalShow] = React.useState(false);
 
     const [columnToggle, setColumnToggle] = useState(true);
 
@@ -22,7 +21,6 @@ function NavBar({ setCardViewToggle }) {
         setBoardViewToggle(false)
         setCardViewToggle(true)
         setColumnToggle(true)
-
     }
 
     const handleBoardViewBtn = () => {
@@ -54,14 +52,17 @@ function NavBar({ setCardViewToggle }) {
 
                     <li className="newAppBtnContainer">
                         {/* <button onClick={(e) => handleNewApplic(e)}><FontAwesomeIcon icon={faCirclePlus} /></button> */}
-                        <Button variant="primary" onClick={() => setModalShow(true)}>
+                        {/* <Button variant="primary" onClick={() => setModalShow(true)}>
+                            <FontAwesomeIcon icon={faCirclePlus} />
+                        </Button> */}
+                        <Button onClick={() => setShowJobEntryModal(true)}>
                             <FontAwesomeIcon icon={faCirclePlus} />
                         </Button>
 
-                        <JobEntryModal
+                        {/* <JobEntryModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}
-                        />
+                        /> */}
 
                     </li>
 

@@ -320,34 +320,6 @@ button :hover {
   opacity: 0.6;
 }
 
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 3.5rem;
-}
-
-h3 {
-  font-size: 2.5rem;
-}
-
-h4 {
-  font-size: 2rem;
-}
-
-h5 {
-  font-size: 1.5rem;
-}
-
-h6 {
-  font-size: 1.35rem;
-}
-
-p {
-  font-size: 1rem;
-}
-
 .landingPg {
   background-color: #12152A;
   height: 100vh;
@@ -672,92 +644,6 @@ p {
   margin: 5px 10px;
 }
 
-.formContainer {
-  border-radius: 20px;
-}
-.formContainer input {
-  border-radius: 10px;
-}
-.formContainer textarea {
-  border-radius: 10px;
-}
-
-.headerForm {
-  background-color: #FE5A5A;
-  position: relative;
-  padding: 20px;
-}
-.headerForm h5 {
-  padding-top: 5px;
-}
-.headerForm .saveApplication {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background-color: #FE5A5A;
-}
-
-.bottomForm {
-  background-color: rgba(255, 255, 255, 0.4);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 20px;
-}
-
-.bottomLeftForm {
-  width: 100%;
-  -webkit-box-flex: wrap;
-      -ms-flex: wrap;
-          flex: wrap;
-}
-.bottomLeftForm label,
-.bottomLeftForm input {
-  margin: 10px;
-  padding: 5px;
-}
-.bottomLeftForm input {
-  width: 50%;
-  border: none;
-}
-
-.inputForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.inputLeftForm,
-.inputRightForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.inputLeftForm label,
-.inputLeftForm input,
-.inputRightForm label,
-.inputRightForm input {
-  display: inline;
-}
-
-.noteForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.noteForm textarea {
-  height: 100%;
-}
-
 .jobDisplayed {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -802,4 +688,155 @@ p {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 20px;
+}
+
+.modal_style {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 70%;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+.modal_style textarea {
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+.overlay_style {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 90;
+}
+
+.headerForm {
+  background-color: #FE5A5A;
+  position: relative;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.headerForm h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.headerForm h4 {
+  font-size: 1.5rem;
+}
+.headerForm h5 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding-top: 5px;
+}
+.headerForm .saveApplication {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background-color: #FE5A5A;
+}
+.headerForm .closeApplication {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border: none;
+  background-color: #FE5A5A;
+}
+
+.bodyForm {
+  background-color: #4A52FF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.bodyForm textarea {
+  background-color: #12152A;
+  border-radius: 10px;
+  resize: none;
+}
+.bodyForm label {
+  margin: 10px;
+  padding: 5px;
+  color: #FFFFFF;
+  display: inline-block;
+}
+.bodyForm input {
+  background-color: #12152A;
+  border-radius: 10px;
+  height: 35px;
+  border: none;
+  margin: 10px;
+  padding: 5px 10px;
+  color: #FFFFFF;
+}
+
+.bodyLeft {
+  width: 50%;
+  margin-right: 10px;
+}
+.bodyLeft .inputForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bodyLeft .inputLeft,
+.bodyLeft .inputRigh {
+  border: 1px solid red;
+}
+.bodyLeft .inputLeft {
+  width: 100%;
+}
+.bodyLeft .noteForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.bodyLeft .noteForm textarea {
+  width: 100%;
+}
+
+.bodyRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  height: 100%;
+}
+.bodyRight .rightUpperForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+.bodyRight .leftBottomForm textarea {
+  height: 99%;
+  width: 99%;
 }
