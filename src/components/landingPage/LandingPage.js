@@ -7,7 +7,7 @@ import "./landingPage.css";
 
 const LandingPage = () => {
     return (
-        <>  
+        <div className='entirePage'>  
             <div className="login-btn">
                 <Button className="login-btn-text" >
                     <Link to="/login">Log In</Link>
@@ -35,7 +35,7 @@ const LandingPage = () => {
                     <img src={circleBlobs} alt="Demo Cards" height={600} width={600}/>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
