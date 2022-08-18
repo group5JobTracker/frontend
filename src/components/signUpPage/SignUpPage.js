@@ -1,8 +1,54 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import Context from '../../context/context';
+import iconLogo from "../../imgFiles/Dragonfly-Logo-Icon-Small.svg";
 import "./signUpPage.css";
-import {Link} from "react-router-dom";
-import iconLogo from "../../imgFiles/Dragonfly-Logo-Icon-Small.svg"
 const SignUpPage = () => {
+    const navigate = useNavigate();
+    const [userInfo, setUserInfo] = useState({});
+    const context = React.useContext(Context);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const userFirstName = event.target.fName.value;
+        const userLastName = event.target.lName.value;
+        const userEmail = event.target.email.value;
+        const userPassword = event.target.password.value;
+        console.log(userFirstName, userLastName, userEmail, userPassword);
+        console.log(userInfo);
+        setUserInfo({
+            firstName : userFirstName,
+            lastName : userLastName,
+            email : userEmail,
+            password : userPassword,
+            industry : 'none'
+        })
+    }
+
+    const createNewUser = async (userData) => {
+        const response = await fetch("https://dragonfly.herokuapp.com/auth/signup", {
+            method : "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify(userData)
+        })
+        const data = await response.json()
+        return data;
+    }
+
+    React.useEffect(() => {
+        createNewUser(userInfo).then(data => {
+            console.log(data);
+            context.updateUserInfo(data)
+            
+
+            if('newUser' in data) {
+                navigate('/login');
+            }
+        })
+    },[userInfo])
+    // console.log(context.userInfo
     return (
         <div className="pageWrapper">
             <div className="center">
@@ -17,28 +63,28 @@ const SignUpPage = () => {
             <div className="center">
                 <div className="formContainer center">
                     <h4>Sign up for free</h4>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="center inputFields">
-                            <input type="text" id="fname" name="First Name" placeholder="   First Name"/>
-                            <input type="text" id="lname" name="Last Name" placeholder="   Last Name"/>
-                            <input type="text" id="email" name="Email" placeholder="   Email"/>
-                            <input type="text" id="password" name="Password" placeholder="   Password"/>
+                            <input type="text" id="fname" name="fName" placeholder="   First Name"/>
+                            <input type="text" id="lname" name="lName" placeholder="   Last Name"/>
+                            <input type="text" id="email" name="email" placeholder="   Email"/>
+                            <input type="text" id="password" name="password" placeholder="   Password"/>
+                        </div>
+                        <div>
+                            <p>Password must contain</p>
+                            <ul className="row">
+                                <li className="bPoint">8 - 20 characters</li>
+                                <li className="bPoint">1 or more numbers</li>
+                            </ul>
+                            <ul className="row">
+                                <li>upper-case letter</li>
+                                <li>lower-case letter</li>
+                            </ul>
+                            <div className="center">
+                                <button className="signUpBtn" type="submit">Sign up for free</button>
+                            </div>
                         </div>
                     </form>
-                    <div>
-                        <p>Password must contain</p>
-                        <ul className="row">
-                            <li>8 - 20 characters</li>
-                            <li>1 or more numbers</li>
-                        </ul>
-                        <ul className="row">
-                            <li>upper-case letter</li>
-                            <li>lower-case letter</li>
-                        </ul>
-                        <div className="center">
-                            <button className="signUpBtn">Sign up for free</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div className="center">

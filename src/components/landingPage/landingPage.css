@@ -3,8 +3,12 @@
 }
 
 a {
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
+}
+
+.entirePage {
+    background-color: #12152a;
 }
 
 a:hover {
