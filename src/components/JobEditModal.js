@@ -13,7 +13,6 @@ function JobEntryModal({ setCardEditModal }) {
             <div className="overlay_style"></div>
             <div className="modal_style">
                 <div className="headerForm">
-                    {/* <h3>Job Title</h3> */}
                     <label htmlFor="jobTitle" className="sr-only" >Job Title</label>
                     <input type="text" id="jobTitle" placeholder="Job Title" />
 
@@ -22,10 +21,6 @@ function JobEntryModal({ setCardEditModal }) {
 
                     <label htmlFor="location" className="sr-only" >Job Title</label>
                     <input type="text" id="location" placeholder="Location" />
-
-
-                    {/* <h4>Company</h4>
-                    <h5>Location</h5> */}
 
                     <button className="saveApplication">Save <FontAwesomeIcon icon={faFloppyDisk} /></button>
                     <button className="closeApplication" onClick={() => handleCloseModal()}>Close <FontAwesomeIcon icon={faXmark} /></button>
