@@ -10,8 +10,6 @@ import Column from "./Column";
 
 function NavBar({ setCardViewToggle, setShowJobEntryModal }) {
 
-    // const [modalShow, setModalShow] = React.useState(false);
-
     const [columnToggle, setColumnToggle] = useState(true);
 
     const [boardViewToggle, setBoardViewToggle] = useState(false);
@@ -58,11 +56,6 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal }) {
                         <Button onClick={() => setShowJobEntryModal(true)}>
                             <FontAwesomeIcon icon={faCirclePlus} />
                         </Button>
-
-                        {/* <JobEntryModal
-                            show={modalShow}
-                            onHide={() => setModalShow(false)}
-                        /> */}
 
                     </li>
 

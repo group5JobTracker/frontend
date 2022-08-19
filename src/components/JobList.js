@@ -48,21 +48,10 @@ function JobList() {
                 </div>
             )}
             {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} /> : ""}
-            {/* <JobEditModal onHide={() => setCardEditModal(false)} */}
-            {/* /> */}
 
         </div>
     )
 }
 
-// const Div = () => {
-//     return (
-//         <div>
-//             <h4>{props.title}</h4>
-//             <h5>{props.company}</h5>
-//             <h6>{props.location}</h6>
-//         </div>
-//     )
-// }
 
 export default JobList
