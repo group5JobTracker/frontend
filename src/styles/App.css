@@ -653,30 +653,33 @@ button :hover {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  height: 100%;
+  color: #FFFFFF;
 }
 
 .cardsJob {
   border: 1px solid black;
   border-radius: 10px;
-  padding: 5px;
-  min-width: calc(33.3333333333% - 10px);
+  padding: 10px;
   margin: 5px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
   -webkit-box-flex: wrap;
       -ms-flex: wrap;
           flex: wrap;
 }
 .cardsJob h4 {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 .cardsJob h5 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
 }
 .cardsJob h6 {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: lighter;
 }
 .cardsJob p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .cardsJob .principal {
   margin-top: 25px;
@@ -688,6 +691,26 @@ button :hover {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 20px;
+}
+
+.col1 {
+  max-width: calc(100% - 10px);
+  min-width: calc(100% - 10px);
+}
+
+.col2 {
+  max-width: calc(50% - 10px);
+  min-width: calc(50% - 10px);
+}
+
+.col3 {
+  max-width: calc(33.3333333333% - 10px);
+  min-width: calc(33.3333333333% - 10px);
+}
+
+.col4 {
+  max-width: calc(25% - 10px);
+  min-width: calc(25% - 10px);
 }
 
 .modal_style {

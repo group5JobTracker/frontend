@@ -1,18 +1,19 @@
 //Libraries
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 //Components
 import Column from "./Column";
 
 
-function NavBar({ setCardViewToggle, setShowJobEntryModal }) {
+function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, columnsCardView }) {
 
     const [columnToggle, setColumnToggle] = useState(true);
 
     const [boardViewToggle, setBoardViewToggle] = useState(false);
+
+
 
     //need to refacture this code, make it concisely
     const handleCardViewBtn = () => {
@@ -32,7 +33,7 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal }) {
             <div className="topNavBar">
                 <ul className="viewBtns">
                     <li>
-                        <button onClick={(e) => handleCardViewBtn(e)}>Card View</button>
+                        <button onClick={(e) => handleCardViewBtn(e)} >Card View</button>
                     </li>
 
                     <li>
@@ -75,7 +76,13 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal }) {
 
                 </li>
                 <li>
-                    {columnToggle && <Column />}
+                    {columnToggle && <Column
+                        setShowCol1={setShowCol1}
+                        setShowCol2={setShowCol2}
+                        setShowCol3={setShowCol3}
+                        setShowCol4={setShowCol4}
+                        columnsCardView={columnsCardView}
+                    />}
 
                 </li>
             </ul>

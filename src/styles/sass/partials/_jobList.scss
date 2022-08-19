@@ -2,34 +2,37 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    height: 100%;
+    // overflow: hidden;
     // margin-top: 50px;
     // max-width: 100%;
+    color: $white
 }
 
 .cardsJob {
     border: 1px solid black;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     // max-width: calc((100% / 3) - 10px);
-    min-width: calc((100% / 3) - 10px);
+    // min-width: calc((100% / 3) - 10px);
     margin: 5px;
     background-color: $cardColor;
     flex: wrap;
 
     h4 {
-        font-size: 1.5rem;
+        @include header2
     }
 
     h5 {
-        font-size: 1.35rem;
+        @include subHeader2
     }
 
     h6 {
-        font-size: 1.2rem;
+        @include subBody1
     }
 
     p {
-        font-size: 0.8rem;
+        @include subBody2
     }
 
     .principal {
@@ -41,4 +44,24 @@
         justify-content: space-around;
         margin-top: 20px;
     }
+}
+
+.col1 {
+    max-width: calc(100% - 10px);
+    min-width: calc(100% - 10px);
+}
+
+.col2 {
+    max-width: calc((100% / 2) - 10px);
+    min-width: calc((100% / 2) - 10px);
+}
+
+.col3 {
+    max-width: calc((100% / 3) - 10px);
+    min-width: calc((100% / 3) - 10px);
+}
+
+.col4 {
+    max-width: calc((100% / 4) - 10px);
+    min-width: calc((100% / 4) - 10px);
 }
