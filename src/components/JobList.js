@@ -4,8 +4,8 @@ import JobEditModal from "./JobEditModal"
 
 
 function JobList() {
-    const [edited, setEdited] = useState(false)
-    const [modalShow, setModalShow] = useState(false);
+
+    const [cardEditModal, setCardEditModal] = useState(false)
 
 
     //make api call
@@ -31,16 +31,11 @@ function JobList() {
     ]
 
 
-
-    const handleCardEdit = ((e) => {
-        console.log(e)
-    })
-
     return (
         <div className="jobDisplayed" >
             {jobArr.map((jobPos, i) =>
                 // <JobSummary title={jobPos.title} company={jobPos.company} location={jobPos.location} dateApplied={jobPos.dateApplied} stats={jobPos.stats} index={i} />
-                <div onClick={() => setModalShow(true)} key={i} id={i} className="cardsJob">
+                <div onClick={() => setCardEditModal(true)} key={i} id={i} className="cardsJob">
                     <div className="principal">
                         <h4>{jobPos.title}</h4>
                         <h5>{jobPos.company}</h5>
@@ -52,10 +47,9 @@ function JobList() {
                     </div>
                 </div>
             )}
-
-            <JobEditModal show={modalShow} onHide={() => setModalShow(false)}
-                setModalShow={setModalShow}
-            />
+            {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} /> : ""}
+            {/* <JobEditModal onHide={() => setCardEditModal(false)} */}
+            {/* /> */}
 
         </div>
     )

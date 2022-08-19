@@ -722,18 +722,31 @@ button :hover {
   padding: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-.headerForm h3 {
+.headerForm h3,
+.headerForm #jobTitle {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #FFFFFF;
 }
-.headerForm h4 {
+.headerForm h4,
+.headerForm #company {
   font-size: 1.5rem;
+  color: #FFFFFF;
 }
-.headerForm h5 {
+.headerForm h5,
+.headerForm #location {
   font-size: 1.5rem;
   font-weight: lighter;
   padding-top: 5px;
+  color: #FFFFFF;
 }
 .headerForm .saveApplication {
   position: absolute;
