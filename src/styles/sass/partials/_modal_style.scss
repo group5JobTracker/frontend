@@ -30,18 +30,27 @@
     padding: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
 
-    h3 {
-        @include header2
+
+    h3,
+    #jobTitle {
+        @include header2;
+        color: $white
     }
 
-    h4 {
-        @include header3
+    h4,
+    #company {
+        @include header3;
+        color: $white
     }
 
-    h5 {
+    h5,
+    #location {
         @include header4;
         padding-top: 5px;
+        color: $white
     }
 
     .saveApplication {

@@ -5,6 +5,7 @@ import JobList from "./JobList"
 import NavBar from "./NavBar"
 import Context from "../context/context";
 import JobEntryModal from "./JobEntryModal";
+import JobEditModal from "./JobEditModal";
 
 function Dashboard() {
     const context = React.useContext(Context)

@@ -4,8 +4,6 @@ import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function JobEntryModal({ setShowJobEntryModal }) {
 
-    // if (!open) return null
-
     const handleCloseModal = () => {
         setShowJobEntryModal(false);
     }
