@@ -1,0 +1,10 @@
+.boardsSection {
+    display: flex;
+    flex-direction: row;
+    margin-left: 160px;
+}
+
+.usersBoards {
+    display: flex;
+    flex-direction: row;
+}

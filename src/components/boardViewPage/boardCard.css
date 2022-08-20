@@ -1,0 +1,78 @@
+body {
+    background-color: #12152A;
+}
+
+.card {
+    width: 368px;
+    height: 190px;
+    margin-bottom: 20px;
+    margin-left: 11px;
+}
+
+.cardBody {
+    background: rgba(47, 57, 126, 0.4);
+    backdrop-filter: blur(50px);
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+.cardTags {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.tagPill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4AC9FF;
+    /* remember to make background color dynamic */
+    color: black;
+    font-size: 12px;
+    font-weight: 400;
+    width: 84px;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 15.5px;
+}
+
+.jobInfo>p {
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.company {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.location {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.jobStatus {
+    display: flex;
+    flex-direction: row;
+    margin-top: 49px;
+    margin-left: 20px;
+}
+
+.jobStatus>p {
+    margin-right: 18px;
+    size: 12px;
+    font-weight: 400 !important;
+    padding-bottom: 10px;
+}
+
+.accentColor {
+    height: 10px;
+    background: #4A52FF;
+    border-radius: 0px 0px 10px 10px;
+}
