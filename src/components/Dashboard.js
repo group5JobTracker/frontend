@@ -8,16 +8,16 @@ import JobEntryModal from "./JobEntryModal";
 
 function Dashboard() {
     const context = React.useContext(Context)
-    const [cardViewToggle, setCardViewToggle] = useState(true)
-    const [showJobEntryModal, setShowJobEntryModal] = useState(false)
+    const [cardViewToggle, setCardViewToggle] = useState(true);
+    const [showJobEntryModal, setShowJobEntryModal] = useState(false);
+    const [showCol1, setShowCol1] = useState(false);
+    const [showCol2, setShowCol2] = useState(false);
+    const [showCol3, setShowCol3] = useState(true);
+    const [showCol4, setShowCol4] = useState(false);
+
+    const [searchTerm, setSearchTerm] = useState("")
+
     console.log(context)
-
-    const columnsCardView = useRef(null)
-
-    const [showCol1, setShowCol1] = useState(false)
-    const [showCol2, setShowCol2] = useState(false)
-    const [showCol3, setShowCol3] = useState(true)
-    const [showCol4, setShowCol4] = useState(false)
 
     return (
         <div className="dashboardStyle">
@@ -29,9 +29,10 @@ function Dashboard() {
                     setShowCol2={setShowCol2}
                     setShowCol3={setShowCol3}
                     setShowCol4={setShowCol4}
-                    columnsCardView={columnsCardView} />
+                    // columnsCardView={columnsCardView}
+                    setSearchTerm={setSearchTerm} />
 
-                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} columnsCardView={columnsCardView} /> : ""}
+                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} searchTerm={searchTerm} /> : ""}
 
                 {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
 
