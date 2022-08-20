@@ -7,13 +7,13 @@ import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free
 import Column from "./Column";
 
 
-function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, columnsCardView }) {
+function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, columnsCardView, setSearchTerm }) {
 
     const [columnToggle, setColumnToggle] = useState(true);
 
     const [boardViewToggle, setBoardViewToggle] = useState(false);
 
-
+    // const [searchTerm, setSearchTerm] = useState("")
 
     //need to refacture this code, make it concisely
     const handleCardViewBtn = () => {
@@ -44,7 +44,7 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowC
                 <ul className="searchCreate">
                     <li className="searchBar">
                         <label htmlFor="search" className="sr-only" >Search</label>
-                        <input type="search" id="search" placeholder="Search" />
+                        <input type="search" id="search" placeholder="Search" on onChange={(e) => setSearchTerm(e.target.value)} />
                         <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
 
                     </li>
