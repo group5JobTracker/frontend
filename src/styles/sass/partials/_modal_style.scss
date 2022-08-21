@@ -71,7 +71,7 @@
 }
 
 .bodyForm {
-    background-color: $cardDarkBlue;
+    background-color: $background2;
     display: flex;
     padding: 20px;
     width: 100%;
@@ -94,7 +94,7 @@
 
     input {
         // width: 50%;
-        background-color: $background;
+        background-color: $backgroundInput;
         border-radius: 10px;
         height: 35px;
         border: none;
@@ -127,6 +127,7 @@
 
         textarea {
             width: 100%;
+            background-color: $backgroundInput
         }
     }
 }
@@ -154,6 +155,7 @@
             // margin-left: 10px;
             height: 99%;
             width: 99%;
+            background-color: $backgroundInput
         }
 
     }
