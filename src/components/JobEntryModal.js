@@ -1,18 +1,93 @@
 //Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function JobEntryModal({ setShowJobEntryModal }) {
+
+    const [redCor, setRedCor] = useState(true);
+    const [orangeCor, setOrangeCor] = useState(false);
+    const [yellowCor, setYellowdCor] = useState(false);
+    const [lightBlueCor, setLightBlueCor] = useState(false);
+    const [darkBlueCor, setDarkBlueCor] = useState(false);
+    const [purpleCor, setPurpleCor] = useState(false);
+    const [pinkCor, setPinkCor] = useState(false);
 
     const handleCloseModal = () => {
         setShowJobEntryModal(false);
     }
 
+    const handleColorCard = (e) => {
+        e.preventDefault();
+        console.log(e.target.value);
+        const cor = e.target.value;
+        if (cor === "red") {
+            setRedCor(true);
+            setOrangeCor(false);
+            setYellowdCor(false);
+            setLightBlueCor(false);
+            setDarkBlueCor(false);
+            setPurpleCor(false);
+            setPinkCor(false);
+        } else if (cor === "orange") {
+            setRedCor(false);
+            setOrangeCor(true);
+            setYellowdCor(false);
+            setLightBlueCor(false);
+            setDarkBlueCor(false);
+            setPurpleCor(false);
+            setPinkCor(false);
+        } else if (cor === "yellow") {
+            setRedCor(false);
+            setOrangeCor(false);
+            setYellowdCor(true);
+            setLightBlueCor(false);
+            setDarkBlueCor(false);
+            setPurpleCor(false);
+            setPinkCor(false);
+        } else if (cor === "lightBlue") {
+            setRedCor(false);
+            setOrangeCor(false);
+            setYellowdCor(false);
+            setLightBlueCor(true);
+            setDarkBlueCor(false);
+            setPurpleCor(false);
+            setPinkCor(false);
+        } else if (cor === "darkBlue") {
+            setRedCor(false);
+            setOrangeCor(false);
+            setYellowdCor(false);
+            setLightBlueCor(false);
+            setDarkBlueCor(true);
+            setPurpleCor(false);
+            setPinkCor(false);
+        } else if (cor === "purple") {
+            setRedCor(false);
+            setOrangeCor(false);
+            setYellowdCor(false);
+            setLightBlueCor(false);
+            setDarkBlueCor(false);
+            setPurpleCor(true);
+            setPinkCor(false);
+        } else if (cor === "pink") {
+            setRedCor(false);
+            setOrangeCor(false);
+            setYellowdCor(false);
+            setLightBlueCor(false);
+            setDarkBlueCor(false);
+            setPurpleCor(false);
+            setPinkCor(true);
+        }
+    }
+
+
     return (
         <>
             <div className="overlay_style"></div>
             <div className="modal_style">
-                <div className="headerForm">
+                <div
+                    className={redCor ? "headerForm redCorBack" : orangeCor ? "headerForm orangeCorBack" : yellowCor ? "headerForm yellowCorBack" : lightBlueCor ? "headerForm lightBlueCorBack" : darkBlueCor ? "headerForm darkBlueCorBack" : purpleCor ? "headerForm purpleCorBack" : pinkCor ? "headerForm pinkCorBack" : "headerForm"}
+                >
                     <label htmlFor="jobTitle" className="sr-only" >Job Title</label>
                     <input type="text" id="jobTitle" placeholder="Job Title" />
 
@@ -54,13 +129,14 @@ function JobEntryModal({ setShowJobEntryModal }) {
                             <div className="inputRight">
                                 <label htmlFor="labels">Labels</label>
                                 <label htmlFor="cardColor">Card Color</label>
-                                <select name="cardColor" id="cardColor" >
+                                <select name="cardColor" id="cardColor"
+                                    onChange={(e) => handleColorCard(e)}
+                                >
                                     <option value="red">Red</option>
                                     <option value="orange">Orange</option>
                                     <option value="yellow">Yellow</option>
-                                    <option value="green">Green</option>
-                                    <option value="blue">Blue</option>
-                                    <option value="blueviolet">Blueviolet</option>
+                                    <option value="lightBlue">Light Blue</option>
+                                    <option value="darkBlue">Dark Blue</option>
                                     <option value="purple">Purple</option>
                                     <option value="pink">Pink</option>
                                 </select>

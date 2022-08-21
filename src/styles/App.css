@@ -660,7 +660,7 @@ button :hover {
 .cardsJob {
   border: 1px solid black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 10px 15px 10px;
   margin: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-box-flex: wrap;
@@ -740,7 +740,6 @@ button :hover {
 }
 
 .headerForm {
-  background-color: #FE5A5A;
   position: relative;
   padding: 20px;
   border-top-left-radius: 20px;
@@ -776,14 +775,14 @@ button :hover {
   top: 15px;
   right: 15px;
   border: none;
-  background-color: #FE5A5A;
+  background-color: transparent;
 }
 .headerForm .closeApplication {
   position: absolute;
   bottom: 15px;
   right: 15px;
   border: none;
-  background-color: #FE5A5A;
+  background-color: transparent;
 }
 
 .bodyForm {
@@ -875,4 +874,32 @@ button :hover {
 .bodyRight .leftBottomForm textarea {
   height: 99%;
   width: 99%;
+}
+
+.redCorBack {
+  background-color: #FE5A5A;
+}
+
+.orangeCorBack {
+  background-color: #FFAC4A;
+}
+
+.yellowCorBack {
+  background-color: #FFE24A;
+}
+
+.lightBlueCorBack {
+  background-color: #4AC9FF;
+}
+
+.darkBlueCorBack {
+  background-color: #4A52FF;
+}
+
+.purpleCorBack {
+  background-color: #AF4AFF;
+}
+
+.pinkCorBack {
+  background-color: #FF77C9;
 }

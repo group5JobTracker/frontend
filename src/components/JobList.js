@@ -39,7 +39,6 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
                     return val
                 }
             }).map((jobPos, i) =>
-                // <JobSummary title={jobPos.title} company={jobPos.company} location={jobPos.location} dateApplied={jobPos.dateApplied} stats={jobPos.stats} index={i} />
                 <div
                     onClick={() => setCardEditModal(true)}
                     key={i}
