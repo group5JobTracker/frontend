@@ -5,6 +5,7 @@ import JobList from "./JobList"
 import NavBar from "./NavBar"
 import Context from "../context/context";
 import JobEntryModal from "./JobEntryModal";
+import { Navigate } from "react-router-dom";
 
 function Dashboard() {
     const context = React.useContext(Context)
@@ -32,8 +33,7 @@ function Dashboard() {
                     setShowCol3={setShowCol3}
                     setShowCol4={setShowCol4}
                     setSearchTerm={setSearchTerm} />
-
-                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} searchTerm={searchTerm} /> : ""}
+                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} columnsCardView={columnsCardView} /> : <Navigate to={"/boards"}/>}
 
                 {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
 

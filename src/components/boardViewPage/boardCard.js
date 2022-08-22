@@ -1,6 +1,7 @@
 import './boardCard.css';
 
-const BoardCard = () => {
+const BoardCard = ({cardInfo}) => {
+    const formattedDate = cardInfo.created_at.split("T")[0]
     return (
         <div className="card">
             <div className="cardBody">
@@ -9,17 +10,17 @@ const BoardCard = () => {
                 </div>
 
                 <div className="jobInfo">
-                    <p className="title">Software Engineer</p>
-                    <p className = "company">Bloomberg</p>
-                    <p className="location">New York, New York</p>
+                    <p className="title">{cardInfo.position}</p>
+                    <p className = "company">{cardInfo.company}</p>
+                    <p className="location">{cardInfo.location}</p>
                 </div>
 
                 <div className="jobStatus">
-                    <p>Date Applied: 08/19/22</p>
-                    <p>Status: Applied</p>
+                    <p>Date Applied: {formattedDate}</p>
+                    <p>Status: {cardInfo.status}</p>
                 </div>
             </div>
-            <div className="accentColor"></div>
+            <div className="accentColor" style={{background : cardInfo.card_color_hex}}></div>
         </div>        
     )
 }
