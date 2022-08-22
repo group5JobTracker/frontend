@@ -1,5 +1,5 @@
 //Libraries
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 //Components
 import JobList from "./JobList"
 import NavBar from "./NavBar"
@@ -15,7 +15,9 @@ function Dashboard() {
     const [showCol3, setShowCol3] = useState(true);
     const [showCol4, setShowCol4] = useState(false);
 
-    const [searchTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("");
+
+
 
     console.log(context)
 
@@ -29,7 +31,6 @@ function Dashboard() {
                     setShowCol2={setShowCol2}
                     setShowCol3={setShowCol3}
                     setShowCol4={setShowCol4}
-                    // columnsCardView={columnsCardView}
                     setSearchTerm={setSearchTerm} />
 
                 {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} searchTerm={searchTerm} /> : ""}
