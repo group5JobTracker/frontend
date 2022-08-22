@@ -1,10 +1,23 @@
+import { useState } from 'react';
 import './addSectionCard.css';
+import CreateBoardForm from './CreateBoardForm';
 
 const AddSection = () => {
+    const [sectionClicked, setSectionClicked] = useState(false);
+    const handleClick = () => {
+        setSectionClicked(true);
+    }
+
     return (
-        <div className = "addSection">
-            <p>Add Section +</p>
-        </div>
+        <>
+            {sectionClicked ? 
+                <CreateBoardForm setSectionClicked = {setSectionClicked}/>
+                :
+                <div className = "addSection" onClick={handleClick}>
+                    <p>Add Section +</p> 
+                </div>
+            }
+        </>
     )
 }
 
