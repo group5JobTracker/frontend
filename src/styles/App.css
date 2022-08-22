@@ -660,12 +660,13 @@ button :hover {
 .cardsJob {
   border: 1px solid black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   margin: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-box-flex: wrap;
       -ms-flex: wrap;
           flex: wrap;
+  position: relative;
 }
 .cardsJob h4 {
   font-size: 1.5rem;
@@ -691,6 +692,18 @@ button :hover {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 20px;
+}
+.cardsJob .complement ::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  display: inline-block;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .col1 {
@@ -740,7 +753,6 @@ button :hover {
 }
 
 .headerForm {
-  background-color: #FE5A5A;
   position: relative;
   padding: 20px;
   border-top-left-radius: 20px;
@@ -776,18 +788,18 @@ button :hover {
   top: 15px;
   right: 15px;
   border: none;
-  background-color: #FE5A5A;
+  background-color: transparent;
 }
 .headerForm .closeApplication {
   position: absolute;
   bottom: 15px;
   right: 15px;
   border: none;
-  background-color: #FE5A5A;
+  background-color: transparent;
 }
 
 .bodyForm {
-  background-color: #4A52FF;
+  background-color: rgba(47, 57, 126, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -808,7 +820,7 @@ button :hover {
   display: inline-block;
 }
 .bodyForm input {
-  background-color: #12152A;
+  background-color: #353945;
   border-radius: 10px;
   height: 35px;
   border: none;
@@ -844,6 +856,7 @@ button :hover {
 }
 .bodyLeft .noteForm textarea {
   width: 100%;
+  background-color: #353945;
 }
 
 .bodyRight {
@@ -875,4 +888,33 @@ button :hover {
 .bodyRight .leftBottomForm textarea {
   height: 99%;
   width: 99%;
+  background-color: #353945;
+}
+
+.redCorBack {
+  background-color: #FE5A5A;
+}
+
+.orangeCorBack {
+  background-color: #FFAC4A;
+}
+
+.yellowCorBack {
+  background-color: #FFE24A;
+}
+
+.lightBlueCorBack {
+  background-color: #4AC9FF;
+}
+
+.darkBlueCorBack {
+  background-color: #4A52FF;
+}
+
+.purpleCorBack {
+  background-color: #AF4AFF;
+}
+
+.pinkCorBack {
+  background-color: #FF77C9;
 }

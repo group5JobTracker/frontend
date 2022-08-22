@@ -3,14 +3,9 @@ import React, { useEffect, useState, useRef } from "react";
 import JobEditModal from "./JobEditModal"
 
 
-function JobList({ columnsCardView, showCol1, showCol2, showCol3, showCol4 }) {
+function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
 
     const [cardEditModal, setCardEditModal] = useState(false)
-
-
-    // useEffect(() => {
-    //     console.log("my columns Card View:", columnsCardView);
-    // })
 
     //make api call
     // const [jobs, setJobs] = useEffect([])
@@ -27,22 +22,6 @@ function JobList({ columnsCardView, showCol1, showCol2, showCol3, showCol4 }) {
     // })
     // }, [])
 
-    // const columnsDisplayed = (e) => {
-    //     if (showCol1) {
-    //         columnsCardView.currentTarget.style.classList.add(".col1");
-    //         columnsCardView.currentTarget.style.classList.remove(".col2", ".col3", ".col4");
-    //     } else if (showCol2) {
-    //         columnsCardView.currentTarget.style.classList.add(".col2");
-    //         columnsCardView.currentTarget.style.classList.remove(".col1", ".col3", ".col4")
-    //     } else if (showCol3) {
-    //         columnsCardView.currentTarget.style.classList.add(".col3");
-    //         columnsCardView.currentTarget.style.classList.remove(".col1", ".col2", ".col4")
-    //     } else if (showCol4) {
-    //         columnsCardView.currentTarget.style.classList.add(".col4");
-    //         columnsCardView.currentTarget.style.classList.remove(".col1", ".col2", ".col3")
-    //     }
-    // }
-
     const jobArr = [
         { title: "Frontend Developer", company: "Shopify", location: "Toronto", dateApplied: "02/14/2022", stats: "Applied" },
         { title: "Backend Developer", company: "Amazon", location: "New York", dateApplied: "03/10/2022", stats: "Applied" },
@@ -53,14 +32,18 @@ function JobList({ columnsCardView, showCol1, showCol2, showCol3, showCol4 }) {
 
     return (
         <div className="jobDisplayed" >
-            {jobArr.map((jobPos, i) =>
-                // <JobSummary title={jobPos.title} company={jobPos.company} location={jobPos.location} dateApplied={jobPos.dateApplied} stats={jobPos.stats} index={i} />
+            {jobArr.filter((val) => {
+                if (searchTerm == "") {
+                    return val
+                } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase()) || val.company.toLowerCase().includes(searchTerm.toLowerCase()) || val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return val
+                }
+            }).map((jobPos, i) =>
                 <div
                     onClick={() => setCardEditModal(true)}
                     key={i}
                     id={i}
-                    className={showCol1 ? "cardsJob col1" : showCol2 ? "cardsJob col2" : showCol3 ? "cardsJob col3" : "cardsJob col4"} ref={columnsCardView}
-                >
+                    className={showCol1 ? "cardsJob col1" : showCol2 ? "cardsJob col2" : showCol3 ? "cardsJob col3" : "cardsJob col4"} >
                     <div className="principal">
                         <h4>{jobPos.title}</h4>
                         <h5>{jobPos.company}</h5>

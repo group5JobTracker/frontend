@@ -25,7 +25,7 @@
 }
 
 .headerForm {
-    background-color: $cardRed;
+    // background-color: $cardRed;
     position: relative;
     padding: 20px;
     border-top-left-radius: 20px;
@@ -58,7 +58,7 @@
         top: 15px;
         right: 15px;
         border: none;
-        background-color: $cardRed;
+        background-color: transparent;
     }
 
     .closeApplication {
@@ -66,12 +66,12 @@
         bottom: 15px;
         right: 15px;
         border: none;
-        background-color: $cardRed;
+        background-color: transparent;
     }
 }
 
 .bodyForm {
-    background-color: $cardDarkBlue;
+    background-color: $background2;
     display: flex;
     padding: 20px;
     width: 100%;
@@ -94,7 +94,7 @@
 
     input {
         // width: 50%;
-        background-color: $background;
+        background-color: $backgroundInput;
         border-radius: 10px;
         height: 35px;
         border: none;
@@ -127,6 +127,7 @@
 
         textarea {
             width: 100%;
+            background-color: $backgroundInput
         }
     }
 }
@@ -154,7 +155,36 @@
             // margin-left: 10px;
             height: 99%;
             width: 99%;
+            background-color: $backgroundInput
         }
 
     }
+}
+
+.redCorBack {
+    background-color: $cardRed
+}
+
+.orangeCorBack {
+    background-color: $cardOrange
+}
+
+.yellowCorBack {
+    background-color: $cardYellow
+}
+
+.lightBlueCorBack {
+    background-color: $cardLightBlue
+}
+
+.darkBlueCorBack {
+    background-color: $cardDarkBlue
+}
+
+.purpleCorBack {
+    background-color: $cardPurple
+}
+
+.pinkCorBack {
+    background-color: $cardPink
 }
