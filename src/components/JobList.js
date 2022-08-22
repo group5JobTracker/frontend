@@ -29,13 +29,13 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
         { title: "Project Manager", company: "Microsoft", location: "Vancouver", dateApplied: "10/24/2022", stats: "Aceepted" }
     ]
 
-
     return (
         <div className="jobDisplayed" >
             {jobArr.filter((val) => {
                 if (searchTerm == "") {
                     return val
-                } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase()) || val.company.toLowerCase().includes(searchTerm.toLowerCase()) || val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
+                } else if (
+                    val.title.toLowerCase().includes(searchTerm.toLowerCase()) || val.company.toLowerCase().includes(searchTerm.toLowerCase()) || val.location.toLowerCase().includes(searchTerm.toLowerCase())) {
                     return val
                 }
             }).map((jobPos, i) =>

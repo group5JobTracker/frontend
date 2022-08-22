@@ -7,13 +7,11 @@ import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free
 import Column from "./Column";
 
 
-function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, columnsCardView, setSearchTerm }) {
+function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, setSearchTerm }) {
 
     const [columnToggle, setColumnToggle] = useState(true);
 
     const [boardViewToggle, setBoardViewToggle] = useState(false);
-
-    // const [searchTerm, setSearchTerm] = useState("")
 
     //need to refacture this code, make it concisely
     const handleCardViewBtn = () => {
@@ -50,10 +48,7 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowC
                     </li>
 
                     <li className="newAppBtnContainer">
-                        {/* <button onClick={(e) => handleNewApplic(e)}><FontAwesomeIcon icon={faCirclePlus} /></button> */}
-                        {/* <Button variant="primary" onClick={() => setModalShow(true)}>
-                            <FontAwesomeIcon icon={faCirclePlus} />
-                        </Button> */}
+
                         <Button onClick={() => setShowJobEntryModal(true)}>
                             <FontAwesomeIcon icon={faCirclePlus} />
                         </Button>
@@ -81,7 +76,7 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowC
                         setShowCol2={setShowCol2}
                         setShowCol3={setShowCol3}
                         setShowCol4={setShowCol4}
-                        columnsCardView={columnsCardView}
+                    // columnsCardView={columnsCardView}
                     />}
 
                 </li>

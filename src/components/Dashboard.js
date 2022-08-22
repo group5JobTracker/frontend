@@ -18,8 +18,6 @@ function Dashboard() {
 
     const [searchTerm, setSearchTerm] = useState("");
 
-
-
     console.log(context)
 
     return (
@@ -33,10 +31,9 @@ function Dashboard() {
                     setShowCol3={setShowCol3}
                     setShowCol4={setShowCol4}
                     setSearchTerm={setSearchTerm} />
-                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} columnsCardView={columnsCardView} /> : <Navigate to={"/boards"}/>}
+                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} searchTerm={searchTerm} /> : <Navigate to={"/boards"} />}
 
                 {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
-
 
             </div>
 
@@ -45,3 +42,4 @@ function Dashboard() {
 }
 
 export default Dashboard
+
