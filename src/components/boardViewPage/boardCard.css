@@ -9,6 +9,11 @@ body {
     /* margin-left: 11px; */
 }
 
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
 .cardBody {
     background: rgba(47, 57, 126, 0.4);
     backdrop-filter: blur(50px);
@@ -19,6 +24,7 @@ body {
 .cardTags {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
 }
 
 .tagPill {
@@ -74,4 +80,11 @@ body {
 .accentColor {
     height: 10px;
     border-radius: 0px 0px 10px 10px;
+}
+
+.selectDot {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
