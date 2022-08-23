@@ -1,11 +1,11 @@
-import './boardCard.css';
+import './boardViewPage/boardCard.css';
 
 const BoardCard = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModal }) => {
     const formattedDate = cardInfo.created_at.split("T")[0]
 
 
     return (
-        <div className="card" key={cardInfo.app_id}>
+        <div className={showCol1 ? "card col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={() => setCardEditModal(true)} key={cardInfo.app_id}>
             <div className="cardBody">
                 <div className="cardTags">
                     <p className="tagPill">Remote</p>
