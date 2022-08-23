@@ -3,7 +3,7 @@ import './boardCard.css';
 const BoardCard = ({cardInfo}) => {
     const formattedDate = cardInfo.created_at.split("T")[0]
     return (
-        <div className="card">
+        <div className="card" key={cardInfo.app_id}>
             <div className="cardBody">
                 <div className="cardTags">
                     <p className="tagPill">Remote</p>
