@@ -1,7 +1,8 @@
 .boardsSection {
     display: flex;
     flex-direction: row;
-    margin-left: 160px;
+    margin-left: 80px;
+    overflow-x: scroll;
 }
 
 .usersBoards {
