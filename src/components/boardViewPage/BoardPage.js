@@ -28,7 +28,7 @@ const BoardPage = () => {
                 setUsersBoards(data.boards);
             }) 
         }
-    }, [])
+    },[])
 
     console.log(selectedBoard);
     return (
