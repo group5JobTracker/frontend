@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Context from '../../context/context';
-import BoardCard from './boardCard';
+import ModalCard from './ModalCard';
 import sortIcon from '../../imgFiles/sort-vector.svg';
 import addToIcon from '../../imgFiles/arrow-up-vector.svg';
 import filterIcon from '../../imgFiles/filter-vector.svg';
@@ -42,7 +42,7 @@ export default function AddCardsModal({setShowModal, selectedBoard}) {
                     </div>
                     <div className='slidingModalBody'>
                         {cards.map(cardInfo => {
-                            return <BoardCard cardInfo = {cardInfo}/>
+                            return <ModalCard cardInfo = {cardInfo}/>
                         })}
                     </div>
                 </div>
