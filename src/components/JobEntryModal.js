@@ -7,13 +7,7 @@ import { useContext } from "react";
 
 function JobEntryModal({ setShowJobEntryModal }) {
 
-    const [redCor, setRedCor] = useState(true);
-    const [orangeCor, setOrangeCor] = useState(false);
-    const [yellowCor, setYellowdCor] = useState(false);
-    const [lightBlueCor, setLightBlueCor] = useState(false);
-    const [darkBlueCor, setDarkBlueCor] = useState(false);
-    const [purpleCor, setPurpleCor] = useState(false);
-    const [pinkCor, setPinkCor] = useState(false);
+    const [selectedCor, setSelectedCor] = useState(null)
 
     const [appInfo, setAppInfo] = useState({});
 
@@ -25,65 +19,8 @@ function JobEntryModal({ setShowJobEntryModal }) {
 
     const handleColorCard = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
         const cor = e.target.value;
-        if (cor === "red") {
-            setRedCor(true);
-            setOrangeCor(false);
-            setYellowdCor(false);
-            setLightBlueCor(false);
-            setDarkBlueCor(false);
-            setPurpleCor(false);
-            setPinkCor(false);
-        } else if (cor === "orange") {
-            setRedCor(false);
-            setOrangeCor(true);
-            setYellowdCor(false);
-            setLightBlueCor(false);
-            setDarkBlueCor(false);
-            setPurpleCor(false);
-            setPinkCor(false);
-        } else if (cor === "yellow") {
-            setRedCor(false);
-            setOrangeCor(false);
-            setYellowdCor(true);
-            setLightBlueCor(false);
-            setDarkBlueCor(false);
-            setPurpleCor(false);
-            setPinkCor(false);
-        } else if (cor === "lightBlue") {
-            setRedCor(false);
-            setOrangeCor(false);
-            setYellowdCor(false);
-            setLightBlueCor(true);
-            setDarkBlueCor(false);
-            setPurpleCor(false);
-            setPinkCor(false);
-        } else if (cor === "darkBlue") {
-            setRedCor(false);
-            setOrangeCor(false);
-            setYellowdCor(false);
-            setLightBlueCor(false);
-            setDarkBlueCor(true);
-            setPurpleCor(false);
-            setPinkCor(false);
-        } else if (cor === "purple") {
-            setRedCor(false);
-            setOrangeCor(false);
-            setYellowdCor(false);
-            setLightBlueCor(false);
-            setDarkBlueCor(false);
-            setPurpleCor(true);
-            setPinkCor(false);
-        } else if (cor === "pink") {
-            setRedCor(false);
-            setOrangeCor(false);
-            setYellowdCor(false);
-            setLightBlueCor(false);
-            setDarkBlueCor(false);
-            setPurpleCor(false);
-            setPinkCor(true);
-        }
+        setSelectedCor(cor)
     }
 
     const handleJobSubmit = (e) => {
@@ -146,7 +83,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
             <form action="Sumbit" onSubmit={handleJobSubmit}>
                 <div className="modal_style">
                     <div
-                        className={redCor ? "headerForm redCorBack" : orangeCor ? "headerForm orangeCorBack" : yellowCor ? "headerForm yellowCorBack" : lightBlueCor ? "headerForm lightBlueCorBack" : darkBlueCor ? "headerForm darkBlueCorBack" : purpleCor ? "headerForm purpleCorBack" : pinkCor ? "headerForm pinkCorBack" : "headerForm"}
+                        className={selectedCor === "#FE5A5A" ? "headerForm redCorBack" : selectedCor === "#FFAC4A" ? "headerForm orangeCorBack" : selectedCor === "#FFE24A" ? "headerForm yellowCorBack" : selectedCor === "#4AC9FF" ? "headerForm lightBlueCorBack" : selectedCor === "#4A52FF" ? "headerForm darkBlueCorBack" : selectedCor === "#AF4AFF" ? "headerForm purpleCorBack" : selectedCor === "#FF77C9" ? "headerForm pinkCorBack" : "headerForm redCorBack"}
                     >
                         <label htmlFor="jobTitle" className="sr-only" >Title</label>
                         <input type="text" id="jobTitle" name="title" placeholder="Position" />
@@ -192,7 +129,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                     <select name="cardColor" id="cardColor"
                                         onChange={(e) => handleColorCard(e)}
                                     >
-                                        <option value="red">Red</option>
+                                        <option value="#FE5A5A">Red</option>
                                         <option value="#FFAC4A">Orange</option>
                                         <option value="#FFE24A">Yellow</option>
                                         <option value="#4AC9FF">Light Blue</option>

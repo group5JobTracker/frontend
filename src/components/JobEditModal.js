@@ -55,14 +55,13 @@ function JobEntryModal({ setCardEditModal }) {
                                     <label htmlFor="labels">Labels</label>
                                     <label htmlFor="cardColor">Card Color</label>
                                     <select name="cardColor" id="cardColor" >
-                                        <option value="red">Red</option>
-                                        <option value="orange">Orange</option>
-                                        <option value="yellow">Yellow</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
-                                        <option value="blueviolet">Blueviolet</option>
-                                        <option value="purple">Purple</option>
-                                        <option value="pink">Pink</option>
+                                        <option value="#FE5A5A">Red</option>
+                                        <option value="#FFAC4A">Orange</option>
+                                        <option value="#FFE24A">Yellow</option>
+                                        <option value="4AC9FF">Light Blue</option>
+                                        <option value="#4A52FF">Dark Blue</option>
+                                        <option value="#AF4AFF">Purple</option>
+                                        <option value="#FF77C9">Pink</option>
                                     </select>
                                     <label htmlFor="alerts">Reminder Alerts
                                         <input type="checkbox" /><span className="slider"></span>

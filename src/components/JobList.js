@@ -12,8 +12,8 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
     const context = React.useContext(Context)
 
 
-    const getCards = async () => {
-        const res = await fetch(`https://dragonfly.herokuapp.com/applications/users/4`);
+    const getCards = async (user_id) => {
+        const res = await fetch(`https://dragonfly.herokuapp.com/applications/users/${user_id}`);
         const data = await res.json();
         // console.log(data);
         return data.posts;
@@ -29,9 +29,9 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
     }, [])
 
     console.log(cardEditModal);
-    const handleCardClick = () => {
-        setCardEditModal(true)
-    }
+    // const handleCardClick = () => {
+    //     setCardEditModal(true)
+    // }
 
     return (
         <div className="jobDisplayed" >

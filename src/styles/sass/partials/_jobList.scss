@@ -12,7 +12,8 @@
     padding: 10px 10px 20px 10px;
     margin: 5px;
     background-color: $cardColor;
-    flex: wrap;
+    flex: nowrap;
+
     position: relative;
 
     h4 {
