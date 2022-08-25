@@ -10,7 +10,8 @@
 
     textarea {
         color: $white;
-        padding: 10px;
+        padding: 15px;
+
     }
 }
 
@@ -25,9 +26,9 @@
 }
 
 .headerForm {
-    // background-color: $cardRed;
     position: relative;
     padding: 20px;
+    height: 160px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
@@ -36,35 +37,42 @@
 
     h3,
     #jobTitle {
-        @include header2;
-        color: $white
+        @include header1;
+        color: $black;
     }
 
     h4,
     #company {
-        @include header3;
-        color: $white
+        @include header2;
+        color: $black;
+        margin-top: 10px
     }
 
     h5,
     #location {
         @include header4;
         padding-top: 5px;
-        color: $white
+        color: $black;
+        margin-top: 10px;
     }
 
     .saveApplication {
         position: absolute;
-        top: 15px;
-        right: 15px;
+        padding: 14px 12px;
+        bottom: 20px;
+        right: 20px;
         border: none;
         background-color: transparent;
+        border: 2px solid black;
+        border-radius: 10px;
+
     }
 
     .closeApplication {
         position: absolute;
-        bottom: 15px;
-        right: 15px;
+        font-size: 25px;
+        top: 25px;
+        right: 25px;
         border: none;
         background-color: transparent;
     }
@@ -83,6 +91,7 @@
         background-color: $background;
         border-radius: 10px;
         resize: none;
+
     }
 
     label {
@@ -119,6 +128,12 @@
 
     .inputLeft {
         width: 100%;
+        min-width: 300px;
+    }
+
+    .inputRight {
+        width: 100%;
+        min-width: 200px;
     }
 
     .noteForm {
@@ -130,9 +145,13 @@
             background-color: $backgroundInput
         }
     }
+
+    select {
+        color: $white;
+        font-weight: 100;
+        background-color: blueviolet;
+    }
 }
-
-
 
 .bodyRight {
 
@@ -152,7 +171,6 @@
 
     .leftBottomForm {
         textarea {
-            // margin-left: 10px;
             height: 99%;
             width: 99%;
             background-color: $backgroundInput
@@ -187,4 +205,66 @@
 
 .pinkCorBack {
     background-color: $cardPink
+}
+
+.minifield {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px;
+
+    input {
+        width: 50%;
+    }
+
+    input[type=text] {
+        min-width: 150px;
+        align-self: flex-start;
+    }
+
+    input[type=email] {
+        min-width: 187px;
+    }
+}
+
+.alertfield {
+    position: relative;
+}
+
+input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+
+.alertLabel::before {
+    content: " ";
+    width: 60px;
+    height: 30px;
+    background-color: $backgroundInput;
+    position: absolute;
+    right: 0;
+    border-radius: 30px;
+}
+
+.alertLabel::after {
+    content: "";
+    position: absolute;
+    top: 17.5px;
+    right: 32.5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $white;
+    transition: 0.5s;
+
+}
+
+input [type=checkbox]:checked~.alertLabel::after {
+
+    right: 92.5px;
+
 }

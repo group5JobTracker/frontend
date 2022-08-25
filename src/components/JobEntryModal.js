@@ -17,6 +17,10 @@ function JobEntryModal({ setShowJobEntryModal }) {
         setShowJobEntryModal(false);
     }
 
+    const handleToggle = () => {
+
+    }
+
     const handleColorCard = (e) => {
         e.preventDefault();
         const cor = e.target.value;
@@ -95,14 +99,14 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <input type="text" id="location" name="location" placeholder="Location" />
 
                         <button type="submit" className="saveApplication">Save <FontAwesomeIcon icon={faFloppyDisk} /></button>
-                        <button className="closeApplication" onClick={() => handleCloseModal()}>Close <FontAwesomeIcon icon={faXmark} /></button>
+                        <button className="closeApplication" onClick={() => handleCloseModal()}><FontAwesomeIcon icon={faXmark} /></button>
                     </div>
 
                     <div className="bodyForm">
                         <div className="bodyLeft">
                             <div className="inputForm">
                                 <div className="inputLeft">
-                                    <div className="field">
+                                    <div className="minifield">
                                         <label htmlFor="status">Status</label>
                                         <select name="statusOfApplication" id="status" >
                                             <option value="needToApply">Need to Apply</option>
@@ -113,33 +117,46 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                             <option value="accepted">Accepted</option>
                                         </select>
                                     </div>
-                                    <div className="field">
+                                    <div className="minifield">
                                         <label htmlFor="dateApplied">Date Applied</label>
                                         <input type="text" id="dateApplied" name="dateApplied" placeholder="MM/DD/YYYY" />
                                     </div>
-                                    <div className="field">
+                                    <div className="minifield">
                                         <label htmlFor="contact">Contact</label>
                                         <input type="email" id="contact" name="contact" placeholder="youremail@email.com" />
                                     </div>
                                 </div>
 
                                 <div className="inputRight">
-                                    <label htmlFor="labels">Labels</label>
-                                    <label htmlFor="cardColor">Card Color</label>
-                                    <select name="cardColor" id="cardColor"
-                                        onChange={(e) => handleColorCard(e)}
-                                    >
-                                        <option value="#FE5A5A">Red</option>
-                                        <option value="#FFAC4A">Orange</option>
-                                        <option value="#FFE24A">Yellow</option>
-                                        <option value="#4AC9FF">Light Blue</option>
-                                        <option value="#4A52FF">Dark Blue</option>
-                                        <option value="#AF4AFF">Purple</option>
-                                        <option value="#FF77C9">Pink</option>
-                                    </select>
-                                    <label htmlFor="alerts">Reminder Alerts
-                                        <input type="checkbox" /><span className="slider"></span>
-                                    </label>
+                                    <div className="minifield">
+                                        <label htmlFor="labels">Labels</label>
+                                        <select name="labels" id="cardLabel">
+                                            <option value="office">Office</option>
+                                            <option value="remote">Remote</option>
+                                            <option value="hybrid">Hybrid</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="minifield">
+                                        <label htmlFor="cardColor">Card Color</label>
+                                        <select name="cardColor" id="cardColor"
+                                            onChange={(e) => handleColorCard(e)}>
+                                            <option value="#FE5A5A">Red</option>
+                                            <option value="#FFAC4A">Orange</option>
+                                            <option value="#FFE24A">Yellow</option>
+                                            <option value="#4AC9FF">Light Blue</option>
+                                            <option value="#4A52FF">Dark Blue</option>
+                                            <option value="#AF4AFF">Purple</option>
+                                            <option value="#FF77C9">Pink</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="minifield alertfield">
+                                        <label htmlFor="alert" className="alertLabel">Reminder Alert</label>
+                                        <input type="checkbox" name="alert" className="alert" />
+                                    </div>
+
+
                                 </div>
                             </div>
 

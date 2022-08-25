@@ -55,6 +55,7 @@
         align-self: flex-end;
         position: relative;
 
+
         :active,
         :focus {
             width: 100%;
@@ -68,7 +69,7 @@
             transition: all 0.8s ease-in 0.2s;
             position: absolute;
             right: 0px;
-            background-color: $white;
+            background-color: $backgroundInput;
         }
 
         button {
@@ -105,5 +106,16 @@
 
     button {
         margin: 5px 10px
+    }
+}
+
+.navBarList {
+    display: flex;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 1px;
+        right: -30px;
     }
 }

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import sortIcon from '../imgFiles/sort-vector.svg';
+import filterIcon from '../imgFiles/filter-vector.svg';
 //Components
 import Column from "./Column";
 
@@ -61,15 +63,15 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowC
 
             <ul className="bottomNavBar">
 
-                <li>
-                    <button>Sort</button>
+                <li className="navBarList">
+                    <button>Sort <img src={sortIcon} /></button>
 
                 </li>
 
-                <li>
-                    <button>Filter</button>
+                <li className="navBarList">
+                    <button>Filter <img src={filterIcon} /></button>
 
-                </li>
+                </li >
                 <li>
                     {columnToggle && <Column
                         setShowCol1={setShowCol1}
