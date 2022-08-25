@@ -35,7 +35,12 @@ const LogInPage = () => {
             body: JSON.stringify(credentials)
         })
         const data = await response.json()
-        console.log(data);
+        if(data.token) {
+            window.localStorage.setItem('user', JSON.stringify(data.userInfo))
+            window.localStorage.setItem('token', data.token)
+        }
+        const user = window.localStorage.getItem('token')
+        console.log('look here',window.localStorage.getItem('token'));
         return data;
     }
 
@@ -47,7 +52,6 @@ const LogInPage = () => {
                 } else {
                     setMessage('');
                     context.updateUserInfo(data);
-                    // window.localStorage.setItem('user', data)
                     navigate('/dashboard');
                 }
             })
