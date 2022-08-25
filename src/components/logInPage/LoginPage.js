@@ -2,15 +2,24 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Context from '../../context/context';
 import iconLogo from "../../imgFiles/Dragonfly-Logo-Icon-Small.svg"
-
+import Lottie from 'react-lottie';
+import animationData from '../../imgFiles/loadingAnimation.json';
 const LogInPage = () => {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({});
     const [message, setMessage] = useState('');
     let [attempts, updateAttempts] = useState(0);
+    const [loading, setLoading] = useState(false);
     const context = React.useContext(Context);
     console.log(context)
-
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      }
     const handleSubmit = (event) => {
         event.preventDefault();
         const userEmail = event.target.email.value;
@@ -39,20 +48,31 @@ const LogInPage = () => {
             window.localStorage.setItem('user', JSON.stringify(data.userInfo))
             window.localStorage.setItem('token', data.token)
         }
-        const user = window.localStorage.getItem('token')
-        console.log('look here',window.localStorage.getItem('token'));
         return data;
     }
 
     React.useEffect(() => {
         if (attempts > 0) {
+            setLoading(true)
             loginAttempt(credentials).then(data => {
                 if (data.message) {
-                    setMessage(data.message)
+                    setMessage("")
+                    setTimeout(() => {
+                        setLoading(false)
+                    },3000)
+                    setTimeout(() => {
+                        setMessage(data.message)
+                    },3000)
                 } else {
                     setMessage('');
+                    setTimeout(() => {
+                        setLoading(false)
+                    },8000)
                     context.updateUserInfo(data);
-                    navigate('/dashboard');
+                    setTimeout(() => {
+                        navigate('/welcome');
+                    },3000)
+                    
                 }
             })
         }
@@ -87,6 +107,7 @@ const LogInPage = () => {
             <div className="center">
                 <p className="redirectText">Don't have an account? <span><Link to="/signup">Sign up</Link></span></p>
             </div>
+            {loading && <Lottie options={defaultOptions} height= {48} width= {48}></Lottie>}
         </div>
     )
 }
