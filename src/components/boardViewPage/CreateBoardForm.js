@@ -1,12 +1,15 @@
 import './addSectionCard.css';
 import React, { useState } from 'react';
 import Context from '../../context/context';
-const CreateBoardForm = ({setSectionClicked}) => {
+const CreateBoardForm = ({setSectionClicked, setNewBoard, newBoard}) => {
     //selected color for the board
     const [selectedColor, setSelectedColor] = useState(null);
     const [newBoardInfo, setNewBoardInfo] = useState({});
     // context where user id is stored
     const context = React.useContext(Context);
+    const currUser = window.localStorage.getItem("user")
+    const parsedUser = JSON.parse(currUser)
+    const userToken = window.localStorage.getItem('token');
     // when a dot is clicked, update the selected color
     const handleDotClick = (e) => {
         setSelectedColor(e.target.id)
@@ -19,7 +22,7 @@ const CreateBoardForm = ({setSectionClicked}) => {
         // and the colorState
         setNewBoardInfo({
             name : e.target.newBoardName.value,
-            owner : context.userInfo.userInfo.user_id,
+            owner : parsedUser.user_id,
             color : selectedColor
         })
     }
@@ -35,6 +38,7 @@ const CreateBoardForm = ({setSectionClicked}) => {
             body: JSON.stringify(boardObj)
         })
         const data = await response.json()
+        setNewBoard(data)
         return data;
     }
 
