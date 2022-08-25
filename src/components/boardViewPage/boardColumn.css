@@ -28,8 +28,8 @@
 .boardCardsSection {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    overflow-y: scroll;
+    align-items: center;
+    overflow-y: auto;
     max-height: 748px;
 }
 
