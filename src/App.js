@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import SignUpPage from "./components/signUpPage/SignUpPage";
 import LoginPage from "./components/logInPage/LoginPage";
 import BoardPage from "./components/boardViewPage/BoardPage";
+import WelcomePage from './components/logInPage/WelcomePage';
 //Styles
 import './styles/App.css';
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/welcome" element = {<WelcomePage/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path= "/boards" element={<BoardPage />} />
       </Routes>
