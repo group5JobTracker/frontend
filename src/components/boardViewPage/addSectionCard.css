@@ -1,5 +1,5 @@
 .addSection {
-    width: 368px;
+    min-width: 368px;
     height: 101px;
     box-sizing: border-box;
     background-color: transparent;
