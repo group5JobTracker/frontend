@@ -1,0 +1,19 @@
+.wrapPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.welcomeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+}
+
+.welcomeContent>p {
+    font-size: 64px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
