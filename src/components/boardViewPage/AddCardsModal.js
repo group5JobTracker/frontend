@@ -2,14 +2,15 @@ import React, {useState, useEffect} from 'react';
 import Context from '../../context/context';
 import ModalCard from './ModalCard';
 import sortIcon from '../../imgFiles/sort-vector.svg';
-import addToIcon from '../../imgFiles/arrow-up-vector.svg';
 import filterIcon from '../../imgFiles/filter-vector.svg';
 import closeIcon from '../../imgFiles/close-vector.svg'
 import './addCardsModal.css';
 export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}) {
     const [uniqueCards, setUniqueCards] = useState([]);
     const [selectedCards, setSelectedCards] = useState([]);
-    const context = React.useContext(Context);
+    const [sortClicked, setSortClicked] = useState(false);
+    const [sortBy, setSortBy] = useState("");
+    const [sortedCards, setSortedCards] = useState([]);
 
     const currUser = window.localStorage.getItem("user")
     const parsedUser = JSON.parse(currUser)
@@ -18,6 +19,12 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
     const handleClose = () => {
         setShowModal(false);
     }
+
+    const handleOptionClick = (e) => {
+        setSortBy(e.target.value)
+        setSortClicked(false);
+    }
+    console.log(sortBy)
     // what I need to do, only fire if there are elements in selectedCards
     // after that condition is met, then 
     const handleAddClick = async() => {
@@ -56,11 +63,11 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
     }
 
     const getUniqueCards = async() => {
-        const allCardsResponse = await fetch(`http://localhost:3000/applications/users/${parsedUser.user_id}`)
+        const allCardsResponse = await fetch(`https://dragonfly.herokuapp.com/users/${parsedUser.user_id}`)
         const allCardsJson = await allCardsResponse.json();
         const allCards = allCardsJson.posts
 
-        const selectedBoardResponse = await fetch(`http://localhost:3000/boards/${selectedBoard}/cards`)
+        const selectedBoardResponse = await fetch(`https://dragonfly.herokuapp.com/boards/${selectedBoard}/cards`)
         const selectedBoardCardsJson = await selectedBoardResponse.json();
         const selectedBoardCards = selectedBoardCardsJson.cards
 
@@ -71,11 +78,68 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
     useEffect(() => {
         if(userToken){
             getUniqueCards().then(data => {
-                setUniqueCards(data)
+                setUniqueCards(data);
+                setSortedCards(data);
             })
         }
     },[])    
-
+    useEffect(() => {
+        let copy = [...uniqueCards];
+        if(sortBy !== ""){
+            switch (sortBy) {
+                case "Company":
+                    let sortedByCompany = copy.sort((a,b) => {
+                        if (a.company < b.company) {
+                            return -1;
+                        }
+                        if (a.company > b.company) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+                    setSortedCards(sortedByCompany)
+                    break;
+                case "Location":
+                    const sortedByLocation = copy.sort((a,b) => {
+                        if (a.location < b.location) {
+                            return -1;
+                        }
+                        if (a.location > b.location) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+                    setSortedCards(sortedByLocation)
+                    break
+                case "Status":
+                    const sortedByStatus = copy.sort((a,b) => {
+                        if (a.status < b.status) {
+                            return -1;
+                        }
+                        if (a.status > b.status) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+                    setSortedCards(sortedByStatus)
+                    break;
+                case "Job Name" :
+                    const sortedByJobName = copy.sort((a,b) => {
+                        if (a.position < b.position) {
+                            return -1;
+                        }
+                        if (a.position > b.position) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+                    setSortedCards(sortedByJobName)
+                    break;
+            }
+        } else {
+            setSortedCards(copy);
+        }
+    },[sortBy])
     return (
         <>
             <div className='modalOverlay'>
@@ -83,7 +147,20 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
                     <div className='slidingModalHeader'>
                         <div className='headerLeftSide'>
                             <p>Your Cards</p>
-                            <p className='filterControls'>Sort <img src={sortIcon}/></p>
+                            {sortClicked ?
+                                <select className="sortBy"onChange={handleOptionClick} onF>
+                                    <option value={sortBy}>Sort By: {sortBy=== "" ? "Default" : sortBy}</option>
+                                    <option value="">Default</option>
+                                    <option value = "Company">Company</option>
+                                    <option value = "Location">Location</option>
+                                    <option value = "Date Applied">Date Applied</option>
+                                    <option value = "Status">Status</option>
+                                    <option value = "Job Name">Job Name</option>
+                                    <option value = "Date Created">Date Created</option>
+                                </select>
+                                : 
+                                <p className='filterControls' onClick={() => setSortClicked(true)}>Sort <img src={sortIcon}/></p>
+                            }
                             <p className='filterControls'>Filter <img src={filterIcon}/></p>
                         </div>
                         <div className='headerRightSide'>
@@ -92,7 +169,7 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
                         </div>
                     </div>
                     <div className='slidingModalBody'>
-                        {uniqueCards.map(cardInfo => {
+                        {sortedCards.map(cardInfo => {
                             return <ModalCard cardInfo = {cardInfo} selectedCards = {selectedCards} setSelectedCards = {setSelectedCards}/>
                         })}
                     </div>
