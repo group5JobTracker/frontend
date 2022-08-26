@@ -1,0 +1,32 @@
+.wrapPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.welcomeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+}
+
+.welcomeContent>p {
+    font-size: 64px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.fadeInText {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

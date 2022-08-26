@@ -21,7 +21,7 @@ const LandingPage = () => {
                                 alt="Dragonfly Logo Motion"
                                 src={logo}
                                 height="30"
-                                className="d-inline-block align-top"
+                                className="d-inline-block align-top motionLogo"
                             />
                             <h2>Stay on top of you job search</h2>
                             <p className='last-intro-text'>Organize, take notes, set reminders, and keep job descriptions all in one place</p>
