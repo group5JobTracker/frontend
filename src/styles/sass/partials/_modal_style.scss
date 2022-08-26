@@ -10,7 +10,8 @@
 
     textarea {
         color: $white;
-        padding: 10px;
+        padding: 15px;
+
     }
 }
 
@@ -25,9 +26,9 @@
 }
 
 .headerForm {
-    // background-color: $cardRed;
     position: relative;
     padding: 20px;
+    height: 160px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
@@ -36,35 +37,42 @@
 
     h3,
     #jobTitle {
-        @include header2;
-        color: $white
+        @include header1;
+        color: $black;
     }
 
     h4,
     #company {
-        @include header3;
-        color: $white
+        @include header2;
+        color: $black;
+        margin-top: 10px
     }
 
     h5,
     #location {
         @include header4;
         padding-top: 5px;
-        color: $white
+        color: $black;
+        margin-top: 10px;
     }
 
     .saveApplication {
         position: absolute;
-        top: 15px;
-        right: 15px;
+        padding: 14px 12px;
+        bottom: 20px;
+        right: 20px;
         border: none;
         background-color: transparent;
+        border: 2px solid black;
+        border-radius: 10px;
+
     }
 
     .closeApplication {
         position: absolute;
-        bottom: 15px;
-        right: 15px;
+        font-size: 25px;
+        top: 25px;
+        right: 25px;
         border: none;
         background-color: transparent;
     }
@@ -73,7 +81,7 @@
 .bodyForm {
     background-color: $background2;
     display: flex;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
     width: 100%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -83,63 +91,92 @@
         background-color: $background;
         border-radius: 10px;
         resize: none;
+
     }
 
     label {
-        margin: 10px;
-        padding: 5px;
+        margin: 10px 10px 10px 0px;
+        padding: 5px 0px 5px 0px;
         color: $white;
-        display: inline-block
+        display: inline-block;
+        align-self: center
     }
 
+    // label {
+    //     padding-left: 0px;
+    //     margin-left: 0px;
+    // }
+
     input {
-        // width: 50%;
+        width: 78%;
         background-color: $backgroundInput;
         border-radius: 10px;
         height: 35px;
         border: none;
-        margin: 10px;
-        padding: 5px 10px;
+        margin: 10px 0px 10px 10px;
+        padding: 1px 10px;
         color: $white
     }
 }
 
 .bodyLeft {
     width: 50%;
+    height: 100%;
     margin-right: 10px;
 
     .inputForm {
         display: flex;
     }
 
-    .inputLeft,
-    .inputRigh {
-        border: 1px solid red;
-    }
+    // .inputLeft,
+    // .inputRigh {
+    //     border: 1px solid red;
+    // }
 
     .inputLeft {
         width: 100%;
+        min-width: 300px;
+    }
+
+    .inputRight {
+        width: 100%;
+        min-width: 200px;
     }
 
     .noteForm {
         display: flex;
         flex-direction: column;
 
+        label {
+            margin-top: 0px;
+            margin-bottom: 5px;
+            align-self: flex-start;
+        }
+
         textarea {
             width: 100%;
             background-color: $backgroundInput
         }
     }
+
+    label {
+        padding-left: -50px;
+    }
+
+    select {
+        color: $white;
+        font-weight: 100;
+        // background-color: blueviolet;
+    }
 }
-
-
 
 .bodyRight {
 
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     height: 100%;
+    margin-left: 10px;
 
     .rightUpperForm {
         display: flex;
@@ -152,10 +189,15 @@
 
     .leftBottomForm {
         textarea {
-            // margin-left: 10px;
-            height: 99%;
-            width: 99%;
+            height: 100%;
+            width: 100%;
             background-color: $backgroundInput
+        }
+
+        label {
+            margin-top: 0px;
+            margin-bottom: 5px;
+            align-self: flex-start;
         }
 
     }
@@ -188,3 +230,107 @@
 .pinkCorBack {
     background-color: $cardPink
 }
+
+.minifield {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+
+
+    input {
+        width: 50%;
+    }
+
+    input[type=text] {
+        min-width: 150px;
+        align-self: flex-start;
+    }
+
+    input[type=email] {
+        min-width: 187px;
+    }
+}
+
+.alertfield {
+    position: relative;
+}
+
+input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+
+.alertLabel::before {
+    content: " ";
+    width: 60px;
+    height: 30px;
+    background-color: $backgroundInput;
+    position: absolute;
+    right: 120px;
+    border-radius: 30px;
+}
+
+.alertLabel::after {
+    content: "";
+    position: absolute;
+    top: 17.5px;
+    right: 152.5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $white;
+    transition: 0.5s;
+
+}
+
+input [type=checkbox]:checked~.alertLabel::after {
+
+    right: 92.5px;
+
+}
+
+// .dot {
+//     height: 24px;
+//     width: 24px;
+//     border-radius: 50%;
+//     display: inline-block;
+//     margin-right: 18px;
+// }
+
+// .redDot {
+//     background-color: #FE5A5A;
+// }
+
+// .orangeDot {
+//     background-color: #FFAC4A;
+// }
+
+// .yellowDot {
+//     background-color: #FFE24A;
+// }
+
+// .greenDot {
+//     background-color: #63BF37;
+// }
+
+// .lightBlueDot {
+//     background-color: #4AC9FF;
+// }
+
+// .mediumBlueDot {
+//     background-color: #4A52FF;
+// }
+
+// .purpleDot {
+//     background-color: #AF4AFF;
+// }
+
+// .pinkDot {
+//     background-color: #FF77C9;
+//     margin-right: 0px !important;
+// }

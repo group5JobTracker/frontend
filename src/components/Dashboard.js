@@ -18,6 +18,8 @@ function Dashboard() {
 
     const [searchTerm, setSearchTerm] = useState("");
 
+
+
     console.log(context)
 
     return (
@@ -26,6 +28,7 @@ function Dashboard() {
                 <NavBar
                     setShowJobEntryModal={setShowJobEntryModal}
                     setCardViewToggle={setCardViewToggle}
+                    cardViewToggle={cardViewToggle}
                     setShowCol1={setShowCol1}
                     setShowCol2={setShowCol2}
                     setShowCol3={setShowCol3}
