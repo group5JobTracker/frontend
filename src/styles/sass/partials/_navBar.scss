@@ -73,8 +73,10 @@
         }
 
         button {
-            color: $black;
+            color: $white;
             position: absolute;
+            // height: 20px;
+            // width: 20px;
             right: 0px;
             z-index: 10;
             padding: 15px;

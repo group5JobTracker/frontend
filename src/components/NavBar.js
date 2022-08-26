@@ -2,14 +2,15 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus, faMagnifyingGlass, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import sortIcon from '../imgFiles/sort-vector.svg';
 import filterIcon from '../imgFiles/filter-vector.svg';
+import search_mag24 from '../imgFiles/search_mag24.svg';
 //Components
 import Column from "./Column";
 
 
-function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, setSearchTerm }) {
+function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, setSearchTerm }) {
 
     const [columnToggle, setColumnToggle] = useState(true);
 
@@ -45,7 +46,8 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowC
                     <li className="searchBar">
                         <label htmlFor="search" className="sr-only" >Search</label>
                         <input type="search" id="search" placeholder="Search" on onChange={(e) => setSearchTerm(e.target.value)} />
-                        <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                        <button><img src={search_mag24} alt="search bottom" /></button>
+
 
                     </li>
 
@@ -60,29 +62,29 @@ function NavBar({ setCardViewToggle, setShowJobEntryModal, setShowCol1, setShowC
                 </ul>
 
             </div>
+            {cardViewToggle &&
+                <ul className="bottomNavBar">
 
-            <ul className="bottomNavBar">
+                    <li className="navBarList">
+                        <button>Sort <img src={sortIcon} /></button>
 
-                <li className="navBarList">
-                    <button>Sort <img src={sortIcon} /></button>
+                    </li>
 
-                </li>
+                    <li className="navBarList">
+                        <button>Filter <img src={filterIcon} /></button>
 
-                <li className="navBarList">
-                    <button>Filter <img src={filterIcon} /></button>
+                    </li >
+                    <li>
+                        {columnToggle && <Column
+                            setShowCol1={setShowCol1}
+                            setShowCol2={setShowCol2}
+                            setShowCol3={setShowCol3}
+                            setShowCol4={setShowCol4}
+                        // columnsCardView={columnsCardView}
+                        />}
 
-                </li >
-                <li>
-                    {columnToggle && <Column
-                        setShowCol1={setShowCol1}
-                        setShowCol2={setShowCol2}
-                        setShowCol3={setShowCol3}
-                        setShowCol4={setShowCol4}
-                    // columnsCardView={columnsCardView}
-                    />}
-
-                </li>
-            </ul>
+                    </li>
+                </ul>}
 
         </nav>
     )

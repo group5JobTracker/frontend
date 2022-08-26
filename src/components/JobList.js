@@ -32,7 +32,7 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
 
 
     return (
-        <div className="jobDisplayed" >
+        <div className={showCol1 ? "jobDisplayed cardsCont1" : showCol2 ? "jobDisplayed cardsCont2" : showCol3 ? "jobDisplayed cardsCont3" : "jobDisplayed cardsCont4"}>
             {userCards.filter((val) => {
                 if (searchTerm == "") {
                     return val
