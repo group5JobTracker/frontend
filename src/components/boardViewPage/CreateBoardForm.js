@@ -30,7 +30,7 @@ const CreateBoardForm = ({setSectionClicked, setNewBoard, newBoard}) => {
     // and pass in our boardState
     const createBoard = async(boardObj) => {
         // remember to switch our the request link with heroku one
-        const response = await fetch("http://localhost:3000/boards/create", {
+        const response = await fetch("https://dragonfly.herokuapp.com/boards/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const CreateBoardForm = ({setSectionClicked, setNewBoard, newBoard}) => {
 
     React.useEffect(() => {
         // only make the request when a user selects a color
-        if(selectedColor !== null) {
+        if("name" in newBoardInfo) {
             createBoard(newBoardInfo).then(data => {
                 console.log(data)
                 setSectionClicked(false);
@@ -55,18 +55,7 @@ const CreateBoardForm = ({setSectionClicked, setNewBoard, newBoard}) => {
     return (
         <div className='createSection'>
             <form className='boardViewForm' onSubmit={handleFormSubmit}>
-                <input type="text" name ="newBoardName" id= "newBoardName" required placeholder='New Board' autoComplete='off'></input>
-                <div className = "colorSection">
-                    <span className='dot redDot' id ='#FE5A5A' onClick={handleDotClick} style = {selectedColor === "#FE5A5A" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot orangeDot' id ="#FFAC4A" onClick={handleDotClick} style = {selectedColor === "#FFAC4A" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot yellowDot' id ="#FFE24A" onClick={handleDotClick} style = {selectedColor === "#FFE24A" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot greenDot' id ="#63BF37" onClick={handleDotClick} style = {selectedColor === "#63BF37" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot lightBlueDot' id ="#4AC9FF" onClick={handleDotClick} style = {selectedColor === "#4AC9FF" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot mediumBlueDot' id ="#4A52FF" onClick={handleDotClick} style = {selectedColor === "#4A52FF" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot purpleDot' id ="#AF4AFF" onClick={handleDotClick} style = {selectedColor === "#AF4AFF" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                    <span className='dot pinkDot' id ="#FF77C9" onClick={handleDotClick} style = {selectedColor === "#FF77C9" ? {border: "2px solid #FFFFFF"} : {}}></span>
-                </div>
-                <button type='submit' className='createButton'>Confirm (temp)</button>
+                <input type="text" name ="newBoardName" id= "newBoardName" required placeholder='New Board...' autoComplete='off' autoFocus></input>
             </form>
         </div>
     )
