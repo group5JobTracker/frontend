@@ -13,7 +13,7 @@ export default function ModalCard({cardInfo, selectedCards, setSelectedCards}) {
         }
         setSelected(!selected);
     }
-    console.log(selectedCards)
+    console.log(cardInfo)
 
     return (
         <div className="card" id = {cardInfo.app_id} key={cardInfo.app_id} onClick={handleCardClick}>
@@ -21,7 +21,7 @@ export default function ModalCard({cardInfo, selectedCards, setSelectedCards}) {
               <div className='cardHeader' id = {cardInfo.app_id}>
                 <span className='selectDot' id = {cardInfo.app_id} style={selected ? {background : "#84FF4A"} : {background : "transparent"} }></span>
                 <div className="cardTags" id = {cardInfo.app_id}>
-                    <p className="tagPill" id = {cardInfo.app_id}>Remote</p>
+                    <p className="tagPill" style ={cardInfo.tagName === "Remote" ? {background : "#4AC9FF"} : cardInfo.tagName === "Office" ? {background : "#FFE24A"} : {background : "#63BF37"}}id = {cardInfo.app_id}>{cardInfo.tagName}</p>
                 </div>
               </div>
 
