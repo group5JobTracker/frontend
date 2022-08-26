@@ -824,7 +824,7 @@ button :hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px;
+  padding: 5px 20px 20px 20px;
   width: 100%;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -835,33 +835,33 @@ button :hover {
   resize: none;
 }
 .bodyForm label {
-  margin: 10px;
-  padding: 5px;
+  margin: 10px 10px 10px 0px;
+  padding: 5px 0px 5px 0px;
   color: #FFFFFF;
   display: inline-block;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 .bodyForm input {
+  width: 78%;
   background-color: #353945;
   border-radius: 10px;
   height: 35px;
   border: none;
-  margin: 10px;
-  padding: 5px 10px;
+  margin: 10px 0px 10px 10px;
+  padding: 1px 10px;
   color: #FFFFFF;
 }
 
 .bodyLeft {
   width: 50%;
+  height: 100%;
   margin-right: 10px;
 }
 .bodyLeft .inputForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-.bodyLeft .inputLeft,
-.bodyLeft .inputRigh {
-  border: 1px solid red;
 }
 .bodyLeft .inputLeft {
   width: 100%;
@@ -880,14 +880,22 @@ button :hover {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.bodyLeft .noteForm label {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
 .bodyLeft .noteForm textarea {
   width: 100%;
   background-color: #353945;
 }
+.bodyLeft label {
+  padding-left: -50px;
+}
 .bodyLeft select {
   color: #FFFFFF;
   font-weight: 100;
-  background-color: blueviolet;
 }
 
 .bodyRight {
@@ -898,8 +906,9 @@ button :hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40%;
+  width: 50%;
   height: 100%;
+  margin-left: 10px;
 }
 .bodyRight .rightUpperForm {
   display: -webkit-box;
@@ -917,9 +926,15 @@ button :hover {
       flex-wrap: nowrap;
 }
 .bodyRight .leftBottomForm textarea {
-  height: 99%;
-  width: 99%;
+  height: 100%;
+  width: 100%;
   background-color: #353945;
+}
+.bodyRight .leftBottomForm label {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .redCorBack {
@@ -958,7 +973,6 @@ button :hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-left: 0px;
 }
 .minifield input {
   width: 50%;
@@ -991,7 +1005,7 @@ input[type=checkbox] {
   height: 30px;
   background-color: #353945;
   position: absolute;
-  right: 0;
+  right: 120px;
   border-radius: 30px;
 }
 
@@ -999,7 +1013,7 @@ input[type=checkbox] {
   content: "";
   position: absolute;
   top: 17.5px;
-  right: 32.5px;
+  right: 152.5px;
   width: 25px;
   height: 25px;
   border-radius: 50%;

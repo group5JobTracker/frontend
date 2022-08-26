@@ -8,6 +8,7 @@ import CardDisplayed from "./CardDisplayed"
 function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
 
     const [cardEditModal, setCardEditModal] = useState(false)
+    const [cardEdited, setCardEdited] = useState({});
     const [userCards, setUserCards] = useState([]);
     const context = React.useContext(Context)
 
@@ -15,7 +16,6 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
     const getCards = async (user_id) => {
         const res = await fetch(`https://dragonfly.herokuapp.com/applications/users/${user_id}`);
         const data = await res.json();
-        // console.log(data);
         return data.posts;
     }
 
@@ -28,10 +28,8 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
         }
     }, [])
 
-    console.log(cardEditModal);
-    // const handleCardClick = () => {
-    //     setCardEditModal(true)
-    // }
+
+
 
     return (
         <div className="jobDisplayed" >
@@ -43,7 +41,7 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
                     return val
                 }
             }).map((cardInfo) =>
-                <CardDisplayed cardInfo={cardInfo} showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} setCardEditModal={setCardEditModal} />
+                <CardDisplayed cardInfo={cardInfo} showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} setCardEditModal={setCardEditModal} key={cardInfo.app_id} />
             )}
             {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} /> : ""}
 
@@ -54,19 +52,3 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
 
 export default JobList
 
-
-// <div
-//     onClick={() => setCardEditModal(true)}
-//     key={i}
-//     id={i}
-//     className={showCol1 ? "cardsJob col1" : showCol2 ? "cardsJob col2" : showCol3 ? "cardsJob col3" : "cardsJob col4"} >
-//     <div className="principal">
-//         <h4>{jobPos.position}</h4>
-//         <h5>{jobPos.company}</h5>
-//         <h6>{jobPos.location}</h6>
-//     </div>
-//     <div className="complement">
-//         <p>Date Applied: {jobPos.dateApplied}</p>
-//         <p>Status: {jobPos.stats}</p>
-//     </div>
-// </div>

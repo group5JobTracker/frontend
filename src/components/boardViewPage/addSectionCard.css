@@ -29,7 +29,8 @@
     justify-content: center;
     border-radius: 10px;
     background: rgba(47, 57, 126, 0.4);
-    backdrop-filter: blur(50px);}
+    backdrop-filter: blur(50px);
+}
 
 #newBoardName {
     color: white;

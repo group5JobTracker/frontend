@@ -81,7 +81,7 @@
 .bodyForm {
     background-color: $background2;
     display: flex;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
     width: 100%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -95,36 +95,43 @@
     }
 
     label {
-        margin: 10px;
-        padding: 5px;
+        margin: 10px 10px 10px 0px;
+        padding: 5px 0px 5px 0px;
         color: $white;
-        display: inline-block
+        display: inline-block;
+        align-self: center
     }
 
+    // label {
+    //     padding-left: 0px;
+    //     margin-left: 0px;
+    // }
+
     input {
-        // width: 50%;
+        width: 78%;
         background-color: $backgroundInput;
         border-radius: 10px;
         height: 35px;
         border: none;
-        margin: 10px;
-        padding: 5px 10px;
+        margin: 10px 0px 10px 10px;
+        padding: 1px 10px;
         color: $white
     }
 }
 
 .bodyLeft {
     width: 50%;
+    height: 100%;
     margin-right: 10px;
 
     .inputForm {
         display: flex;
     }
 
-    .inputLeft,
-    .inputRigh {
-        border: 1px solid red;
-    }
+    // .inputLeft,
+    // .inputRigh {
+    //     border: 1px solid red;
+    // }
 
     .inputLeft {
         width: 100%;
@@ -140,16 +147,26 @@
         display: flex;
         flex-direction: column;
 
+        label {
+            margin-top: 0px;
+            margin-bottom: 5px;
+            align-self: flex-start;
+        }
+
         textarea {
             width: 100%;
             background-color: $backgroundInput
         }
     }
 
+    label {
+        padding-left: -50px;
+    }
+
     select {
         color: $white;
         font-weight: 100;
-        background-color: blueviolet;
+        // background-color: blueviolet;
     }
 }
 
@@ -157,8 +174,9 @@
 
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     height: 100%;
+    margin-left: 10px;
 
     .rightUpperForm {
         display: flex;
@@ -171,9 +189,15 @@
 
     .leftBottomForm {
         textarea {
-            height: 99%;
-            width: 99%;
+            height: 100%;
+            width: 100%;
             background-color: $backgroundInput
+        }
+
+        label {
+            margin-top: 0px;
+            margin-bottom: 5px;
+            align-self: flex-start;
         }
 
     }
@@ -210,7 +234,8 @@
 .minifield {
     display: flex;
     flex-direction: row;
-    margin-left: 0px;
+    // justify-content: space-between;
+
 
     input {
         width: 50%;
@@ -246,7 +271,7 @@ input[type=checkbox] {
     height: 30px;
     background-color: $backgroundInput;
     position: absolute;
-    right: 0;
+    right: 120px;
     border-radius: 30px;
 }
 
@@ -254,7 +279,7 @@ input[type=checkbox] {
     content: "";
     position: absolute;
     top: 17.5px;
-    right: 32.5px;
+    right: 152.5px;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -268,3 +293,44 @@ input [type=checkbox]:checked~.alertLabel::after {
     right: 92.5px;
 
 }
+
+// .dot {
+//     height: 24px;
+//     width: 24px;
+//     border-radius: 50%;
+//     display: inline-block;
+//     margin-right: 18px;
+// }
+
+// .redDot {
+//     background-color: #FE5A5A;
+// }
+
+// .orangeDot {
+//     background-color: #FFAC4A;
+// }
+
+// .yellowDot {
+//     background-color: #FFE24A;
+// }
+
+// .greenDot {
+//     background-color: #63BF37;
+// }
+
+// .lightBlueDot {
+//     background-color: #4AC9FF;
+// }
+
+// .mediumBlueDot {
+//     background-color: #4A52FF;
+// }
+
+// .purpleDot {
+//     background-color: #AF4AFF;
+// }
+
+// .pinkDot {
+//     background-color: #FF77C9;
+//     margin-right: 0px !important;
+// }

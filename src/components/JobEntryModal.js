@@ -17,10 +17,6 @@ function JobEntryModal({ setShowJobEntryModal }) {
         setShowJobEntryModal(false);
     }
 
-    const handleToggle = () => {
-
-    }
-
     const handleColorCard = (e) => {
         e.preventDefault();
         const cor = e.target.value;
@@ -41,7 +37,8 @@ function JobEntryModal({ setShowJobEntryModal }) {
             "notes": e.target.notes.value,
             "desc": e.target.jobDescription.value,
             "notif": false,
-            "userId": context.userInfo.userInfo.user_id
+            "userId": context.userInfo.userInfo.user_id,
+            "tagName": e.target.labels.value
         })
     }
 
@@ -51,13 +48,16 @@ function JobEntryModal({ setShowJobEntryModal }) {
         title: "UX Designer", // the title of the position
         company: "Figma",
         location: "San Diego, CA",
-        date: "2022-08-18T04:00:00.000Z", //unix timestamp
+        date: "08/25/22",
         notes: "recruiter really likes pancakes", // can be empty
         contact: "recruiter@figma.com", // email of the recruiter for the job posting
         notif: false, // boolean indicating whether or not the user wants notifications for this application
         color: "#ff0000", // Hex Triplet Color Code for the accent of the card
-        desc: "Looking for an entry level UX designer to..."
+        desc: "Looking for an entry level UX designer to...",
+        tagName: "Remote" // or Office or Hybrid ONLY
     }
+
+
 
 
     const createCard = async (application) => {
