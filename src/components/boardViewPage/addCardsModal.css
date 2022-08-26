@@ -32,6 +32,7 @@
     justify-content: space-between;
     margin-bottom: 22px;
     align-items: baseline;
+    column-gap: 10px;
 }
 
 .headerLeftSide>p {
@@ -50,11 +51,9 @@
     align-items: center;
 }
 
-.filterControls {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    column-gap: 5px;
+.smallIcon {
+    width: 24px;
+    height: 24px;
 }
 
 .closeModalButton {
@@ -69,6 +68,7 @@
     flex-direction: row;
     font-size: 16px !important;
     font-weight: 400 !important;
+    column-gap: 5px;
 }
 
 .slidingModalBody {
@@ -90,4 +90,12 @@
     color: white;
     font-size: 16px;
     font-weight: 700;
+}
+
+.sortBy>option {
+    background: #2F397E 40%;
+}
+
+.sortBy {
+    color: white;
 }
