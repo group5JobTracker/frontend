@@ -12,10 +12,41 @@
     margin-left: 30px;
 }
 
+.headerTopRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.headerTopRowRightSide {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.threeDotsButton {
+    width: 166px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.deleteSectionButton {
+    width: 160px;
+    height: 39px;
+    background-color: #2F397E66;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 19px;
+}
+
 .boardName {
+    color: #FFFFFF;
     font-size: 32px;
     font-weight: 700;
     padding-top: 20px;
+    margin-left: 30px;
 }
 
 .addCards {
