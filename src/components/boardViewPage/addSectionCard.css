@@ -29,7 +29,8 @@
     justify-content: center;
     border-radius: 10px;
     background: rgba(47, 57, 126, 0.4);
-    backdrop-filter: blur(50px);}
+    backdrop-filter: blur(50px);
+}
 
 #newBoardName {
     color: white;
@@ -37,59 +38,10 @@
     font-weight: 700;
     text-align: center;
     height: 39px;
-    margin-top: 20px;
 }
 
 #newBoardName::placeholder {
     color: white !important;
-}
-
-.colorSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 25px;
-}
-
-.colorSection>.dot {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 18px;
-}
-
-.redDot {
-    background-color: #FE5A5A;
-}
-
-.orangeDot {
-    background-color: #FFAC4A;
-}
-
-.yellowDot {
-    background-color: #FFE24A;
-}
-
-.greenDot {
-    background-color: #63BF37;
-}
-
-.lightBlueDot {
-    background-color: #4AC9FF;
-}
-
-.mediumBlueDot {
-    background-color: #4A52FF;
-}
-
-.purpleDot {
-    background-color: #AF4AFF;
-}
-
-.pinkDot {
-    background-color: #FF77C9;
-    margin-right: 0px !important;
 }
 
 .createButton {
