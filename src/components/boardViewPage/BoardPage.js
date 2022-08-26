@@ -24,7 +24,7 @@ const BoardPage = () => {
 
     const getBoards = async(userId) => {
         // remember to replace the link with the heroku link
-        const response = await (await fetch(`http://localhost:3000/boards/user/${userId}`))
+        const response = await (await fetch(`https://dragonfly.herokuapp.com/boards/user/${userId}`))
         const data = await response.json();
         return data
     }
@@ -51,7 +51,7 @@ const BoardPage = () => {
             <div className="boardsSection">
                 <div className = "usersBoards">
                     { usersBoards.map(boardInfo => {
-                        return <BoardColumn boardInfo = {boardInfo} setShowModal = {setShowModal} setSelectedBoard = {setSelectedBoard} newCards = {newCards}/>
+                        return <BoardColumn boardInfo = {boardInfo} setShowModal = {setShowModal} setSelectedBoard = {setSelectedBoard} newCards = {newCards} setNewBoard={setNewBoard}/>
                     })}
                 </div>
                 <AddSection newBoard = {newBoard} setNewBoard = {setNewBoard}/>
