@@ -1,22 +1,26 @@
 //Libraries
 import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
-import sortIcon from '../imgFiles/sort-vector.svg';
-import filterIcon from '../imgFiles/filter-vector.svg';
-import search_mag24 from '../imgFiles/search_mag24.svg';
 //Components
 import Column from "./Column";
+//Images
+import sortIcon from '../imgFiles/sort-vector.svg';
+import filterIcon from '../imgFiles/filter-vector.svg';
+import search_white from '../imgFiles/search_white.svg';
+import add_white from "../imgFiles/add_white.svg"
 
 
 function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, setSearchTerm }) {
 
     const [columnToggle, setColumnToggle] = useState(true);
-
     const [boardViewToggle, setBoardViewToggle] = useState(false);
+    const [sortClicked, setSortClicked] = useState(false);
+    const [sortBy, setSortBy] = useState("");
+    const [sortedCards, setSortedCards] = useState([]);
 
-    //need to refacture this code, make it concisely
+    const currUser = window.localStorage.getItem("user");
+    const parsedUser = JSON.parse(currUser);
+    const userToken = window.localStorage.getItem('token');
+
     const handleCardViewBtn = () => {
         setBoardViewToggle(false)
         setCardViewToggle(true)
@@ -26,6 +30,11 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
     const handleBoardViewBtn = () => {
         setCardViewToggle(false)
         setColumnToggle(false)
+    }
+
+    const handleOptionClick = (e) => {
+        setSortBy(e.target.value)
+        setSortClicked(false);
     }
 
 
@@ -46,17 +55,12 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
                     <li className="searchBar">
                         <label htmlFor="search" className="sr-only" >Search</label>
                         <input type="search" id="search" placeholder="Search" on onChange={(e) => setSearchTerm(e.target.value)} />
-                        <button><img src={search_mag24} alt="search bottom" /></button>
-
-
+                        <button><img src={search_white} alt="search bottom" /></button>
                     </li>
 
                     <li className="newAppBtnContainer">
-
-                        <Button onClick={() => setShowJobEntryModal(true)}>
-                            <FontAwesomeIcon icon={faCirclePlus} />
-                        </Button>
-
+                        <button onClick={() => setShowJobEntryModal(true)}><img src={add_white} alt="add button" />
+                        </button>
                     </li>
 
                 </ul>
@@ -65,7 +69,25 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
             {cardViewToggle &&
                 <ul className="bottomNavBar">
 
+                    <li>
+                        {columnToggle && <Column
+                            setShowCol1={setShowCol1}
+                            setShowCol2={setShowCol2}
+                            setShowCol3={setShowCol3}
+                            setShowCol4={setShowCol4}
+                        />}
+
+                    </li>
                     <li className="navBarList">
+                        <select name="sortBy">
+                            <option value="">Default</option>
+                            <option value="Company">Company</option>
+                            <option value="Location">Location</option>
+                            <option value="Date Applied">Date Applied</option>
+                            <option value="Status">Status</option>
+                            <option value="Job Name">Job Name</option>
+                            <option value="Date Created">Date Created</option>
+                        </select>
                         <button>Sort <img src={sortIcon} /></button>
 
                     </li>
@@ -74,16 +96,6 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
                         <button>Filter <img src={filterIcon} /></button>
 
                     </li >
-                    <li>
-                        {columnToggle && <Column
-                            setShowCol1={setShowCol1}
-                            setShowCol2={setShowCol2}
-                            setShowCol3={setShowCol3}
-                            setShowCol4={setShowCol4}
-                        // columnsCardView={columnsCardView}
-                        />}
-
-                    </li>
                 </ul>}
 
         </nav>

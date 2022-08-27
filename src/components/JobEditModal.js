@@ -105,7 +105,7 @@ function JobEntryModal({ setCardEditModal }) {
                                         <label htmlFor="cardColor">Card Color</label>
                                         <select name="cardColor" id="cardColor"
                                             onChange={(e) => handleColorCard(e)}>
-                                            <option value="#FE5A5A" ><span className="dot redDot" style={{ border: "2px solid #FFFFFF" }}></span></option>
+                                            <option value="#FE5A5A" ><p><span className="dot redDot" style={{ border: "2px solid #FFFFFF" }}></span></p></option>
                                             <option value="#FFAC4A" className="dot orangeDot">Orange</option>
                                             <option value="#FFE24A" className="dot yellowDot">Yellow</option>
                                             <option value="#4AC9FF" className="dot lightBlueDot">Light Blue</option>

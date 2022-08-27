@@ -101,7 +101,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <button type="submit" className="saveApplication">Save <FontAwesomeIcon icon={faFloppyDisk} /></button>
                         <button className="closeApplication" onClick={() => handleCloseModal()}><FontAwesomeIcon icon={faXmark} /></button>
                     </div>
-
+                    {/* <div className="backgroundBlur"></div> */}
                     <div className="bodyForm">
                         <div className="bodyLeft">
                             <div className="inputForm">

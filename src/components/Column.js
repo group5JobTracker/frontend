@@ -28,10 +28,10 @@ function Column({ setShowCol1, setShowCol2, setShowCol3, setShowCol4 }) {
     return (
         <div className="columnGrid">
             <p>Columns</p>
-            <button onClick={() => handleClickCol1()}>1</button>
-            <button onClick={() => handleClickCol2()}>2</button>
-            <button onClick={() => handleClickCol3()}>3</button>
-            <button onClick={() => handleClickCol4()}>4</button>
+            <button className="toma" onClick={() => handleClickCol1()}>1</button>
+            <button className="btnSelected" onClick={() => handleClickCol2()}>2</button>
+            <button className="btnSelected" onClick={() => handleClickCol3()}>3</button>
+            <button className="btnSelected" onClick={() => handleClickCol4()}>4</button>
         </div>
     )
 }

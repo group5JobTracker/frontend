@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Context from '../context/context';
-// import { axios } from "axios"
 import JobEditModal from "./JobEditModal"
 import CardDisplayed from "./CardDisplayed"
 
@@ -10,7 +9,7 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
     const [cardEditModal, setCardEditModal] = useState(false)
     const [cardEdited, setCardEdited] = useState({});
     const [userCards, setUserCards] = useState([]);
-    const context = React.useContext(Context)
+    const context = React.useContext(Context);
 
 
     const getCards = async (user_id) => {
