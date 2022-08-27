@@ -9,7 +9,7 @@ const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModa
     const context = useContext(Context);
 
     const handleCardSelected = (e) => {
-        console.log(e.target.__reactFiber$s1ayt0gkqss.alternate.tag);
+        console.log(e.target.parentElement.parentElement.id.value);
     }
 
 

@@ -13,13 +13,8 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
 
     const [columnToggle, setColumnToggle] = useState(true);
     const [boardViewToggle, setBoardViewToggle] = useState(false);
-    const [sortClicked, setSortClicked] = useState(false);
-    const [sortBy, setSortBy] = useState("");
-    const [sortedCards, setSortedCards] = useState([]);
+    const [sortDropdown, setSortDropdown] = useState(false)
 
-    const currUser = window.localStorage.getItem("user");
-    const parsedUser = JSON.parse(currUser);
-    const userToken = window.localStorage.getItem('token');
 
     const handleCardViewBtn = () => {
         setBoardViewToggle(false)
@@ -32,10 +27,7 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
         setColumnToggle(false)
     }
 
-    const handleOptionClick = (e) => {
-        setSortBy(e.target.value)
-        setSortClicked(false);
-    }
+
 
 
     return (
@@ -79,16 +71,17 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
 
                     </li>
                     <li className="navBarList">
-                        <select name="sortBy">
-                            <option value="">Default</option>
-                            <option value="Company">Company</option>
-                            <option value="Location">Location</option>
-                            <option value="Date Applied">Date Applied</option>
-                            <option value="Status">Status</option>
-                            <option value="Job Name">Job Name</option>
-                            <option value="Date Created">Date Created</option>
-                        </select>
-                        <button>Sort <img src={sortIcon} /></button>
+
+                        <button onClick={setSortDropdown(true)}>Sort <img src={sortIcon} /></button>
+                        {sortDropdown ?
+                            <div>
+                                <option value="company">Company</option>
+                                <option value="Location">Location</option>
+                                <option value="Date Applied">Date Applied</option>
+                                <option value="Status">Status</option>
+                                <option value="Job Name">Job Name</option>
+                                <option value="Date Created">Date Created</option>
+                            </div> : ""}
 
                     </li>
 
