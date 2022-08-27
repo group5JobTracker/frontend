@@ -55,7 +55,6 @@
         align-self: flex-end;
         position: relative;
 
-
         :active,
         :focus {
             width: 100%;
@@ -75,8 +74,6 @@
         button {
             color: $white;
             position: absolute;
-            // height: 20px;
-            // width: 20px;
             right: 0px;
             z-index: 10;
             padding: 15px;
@@ -85,10 +82,23 @@
 
     .newAppBtnContainer {
         margin: 0 auto;
+        position: relative;
 
         button {
-            font-size: 2rem;
-            color: $cardDarkBlue;
+            z-index: 10;
+
+            &::before {
+                content: "";
+                width: 48px;
+                height: 48px;
+                background: $cardDarkBlue;
+                border-radius: 50%;
+                position: absolute;
+                top: -5px;
+                right: -12px;
+                z-index: -1;
+
+            }
         }
     }
 
@@ -105,9 +115,20 @@
 .columnGrid {
     display: flex;
 
+    p {
+        align-self: center
+    }
 
     button {
-        margin: 5px 10px
+        margin: 5px 10px;
+
+    }
+
+    .toma {
+        background-color: blue;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
     }
 }
 

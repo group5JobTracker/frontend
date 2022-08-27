@@ -8,9 +8,16 @@ const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModa
 
     const context = useContext(Context);
 
+    const handleCardSelected = (e) => {
+        console.log(e.target.parentElement.parentElement.id.value);
+    }
+
 
     return (
-        <div className={showCol1 ? "card col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={() => setCardEditModal(true)} >
+        <div className={showCol1 ? "card col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={(e) => {
+            handleCardSelected(e)
+            // setCardEditModal(true)
+        }} >
             <div className="cardBody">
                 <div className="cardTags">
                     <p className="tagPill">Remote</p>

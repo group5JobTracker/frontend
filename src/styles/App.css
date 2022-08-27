@@ -618,10 +618,21 @@ button :hover {
 }
 .searchCreate .newAppBtnContainer {
   margin: 0 auto;
+  position: relative;
 }
 .searchCreate .newAppBtnContainer button {
-  font-size: 2rem;
-  color: #4A52FF;
+  z-index: 10;
+}
+.searchCreate .newAppBtnContainer button::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  background: #4A52FF;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -12px;
+  z-index: -1;
 }
 
 .bottomNavBar {
@@ -640,8 +651,18 @@ button :hover {
   display: -ms-flexbox;
   display: flex;
 }
+.columnGrid p {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
 .columnGrid button {
   margin: 5px 10px;
+}
+.columnGrid .toma {
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 .navBarList {

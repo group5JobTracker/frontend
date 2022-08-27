@@ -78,8 +78,20 @@
     }
 }
 
+// .backgroundBlur {
+//     position: relative;
+//     background-color: $background2;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     height: 100%;
+//     filter: blur(8px);
+// }
+
 .bodyForm {
+    // position: relative;
     background-color: $background2;
+    // filter: blur(10px);
     display: flex;
     padding: 5px 20px 20px 20px;
     width: 100%;
@@ -101,11 +113,6 @@
         display: inline-block;
         align-self: center
     }
-
-    // label {
-    //     padding-left: 0px;
-    //     margin-left: 0px;
-    // }
 
     input {
         width: 78%;
@@ -184,7 +191,6 @@
         justify-content: space-between;
         width: 100%;
         flex-wrap: nowrap;
-
     }
 
     .leftBottomForm {
@@ -234,7 +240,6 @@
 .minifield {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
 
 
     input {
