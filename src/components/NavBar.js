@@ -62,11 +62,11 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, showC
             <div className="topNavBar">
                 <ul className="viewBtns">
                     <li>
-                        <button onClick={(e) => handleCardViewBtn(e)} >Card View</button>
+                        <button className={cardViewToggle ? "btnSelectedUnderline" : ""} onClick={(e) => handleCardViewBtn(e)} >Card View</button>
                     </li>
 
                     <li>
-                        <button onClick={(e) => handleBoardViewBtn(e)}>Board View</button>
+                        <button className={boardViewToggle ? "btnSelectedUnderline" : ""} onClick={(e) => handleBoardViewBtn(e)}>Board View</button>
                     </li>
                 </ul>
 

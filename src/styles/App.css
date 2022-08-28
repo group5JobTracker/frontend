@@ -534,7 +534,6 @@ button :hover {
   padding-top: 30px;
 }
 .navBar button {
-  border: none;
   background-color: transparent;
   color: #FFFFFF;
 }
@@ -576,8 +575,8 @@ button :hover {
   width: 20%;
   height: 40px;
 }
-.viewBtns button:active,
-.viewBtns :focus {
+
+.btnSelectedUnderline {
   border-bottom: 1px solid white;
 }
 

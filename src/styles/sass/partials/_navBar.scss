@@ -16,7 +16,6 @@
     padding-top: 30px;
 
     button {
-        border: none;
         background-color: transparent;
         color: $white;
     }
@@ -43,10 +42,16 @@
     width: 20%;
     height: 40px;
 
-    button:active,
-    :focus {
-        border-bottom: 1px solid white;
-    }
+    // button:active,
+    // :focus,
+    // :visited {
+    //     border-bottom: 1px solid white;
+    // }
+}
+
+.btnSelectedUnderline {
+    border-bottom: 1px solid white;
+
 }
 
 .searchCreate {
