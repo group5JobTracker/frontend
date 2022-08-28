@@ -27,7 +27,9 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
         setColumnToggle(false)
     }
 
-
+    const handleSortBtn = () => {
+        setSortDropdown(current => !current)
+    }
 
 
     return (
@@ -72,16 +74,17 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
                     </li>
                     <li className="navBarList">
 
-                        <button onClick={setSortDropdown(true)}>Sort <img src={sortIcon} /></button>
+                        <button onClick={handleSortBtn}>Sort <img src={sortIcon} /></button>
                         {sortDropdown ?
-                            <div>
+                            <select>
+                                <option disabled selected value></option>
                                 <option value="company">Company</option>
                                 <option value="Location">Location</option>
                                 <option value="Date Applied">Date Applied</option>
                                 <option value="Status">Status</option>
                                 <option value="Job Name">Job Name</option>
                                 <option value="Date Created">Date Created</option>
-                            </div> : ""}
+                            </select> : ""}
 
                     </li>
 
