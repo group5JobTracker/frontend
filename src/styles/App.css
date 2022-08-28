@@ -663,7 +663,7 @@ button :hover {
 .columnGrid button {
   margin: 5px 10px;
 }
-.columnGrid .toma {
+.columnGrid .bntSelected {
   background-color: blue;
   width: 20px;
   height: 20px;

@@ -9,7 +9,7 @@ import search_white from '../imgFiles/search_white.svg';
 import add_white from "../imgFiles/add_white.svg"
 
 
-function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setShowCol1, setShowCol2, setShowCol3, setShowCol4, setSearchTerm }) {
+function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, showCol1, showCol2, showCol3, showCol4, setShowCol1, setShowCol2, setShowCol3, setShowCol4, setSearchTerm }) {
 
     const [columnToggle, setColumnToggle] = useState(true);
     const [boardViewToggle, setBoardViewToggle] = useState(false);
@@ -29,6 +29,31 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
 
     const handleSortBtn = () => {
         setSortDropdown(current => !current)
+    }
+
+    const handleClickCol1 = () => {
+        setShowCol1(true);
+        setShowCol2(false);
+        setShowCol3(false);
+        setShowCol4(false);
+    }
+    const handleClickCol2 = () => {
+        setShowCol1(false);
+        setShowCol2(true);
+        setShowCol3(false);
+        setShowCol4(false);
+    }
+    const handleClickCol3 = () => {
+        setShowCol1(false);
+        setShowCol2(false);
+        setShowCol3(true);
+        setShowCol4(false);
+    }
+    const handleClickCol4 = () => {
+        setShowCol1(false);
+        setShowCol2(false);
+        setShowCol3(false);
+        setShowCol4(true);
     }
 
 
@@ -64,12 +89,23 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, setSh
                 <ul className="bottomNavBar">
 
                     <li>
-                        {columnToggle && <Column
+                        {/* {columnToggle && <Column
+                            showCol1={showCol1}
+                            showCol2={showCol2}
+                            showCol3={showCol3}
+                            showCol4={showCol4}
                             setShowCol1={setShowCol1}
                             setShowCol2={setShowCol2}
                             setShowCol3={setShowCol3}
                             setShowCol4={setShowCol4}
-                        />}
+                        />} */}
+                        <div className="columnGrid">
+                            <p>Columns</p>
+                            <button className={showCol1 ? "bntSelected" : ""} onClick={() => handleClickCol1()}>1</button>
+                            <button className={showCol2 ? "bntSelected" : ""} onClick={() => handleClickCol2()}>2</button>
+                            <button className={showCol3 ? "bntSelected" : ""} onClick={() => handleClickCol3()}>3</button>
+                            <button className={showCol4 ? "bntSelected" : ""} onClick={() => handleClickCol4()}>4</button>
+                        </div>
 
                     </li>
                     <li className="navBarList">

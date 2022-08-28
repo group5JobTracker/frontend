@@ -37,6 +37,10 @@ function Dashboard() {
                     setShowJobEntryModal={setShowJobEntryModal}
                     setCardViewToggle={setCardViewToggle}
                     cardViewToggle={cardViewToggle}
+                    showCol1={showCol1}
+                    showCol2={showCol2}
+                    showCol3={showCol3}
+                    showCol4={showCol4}
                     setShowCol1={setShowCol1}
                     setShowCol2={setShowCol2}
                     setShowCol3={setShowCol3}
