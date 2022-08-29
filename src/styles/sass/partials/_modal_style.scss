@@ -275,12 +275,17 @@
 }
 
 input[type=checkbox] {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
-    right: 5px;
-    top: 5px;
-    height: 30px;
-    width: 30px;
+    right: 20px;
+    // top: 5px;
+    height: 40px;
+    width: 150px;
+
+
+    &:checked+.alertLabel::after {
+        right: 3px;
+    }
 }
 
 
@@ -307,11 +312,30 @@ input[type=checkbox] {
 
 }
 
-input [type=checkbox]:checked~.alertLabel::after {
-
-    right: 92.5px;
-
+.compo {
+    border: 1px solid red;
 }
+
+.checked {
+    &.alertLabel::after {
+        right: 3px;
+    }
+}
+
+// input [type=checkbox]:checked {
+
+//     background-color: pink;
+
+
+// }
+
+// input [type=checkbox]:checked~*.alertLabel::after {
+//     right: 92.5px;
+
+
+// }
+
+
 
 // .dot {
 //     height: 24px;

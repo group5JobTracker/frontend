@@ -15,9 +15,6 @@ function JobEntryModal({ setCardEditModal }) {
         setCardEditModal(false);
     }
 
-    const handleJobCardEdit = () => {
-
-    }
 
     const handleColorCard = (e) => {
         e.preventDefault();
@@ -116,7 +113,7 @@ function JobEntryModal({ setCardEditModal }) {
                                     </div>
 
                                     <div className="minifield alertfield">
-                                        <label htmlFor="alert" className="alertLabel">Reminder Alert</label>
+                                        <label htmlFor="alert" >Reminder Alert</label>
                                         <input type="checkbox" name="alert" className="alert" />
                                     </div>
 
