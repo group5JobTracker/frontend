@@ -24,7 +24,6 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
         setSortBy(e.target.value)
         setSortClicked(false);
     }
-    console.log(sortBy)
     // what I need to do, only fire if there are elements in selectedCards
     // after that condition is met, then 
     const handleAddClick = async() => {
@@ -33,7 +32,7 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
             const body = {
                 appId : cardId
             }
-            const response = await fetch(`http://localhost:3000/boards/addCard/${selectedBoard}`,{
+            const response = await fetch(`https://dragonfly.herokuapp.com/boards/addCard/${selectedBoard}`,{
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json"
@@ -47,7 +46,6 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
         setNewCards(arr);
         setShowModal(false);
     }
-    console.log(selectedCards)
     const uniqueElements = (array1, array2) => {
         const hash = {};
         for(const element of array1) {
@@ -63,7 +61,7 @@ export default function AddCardsModal({setShowModal, selectedBoard, setNewCards}
     }
 
     const getUniqueCards = async() => {
-        const allCardsResponse = await fetch(`https://dragonfly.herokuapp.com/users/${parsedUser.user_id}`)
+        const allCardsResponse = await fetch(`https://dragonfly.herokuapp.com/applications/users/${parsedUser.user_id}`)
         const allCardsJson = await allCardsResponse.json();
         const allCards = allCardsJson.posts
 
