@@ -1,4 +1,4 @@
-/* * {
+* {
     font-family: 'Inter' !important;
 }
 
@@ -57,6 +57,12 @@ input {
     width: 100%;
 }
 
+.emailIcon {
+    padding-left: 25px;
+    background: url(../../imgFiles/email_white_24dp.svg);
+    background-size: 24px;
+}
+
 ::placeholder {
     color: white;
     opacity: 1;
@@ -96,4 +102,4 @@ ul li::before {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
-} */
+}
