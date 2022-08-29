@@ -112,10 +112,10 @@ function JobEntryModal({ setCardEditModal }) {
                                         </select>
                                     </div>
 
-                                    <div className="minifield alertfield">
+                                    {/* <div className="minifield alertfield">
                                         <label htmlFor="alert" >Reminder Alert</label>
                                         <input type="checkbox" name="alert" className="alert" />
-                                    </div>
+                                    </div> */}
 
 
                                 </div>
