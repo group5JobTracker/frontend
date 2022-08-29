@@ -8,12 +8,14 @@ import { useContext } from "react";
 function JobEntryModal({ setShowJobEntryModal }) {
 
     const [selectedCor, setSelectedCor] = useState(null)
-
     const [appInfo, setAppInfo] = useState({});
+    const [alertToggle, setAlertToggle] = useState(false)
+
 
     const currUser = window.localStorage.getItem("user")
     const parsedUser = JSON.parse(currUser)
     const userToken = window.localStorage.getItem('token');
+
 
     const handleCloseModal = () => {
         setShowJobEntryModal(false);
@@ -23,6 +25,11 @@ function JobEntryModal({ setShowJobEntryModal }) {
         e.preventDefault();
         const cor = e.target.value;
         setSelectedCor(cor)
+    }
+
+    const handleAlertToggle = () => {
+        setAlertToggle(current => !current)
+        console.log(alertToggle);
     }
 
     const handleJobSubmit = (e) => {
@@ -58,9 +65,6 @@ function JobEntryModal({ setShowJobEntryModal }) {
         desc: "Looking for an entry level UX designer to...",
         tagName: "Remote" // or Office or Hybrid ONLY
     }
-
-
-
 
     const createCard = async (application) => {
         const response = await fetch("https://dragonfly.herokuapp.com/applications/create", {
@@ -155,9 +159,13 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                     </div>
 
                                     <div className="minifield alertfield">
-                                        <label htmlFor="alert" className="alertLabel">Reminder Alert</label>
-                                        <input type="checkbox" name="alert" className="alert" />
+                                        <label htmlFor="alert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>Reminder Alert</label>
+                                        <input type="checkbox" name="alert" className="alert" onClick={() => handleAlertToggle()} />
                                     </div>
+                                    {/* <div className="minifield alertfield">
+                                        <label htmlFor="newAlert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>New Alert</label>
+                                        <input type="checkbox" name="newAlert" className="alertNew" onClick={() => handleAlertToggle()} />
+                                    </div> */}
 
 
                                 </div>
@@ -176,7 +184,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                             </div>
                             <div className="leftBottomForm">
                                 <label htmlFor="jobDescription">Job Description</label>
-                                <textarea name="jobDescription" id="jobDescription" cols="30" rows="20"></textarea>
+                                <textarea name="jobDescription" id="jobDescription" cols="30" rows="15"></textarea>
                             </div>
                         </div>
 

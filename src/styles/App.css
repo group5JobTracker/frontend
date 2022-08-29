@@ -920,6 +920,9 @@ button :hover {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
+.bodyRight .rightUpperForm input {
+  width: 70%;
+}
 .bodyRight .leftBottomForm textarea {
   height: 100%;
   width: 100%;
@@ -986,7 +989,7 @@ button :hover {
 }
 
 input[type=checkbox] {
-  opacity: 1;
+  opacity: 0;
   position: absolute;
   right: 20px;
   height: 40px;
@@ -1019,10 +1022,9 @@ input[type=checkbox]:checked + .alertLabel::after {
   transition: 0.5s;
 }
 
-.compo {
-  border: 1px solid red;
-}
-
 .checked.alertLabel::after {
-  right: 3px;
+  right: 32.5px;
+}
+.checked.alerLabel::before {
+  background-color: greenyellow;
 }
