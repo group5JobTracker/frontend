@@ -1,25 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
-import Context from '../../context/context';
 import iconLogo from "../../imgFiles/Dragonfly-Logo-Icon-Small.svg"
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie-player';
 import animationData from '../../imgFiles/loadingAnimation.json';
+import emailIcon from '../../imgFiles/email_white_24dp.svg';
+import "./loginPage.css";
 const LogInPage = () => {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({});
     const [message, setMessage] = useState('');
     let [attempts, updateAttempts] = useState(0);
     const [loading, setLoading] = useState(false);
-    const context = React.useContext(Context);
-    console.log(context)
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice"
-        }
-      }
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const userEmail = event.target.email.value;
@@ -68,7 +61,6 @@ const LogInPage = () => {
                     setTimeout(() => {
                         setLoading(false)
                     },8000)
-                    context.updateUserInfo(data);
                     setTimeout(() => {
                         navigate('/welcome');
                     },3000)
@@ -94,8 +86,8 @@ const LogInPage = () => {
                     <h4>Log in</h4>
                     <form onSubmit={handleSubmit}>
                         <div className="center inputFields">
-                            <input type="text" id="email" name="email" placeholder="   Email" />
-                            <input type="text" id="password" name="password" placeholder="   Password" />
+                            <input  type="text" id="email" name="email" placeholder="   Email" />
+                            <input type="password" id="password" name="password" placeholder="   Password" />
                         </div>
                         {message && <p>{message}</p>}
                         <div className="center">
@@ -107,7 +99,9 @@ const LogInPage = () => {
             <div className="center">
                 <p className="redirectText">Don't have an account? <span><Link to="/signup">Sign up</Link></span></p>
             </div>
-            {loading && <Lottie options={defaultOptions} height= {48} width= {48}></Lottie>}
+            <div className="animationDiv">
+            {loading && <Lottie loop play animationData={animationData} style= {{height :48, width: 48}}></Lottie>}
+            </div>
         </div>
     )
 }

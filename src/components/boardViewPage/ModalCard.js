@@ -4,7 +4,6 @@ export default function ModalCard({cardInfo, selectedCards, setSelectedCards}) {
     const formattedDate = cardInfo.created_at.split("T")[0]
     const [selected, setSelected] = useState(false)
     const handleCardClick = (e) => {
-        console.log(e.target.id)
         if(!selected) {
             setSelectedCards([...selectedCards,e.target.id])
         } else {
@@ -13,18 +12,16 @@ export default function ModalCard({cardInfo, selectedCards, setSelectedCards}) {
         }
         setSelected(!selected);
     }
-    console.log(cardInfo)
 
     return (
         <div className="card" id = {cardInfo.app_id} key={cardInfo.app_id} onClick={handleCardClick}>
-            <div className="cardBody" id = {cardInfo.app_id}>
               <div className='cardHeader' id = {cardInfo.app_id}>
                 <span className='selectDot' id = {cardInfo.app_id} style={selected ? {background : "#84FF4A"} : {background : "transparent"} }></span>
                 <div className="cardTags" id = {cardInfo.app_id}>
                     <p className="tagPill" style ={cardInfo.tagName === "Remote" ? {background : "#4AC9FF"} : cardInfo.tagName === "Office" ? {background : "#FFE24A"} : {background : "#63BF37"}}id = {cardInfo.app_id}>{cardInfo.tagName}</p>
                 </div>
               </div>
-
+              <div className="cardBody" id = {cardInfo.app_id}>
                 <div className="jobInfo" id = {cardInfo.app_id}>
                     <p className="title" id = {cardInfo.app_id}>{cardInfo.position}</p>
                     <p className = "company" id = {cardInfo.app_id}>{cardInfo.company}</p>

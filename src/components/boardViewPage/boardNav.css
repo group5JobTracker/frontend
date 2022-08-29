@@ -1,0 +1,56 @@
+.navBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+
+.navigationSection {
+    display: flex;
+    column-gap: 50px;
+    margin-left: 80px;
+}
+
+.navigationSection>p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    border-bottom: 0.5px solid white;
+    padding-bottom: 5px;
+}
+
+.cardViewLink {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.addCardsContainer {
+    display: flex;
+}
+
+.buttonsSection {
+    display: flex;
+    margin-right: 80px;
+    column-gap: 120px;
+}
+
+.addCardButton {
+    border-radius: 50%;
+    background-color: #4A52FF;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logOutButton {
+    width: 153px;
+    height: 39px;
+    font-size: 16px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}

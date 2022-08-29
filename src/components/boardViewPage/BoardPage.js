@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../NavBar';
-import Context from '../../context/context';
+import BoardNav from './BoardNav';
 import AddSection from './AddSectionCard';
 import BoardColumn from './BoardColumn';
 import './boardsPage.css'
 import AddCardsModal from './AddCardsModal';
-import { useNavigate } from 'react-router-dom';
+import LoadingBoards from './LoadingBoards';
 const BoardPage = () => {
     // what I need to do: get the boards that the user has
     const [usersBoards, setUsersBoards] = useState([]);
@@ -13,10 +12,7 @@ const BoardPage = () => {
     const [newCards, setNewCards] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [selectedBoard, setSelectedBoard] = useState(null);
-    const navigate = useNavigate();
-
-    const context = React.useContext(Context);
-    console.log(context);
+    const [loading, setLoading] = useState(true);
 
     const currUser = window.localStorage.getItem("user")
     const parsedUser = JSON.parse(currUser)
@@ -29,35 +25,32 @@ const BoardPage = () => {
         return data
     }
 
-    const handleLogOut = () => {
-        window.localStorage.clear()
-        navigate('/', {replace : true})
-    }
     useEffect(() => {
         if(userToken){
+            setTimeout(() => {
             getBoards(parsedUser.user_id)
             .then(data => {
                 setUsersBoards(data.boards);
+                setLoading(false);
             }) 
+        }, 1100)
         }
     },[newBoard])
 
-    console.log(selectedBoard)
-
-    console.log(selectedBoard);
     return (
         <div>
-            <NavBar/>
+            <BoardNav/>
+            {loading ? <LoadingBoards/> : 
             <div className="boardsSection">
                 <div className = "usersBoards">
                     { usersBoards.map(boardInfo => {
-                        return <BoardColumn boardInfo = {boardInfo} setShowModal = {setShowModal} setSelectedBoard = {setSelectedBoard} newCards = {newCards} setNewBoard={setNewBoard}/>
+                        return <BoardColumn boardInfo = {boardInfo} setShowModal = {setShowModal} setSelectedBoard = {setSelectedBoard} newCards = {newCards} setNewCards = {setNewCards} setNewBoard={setNewBoard}/>
                     })}
                 </div>
                 <AddSection newBoard = {newBoard} setNewBoard = {setNewBoard}/>
             </div>
+            }
             {showModal ? <AddCardsModal setShowModal ={setShowModal} selectedBoard={selectedBoard} showModal = {showModal} setNewCards = {setNewCards}/> : <></>}
-            <button className='logOutButton' onClick={handleLogOut}>LOG OUT</button>
         </div>
     )
 }

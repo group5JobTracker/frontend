@@ -11,7 +11,9 @@ function JobEntryModal({ setShowJobEntryModal }) {
 
     const [appInfo, setAppInfo] = useState({});
 
-    const context = useContext(Context)
+    const currUser = window.localStorage.getItem("user")
+    const parsedUser = JSON.parse(currUser)
+    const userToken = window.localStorage.getItem('token');
 
     const handleCloseModal = () => {
         setShowJobEntryModal(false);
@@ -37,7 +39,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
             "notes": e.target.notes.value,
             "desc": e.target.jobDescription.value,
             "notif": false,
-            "userId": context.userInfo.userInfo.user_id,
+            "userId": parsedUser.user_id,
             "tagName": e.target.labels.value
         })
     }
@@ -110,12 +112,12 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                     <div className="minifield">
                                         <label htmlFor="status">Status</label>
                                         <select name="statusOfApplication" id="status" >
-                                            <option value="needToApply">Need to Apply</option>
-                                            <option value="applied">Applied</option>
-                                            <option value="screened">Screened</option>
-                                            <option value="interviewSet">Interview Set</option>
-                                            <option value="rejected">Rejected</option>
-                                            <option value="accepted">Accepted</option>
+                                            <option value="Need to Apply">Need to Apply</option>
+                                            <option value="Applied">Applied</option>
+                                            <option value="Screened">Screened</option>
+                                            <option value="Interview Set">Interview Set</option>
+                                            <option value="Rejected">Rejected</option>
+                                            <option value="Accepted">Accepted</option>
                                         </select>
                                     </div>
                                     <div className="minifield">
@@ -132,9 +134,9 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                     <div className="minifield">
                                         <label htmlFor="labels">Labels</label>
                                         <select name="labels" id="cardLabel">
-                                            <option value="office">Office</option>
-                                            <option value="remote">Remote</option>
-                                            <option value="hybrid">Hybrid</option>
+                                            <option value="Office">Office</option>
+                                            <option value="Remote">Remote</option>
+                                            <option value="Hybrid">Hybrid</option>
                                         </select>
                                     </div>
 

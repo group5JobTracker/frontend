@@ -1,0 +1,15 @@
+.animationDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailIcon {
+    display: flex;
+    width: 28px;
+    height: 24px;
+    background: url(../../imgFiles/email_white_24dp.svg);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}

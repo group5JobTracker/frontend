@@ -1,7 +1,7 @@
 .boardColumn {
     width: 408px;
     min-height: 127px;
-    max-height: 875px;
+    max-height: 770px;
     background-color: #1A1E4A;
     border-radius: 10px;
     margin-right: 20px;
@@ -49,11 +49,33 @@
     margin-left: 30px;
 }
 
-.addCards {
+.headerBottomRow {
+    display: flex;
+    margin-right: 20px;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerBottomRow>p {
     font-size: 16px;
     font-weight: 700;
     padding-top: 24.5px;
     padding-bottom: 24.5px;
+    color: #FFFFFF
+}
+
+.removeCardsButton {
+    display: flex;
+    height: 48px;
+    width: 116px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #31345c;
 }
 
 .boardCardsSection {
@@ -61,7 +83,7 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    max-height: 748px;
+    max-height: 640px;
 }
 
 .boardCardsSection::-webkit-scrollbar {
