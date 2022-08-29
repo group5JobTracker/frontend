@@ -86,6 +86,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
 
             <form action="Sumbit" onSubmit={handleJobSubmit}>
                 <div className="modal_style">
+                    {/* <div className="blur"><p>oi</p></div> */}
                     <div
                         className={selectedCor === "#FE5A5A" ? "headerForm redCorBack" : selectedCor === "#FFAC4A" ? "headerForm orangeCorBack" : selectedCor === "#FFE24A" ? "headerForm yellowCorBack" : selectedCor === "#4AC9FF" ? "headerForm lightBlueCorBack" : selectedCor === "#4A52FF" ? "headerForm darkBlueCorBack" : selectedCor === "#AF4AFF" ? "headerForm purpleCorBack" : selectedCor === "#FF77C9" ? "headerForm pinkCorBack" : "headerForm redCorBack"}
                     >

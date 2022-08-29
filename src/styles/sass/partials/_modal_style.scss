@@ -8,12 +8,14 @@
     border-radius: 20px;
     color: $white;
 
+
     textarea {
         color: $white;
         padding: 15px;
 
     }
 }
+
 
 .overlay_style {
     position: fixed;
@@ -22,8 +24,19 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 90;
+    z-index: 80;
+    // overflow-y: scroll;
 }
+
+// .blur {
+//     background-color: $background2;
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     z-index: -2;
+//     backdrop-filter: blur(50px);
+//     border-radius: 20px;
+// }
 
 .headerForm {
     position: relative;
@@ -90,8 +103,9 @@
 
 .bodyForm {
     // position: relative;
-    background-color: $background2;
-    // filter: blur(10px);
+    background-color: rgba(47, 57, 126, 0.6);
+    backdrop-filter: blur(4px);
+    // backdrop-filter: brightnpm run startness(100%);
     display: flex;
     padding: 5px 20px 20px 20px;
     width: 100%;
@@ -261,12 +275,17 @@
 }
 
 input[type=checkbox] {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
-    right: 5px;
-    top: 5px;
-    height: 30px;
-    width: 30px;
+    right: 20px;
+    // top: 5px;
+    height: 40px;
+    width: 150px;
+
+
+    &:checked+.alertLabel::after {
+        right: 3px;
+    }
 }
 
 
@@ -276,7 +295,7 @@ input[type=checkbox] {
     height: 30px;
     background-color: $backgroundInput;
     position: absolute;
-    right: 120px;
+    right: 30px;
     border-radius: 30px;
 }
 
@@ -284,7 +303,7 @@ input[type=checkbox] {
     content: "";
     position: absolute;
     top: 17.5px;
-    right: 152.5px;
+    right: 62.5px;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -293,11 +312,30 @@ input[type=checkbox] {
 
 }
 
-input [type=checkbox]:checked~.alertLabel::after {
-
-    right: 92.5px;
-
+.compo {
+    border: 1px solid red;
 }
+
+.checked {
+    &.alertLabel::after {
+        right: 3px;
+    }
+}
+
+// input [type=checkbox]:checked {
+
+//     background-color: pink;
+
+
+// }
+
+// input [type=checkbox]:checked~*.alertLabel::after {
+//     right: 92.5px;
+
+
+// }
+
+
 
 // .dot {
 //     height: 24px;

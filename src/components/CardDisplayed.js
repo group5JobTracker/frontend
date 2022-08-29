@@ -1,12 +1,10 @@
 import './boardViewPage/boardCard.css';
-import Context from "../context/context"
 import { useContext } from "react";
 import { useEffect } from 'react';
 
 const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModal }) => {
     const formattedDate = cardInfo.created_at.split("T")[0];
 
-    const context = useContext(Context);
 
     const handleCardSelected = (e) => {
         console.log(e.target.parentElement.parentElement.id.value);
@@ -16,7 +14,7 @@ const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModa
     return (
         <div className={showCol1 ? "card col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={(e) => {
             handleCardSelected(e)
-            // setCardEditModal(true)
+            setCardEditModal(true)
         }} >
             <div className="cardBody">
                 <div className="cardTags">
