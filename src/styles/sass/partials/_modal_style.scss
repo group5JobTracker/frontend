@@ -205,6 +205,10 @@
         justify-content: space-between;
         width: 100%;
         flex-wrap: nowrap;
+
+        input {
+            width: 70%;
+        }
     }
 
     .leftBottomForm {
@@ -275,7 +279,7 @@
 }
 
 input[type=checkbox] {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     right: 20px;
     // top: 5px;
@@ -312,28 +316,15 @@ input[type=checkbox] {
 
 }
 
-.compo {
-    border: 1px solid red;
-}
-
 .checked {
     &.alertLabel::after {
-        right: 3px;
+        right: 32.5px;
+    }
+
+    &.alerLabel::before {
+        background-color: greenyellow;
     }
 }
-
-// input [type=checkbox]:checked {
-
-//     background-color: pink;
-
-
-// }
-
-// input [type=checkbox]:checked~*.alertLabel::after {
-//     right: 92.5px;
-
-
-// }
 
 
 
