@@ -44,20 +44,20 @@ function JobEntryModal({ setShowJobEntryModal }) {
         })
     }
 
-    const example = {
-        userId: 3, // the ID of the user that is creating the card
-        status: 2, // the status of the application
-        title: "UX Designer", // the title of the position
-        company: "Figma",
-        location: "San Diego, CA",
-        date: "08/25/22",
-        notes: "recruiter really likes pancakes", // can be empty
-        contact: "recruiter@figma.com", // email of the recruiter for the job posting
-        notif: false, // boolean indicating whether or not the user wants notifications for this application
-        color: "#ff0000", // Hex Triplet Color Code for the accent of the card
-        desc: "Looking for an entry level UX designer to...",
-        tagName: "Remote" // or Office or Hybrid ONLY
-    }
+    // const example = {
+    //     userId: 3, // the ID of the user that is creating the card
+    //     status: 2, // the status of the application
+    //     title: "UX Designer", // the title of the position
+    //     company: "Figma",
+    //     location: "San Diego, CA",
+    //     date: "08/25/22",
+    //     notes: "recruiter really likes pancakes", // can be empty
+    //     contact: "recruiter@figma.com", // email of the recruiter for the job posting
+    //     notif: false, // boolean indicating whether or not the user wants notifications for this application
+    //     color: "#ff0000", // Hex Triplet Color Code for the accent of the card
+    //     desc: "Looking for an entry level UX designer to...",
+    //     tagName: "Remote" // or Office or Hybrid ONLY
+    // }
 
 
 
@@ -72,6 +72,50 @@ function JobEntryModal({ setShowJobEntryModal }) {
         });
         const data = await response.json();
         return data
+    }
+
+    const validLink = (parsedLinkInput) => {
+        const regex = /^\d+$/
+        if(parsedLinkInput.length >= 6) {
+            if(parsedLinkInput[0] === "https:" && parsedLinkInput[1] === "" && parsedLinkInput[2] === "www.linkedin.com" && parsedLinkInput[3] === "jobs" && parsedLinkInput[4] === "view"){
+                if(parsedLinkInput[5].length === 10 && regex.test(parsedLinkInput[5])){
+                    return true
+                }
+                return false;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    const handleLinkChange = async(e) => {
+        // console.log(e.target.value)
+        const parsedLink = e.target.value.split('/')
+        console.log(parsedLink)
+        console.log(validLink(parsedLink));
+        if(validLink(parsedLink)){
+            const formattedLink = parsedLink.slice(0,6).join('/')
+            console.log(formattedLink)
+            const reqBody = {
+                url : formattedLink
+            }
+            const response = await fetch(`http://localhost:3000/applications/auto`,{
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify(reqBody)
+            })
+            const data = await response.json()
+            console.log(data)
+            // now that we have the data, we just have the update the input fields on the form with this data
+            console.log(document.querySelector('#jobTitle'));
+            document.querySelector('#jobTitle').value = data.scrapedData.title;
+            document.querySelector('#company').value = data.scrapedData.company;
+            document.querySelector('#location').value = data.scrapedData.location;
+            document.querySelector('#jobDescription').value = data.scrapedData.description;
+        }
+
     }
 
     useEffect(() => {
@@ -171,7 +215,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <div className="bodyRight">
                             <div className="rightUpperForm">
                                 <label htmlFor="jobLink">Application Link</label>
-                                <input type="text" id="jobLink" placeholder="https//:...." />
+                                <input type="text" id="jobLink" placeholder="https//:...." onChange={handleLinkChange}/>
                             </div>
                             <div className="leftBottomForm">
                                 <label htmlFor="jobDescription">Job Description</label>
