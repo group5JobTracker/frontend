@@ -16,15 +16,20 @@ const LandingPage = () => {
                 </div>
                 <div className="firstPage_landingPage">
                     <section className="mainHeader_landingPage">
-                        <div>
+                        <div className='logoContainer'>
                             <img
                                 alt="Dragonfly Logo Motion"
                                 src={logo}
                                 height="30"
                                 className="d-inline-block align-top motionLogo"
                             />
+                        </div>
+                        <div className='headerTextContainer'>
                             <h2>Stay on top of you job search</h2>
                             <p className='last-intro-text'>Organize, take notes, set reminders, and keep job descriptions all in one place</p>
+
+                        </div>
+                        <div className='loginBtnContainer'>
                             <form >
                                 <button className="signup-btn-text">
                                     <Link to="/signup">Sign up</Link>
