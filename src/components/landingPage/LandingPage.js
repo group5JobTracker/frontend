@@ -1,7 +1,7 @@
 //Library
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import circleBlobs from "../../imgFiles/Landing-Page-Image.svg";
+import circleBlobs from "../../imgFiles/Cards-Image.png";
 import logo from '../../imgFiles/dragonfly-motion-logo-full.svg';
 // import "./landingPage.css";
 
