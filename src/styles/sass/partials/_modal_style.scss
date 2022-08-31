@@ -8,12 +8,14 @@
     border-radius: 20px;
     color: $white;
 
+
     textarea {
         color: $white;
         padding: 15px;
 
     }
 }
+
 
 .overlay_style {
     position: fixed;
@@ -22,8 +24,19 @@
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 90;
+    z-index: 80;
+    // overflow-y: scroll;
 }
+
+// .blur {
+//     background-color: $background2;
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     z-index: -2;
+//     backdrop-filter: blur(50px);
+//     border-radius: 20px;
+// }
 
 .headerForm {
     position: relative;
@@ -78,8 +91,21 @@
     }
 }
 
+// .backgroundBlur {
+//     position: relative;
+//     background-color: $background2;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     height: 100%;
+//     filter: blur(8px);
+// }
+
 .bodyForm {
-    background-color: $background2;
+    // position: relative;
+    background-color: rgba(47, 57, 126, 0.6);
+    backdrop-filter: blur(4px);
+    // backdrop-filter: brightnpm run startness(100%);
     display: flex;
     padding: 5px 20px 20px 20px;
     width: 100%;
@@ -101,11 +127,6 @@
         display: inline-block;
         align-self: center
     }
-
-    // label {
-    //     padding-left: 0px;
-    //     margin-left: 0px;
-    // }
 
     input {
         width: 78%;
@@ -185,6 +206,9 @@
         width: 100%;
         flex-wrap: nowrap;
 
+        input {
+            width: 70%;
+        }
     }
 
     .leftBottomForm {
@@ -234,7 +258,6 @@
 .minifield {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
 
 
     input {
@@ -258,10 +281,15 @@
 input[type=checkbox] {
     opacity: 0;
     position: absolute;
-    right: 5px;
-    top: 5px;
-    height: 30px;
-    width: 30px;
+    right: 20px;
+    // top: 5px;
+    height: 40px;
+    width: 150px;
+
+
+    &:checked+.alertLabel::after {
+        right: 3px;
+    }
 }
 
 
@@ -271,7 +299,7 @@ input[type=checkbox] {
     height: 30px;
     background-color: $backgroundInput;
     position: absolute;
-    right: 120px;
+    right: 30px;
     border-radius: 30px;
 }
 
@@ -279,7 +307,7 @@ input[type=checkbox] {
     content: "";
     position: absolute;
     top: 17.5px;
-    right: 152.5px;
+    right: 62.5px;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -288,11 +316,17 @@ input[type=checkbox] {
 
 }
 
-input [type=checkbox]:checked~.alertLabel::after {
+.checked {
+    &.alertLabel::after {
+        right: 32.5px;
+    }
 
-    right: 92.5px;
-
+    &.alerLabel::before {
+        background-color: greenyellow;
+    }
 }
+
+
 
 // .dot {
 //     height: 24px;

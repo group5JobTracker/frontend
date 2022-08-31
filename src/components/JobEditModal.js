@@ -15,9 +15,6 @@ function JobEntryModal({ setCardEditModal }) {
         setCardEditModal(false);
     }
 
-    const handleJobCardEdit = () => {
-
-    }
 
     const handleColorCard = (e) => {
         e.preventDefault();
@@ -105,7 +102,7 @@ function JobEntryModal({ setCardEditModal }) {
                                         <label htmlFor="cardColor">Card Color</label>
                                         <select name="cardColor" id="cardColor"
                                             onChange={(e) => handleColorCard(e)}>
-                                            <option value="#FE5A5A" ><span className="dot redDot" style={{ border: "2px solid #FFFFFF" }}></span></option>
+                                            <option value="#FE5A5A" ><p><span className="dot redDot" style={{ border: "2px solid #FFFFFF" }}></span></p></option>
                                             <option value="#FFAC4A" className="dot orangeDot">Orange</option>
                                             <option value="#FFE24A" className="dot yellowDot">Yellow</option>
                                             <option value="#4AC9FF" className="dot lightBlueDot">Light Blue</option>
@@ -115,10 +112,10 @@ function JobEntryModal({ setCardEditModal }) {
                                         </select>
                                     </div>
 
-                                    <div className="minifield alertfield">
-                                        <label htmlFor="alert" className="alertLabel">Reminder Alert</label>
+                                    {/* <div className="minifield alertfield">
+                                        <label htmlFor="alert" >Reminder Alert</label>
                                         <input type="checkbox" name="alert" className="alert" />
-                                    </div>
+                                    </div> */}
 
 
                                 </div>
