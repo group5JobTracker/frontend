@@ -16,9 +16,10 @@ const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModa
             handleCardSelected(e)
             setCardEditModal(true)
         }} >
+            {/* <div className='cardHeader'> */}
             <div className="cardBody">
                 <div className="cardTags">
-                    <p className="tagPill">Remote</p>
+                    <p className="tagPill" style={cardInfo.tagName === "Remote" ? { background: "#4AC9FF" } : cardInfo.tagName === "Office" ? { background: "#FFE24A" } : { background: "#63BF37" }}>{cardInfo.tagName}</p>
                 </div>
 
                 <div className="jobInfo">
@@ -32,6 +33,7 @@ const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModa
                     <p>Status: {cardInfo.status}</p>
                 </div>
             </div>
+            {/* </div> */}
             <div className="accentColor" style={{ background: cardInfo.card_color_hex }}></div>
         </div>
     )

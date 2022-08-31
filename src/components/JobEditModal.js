@@ -4,6 +4,7 @@ import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import Context from "../context/context"
 import { useContext } from "react";
+import arrow from "../imgFiles/arrow-up-vector.svg"
 
 function JobEntryModal({ setCardEditModal }) {
 
@@ -69,7 +70,7 @@ function JobEntryModal({ setCardEditModal }) {
                                 <div className="inputLeft">
                                     <div className="minifield">
                                         <label htmlFor="status">Status</label>
-                                        <select name="statusOfApplication" id="status" >
+                                        <select className="statusApp" name="statusOfApplication" id="status" >
                                             <option value="needToApply">Need to Apply</option>
                                             <option value="applied">Applied</option>
                                             <option value="screened">Screened</option>
@@ -77,6 +78,12 @@ function JobEntryModal({ setCardEditModal }) {
                                             <option value="rejected">Rejected</option>
                                             <option value="accepted">Accepted</option>
                                         </select>
+                                        {/* <div className="customArrow">
+                                            <img src={arrow} />
+                                        </div> */}
+                                        {/* <div className="dropdownMenu">
+
+                                        </div> */}
                                     </div>
                                     <div className="minifield">
                                         <label htmlFor="dateApplied">Date Applied</label>
