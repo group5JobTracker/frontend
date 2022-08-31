@@ -13,3 +13,11 @@
     background-repeat: no-repeat;
     z-index: 1000;
 }
+
+.signUpLogoIcon {
+    margin-top: 10vh;
+}
+
+.centerCont {
+    margin-top: 50px;
+}

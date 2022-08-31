@@ -55,7 +55,7 @@ const SignUpPage = () => {
     // console.log(context.userInfo
     return (
         <div className="pageWrapper">
-            <div className="center">
+            <div className="center topCont">
                 <Link to="/">
                     <img
                         className="signUpLogoIcon"
@@ -64,7 +64,7 @@ const SignUpPage = () => {
                     />
                 </Link>
             </div>
-            <div className="center">
+            <div className="center centerCont">
                 <div className="formContainer_LogSignIn center">
                     <h4>Sign up for free</h4>
                     <form onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ const SignUpPage = () => {
                             <input type="text" id="email" className="loginEmail" name="email" placeholder="Email" />
                             <input type="text" id="password" className="loginPswd" name="password" placeholder="Password" />
                         </div>
-                        <div>
+                        <div className='mustCont'>
                             <p>Password must contain</p>
                             <ul className="row">
                                 <li className="bPoint">8 - 20 characters</li>
@@ -84,15 +84,15 @@ const SignUpPage = () => {
                                 <li>upper-case letter</li>
                                 <li>lower-case letter</li>
                             </ul>
-                            <div className="center">
+                            <div className="center BottomCont">
                                 <button className="signUpBtn" type="submit">Sign up for free</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div className="center">
-                <p className="redirectText">Already have an account? <span><Link to="/login">Log in</Link></span></p>
+            <div className="center lastCont">
+                <p className="redirectText">Already have an account? <span><Link to="/login"><span>Log in</span></Link></span></p>
             </div>
         </div>
     )
