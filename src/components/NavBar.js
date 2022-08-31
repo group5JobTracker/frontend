@@ -89,16 +89,6 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, showC
                 <ul className="bottomNavBar">
 
                     <li>
-                        {/* {columnToggle && <Column
-                            showCol1={showCol1}
-                            showCol2={showCol2}
-                            showCol3={showCol3}
-                            showCol4={showCol4}
-                            setShowCol1={setShowCol1}
-                            setShowCol2={setShowCol2}
-                            setShowCol3={setShowCol3}
-                            setShowCol4={setShowCol4}
-                        />} */}
                         <div className="columnGrid">
                             <p>Columns</p>
                             <button className={showCol1 ? "bntSelected" : ""} onClick={() => handleClickCol1()}>1</button>

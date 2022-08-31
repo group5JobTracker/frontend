@@ -88,13 +88,62 @@
         margin: 15px 0px;
         width: 130px;
         height: 35px;
-        // align-items: center;
         border-color: #4a52ff;
         border-radius: 10px;
         width: 327px;
     }
 
 }
+
+.loginName {
+    background-image: url("../imgFiles/person_outline_white_24dp.svg");
+}
+
+.loginName:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginLname {
+    background-image: url("../imgFiles/people_alt_white_24dp.svg");
+}
+
+.loginLname:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginEmail {
+    background-image: url("../imgFiles/email_white_24dp.svg");
+}
+
+.loginEmail:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginPswd {
+    background-image: url("../imgFiles/key_white_24dp.svg");
+}
+
+.loginPswd:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginName,
+.loginLname,
+.loginEmail,
+.loginPswd {
+    background-repeat: no-repeat;
+    background-position: top 5px left 5px;
+    text-indent: 25px;
+}
+
 
 .redirectText {
     margin-top: 15px;

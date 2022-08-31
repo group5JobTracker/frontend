@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import Context from '../../context/context';
 import iconLogo from "../../imgFiles/Dragonfly-Logo-Icon-Small.svg";
+import email_white_24dp from '../../imgFiles/email_white_24dp.svg';
+import person_outline from '../../imgFiles/person_outline_white_24dp.svg';
+import people_outline from '../../imgFiles/people_white_24dp.svg';
 // import "./signUpPage.css";
 
 const SignUpPage = () => {
@@ -66,10 +69,10 @@ const SignUpPage = () => {
                     <h4>Sign up for free</h4>
                     <form onSubmit={handleSubmit}>
                         <div className="center inputFields">
-                            <input type="text" id="fname" name="fName" placeholder="   First Name" />
-                            <input type="text" id="lname" name="lName" placeholder="   Last Name" />
-                            <input type="text" id="email" name="email" placeholder="   Email" />
-                            <input type="text" id="password" name="password" placeholder="   Password" />
+                            <input type="text" id="fname" className="loginName" name="fName" placeholder="First Name" />
+                            <input type="text" id="lname" className="loginLname" name="lName" placeholder="Last Name" />
+                            <input type="text" id="email" className="loginEmail" name="email" placeholder="Email" />
+                            <input type="text" id="password" className="loginPswd" name="password" placeholder="Password" />
                         </div>
                         <div>
                             <p>Password must contain</p>

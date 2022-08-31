@@ -13,6 +13,7 @@ const LandingPage = () => {
                     <Button className="login-btn-text" >
                         <Link to="/login">Log In</Link>
                     </Button>
+
                 </div>
                 <div className="firstPage_landingPage">
                     <section className="mainHeader_landingPage">
