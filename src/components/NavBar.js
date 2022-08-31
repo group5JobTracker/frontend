@@ -58,7 +58,7 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, showC
 
 
     return (
-        <nav className="navBar">
+        <nav className="navBar wrapper">
             <div className="topNavBar">
                 <ul className="viewBtns">
                     <li>

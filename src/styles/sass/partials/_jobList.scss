@@ -84,19 +84,21 @@
 }
 
 .col2 {
-    max-width: calc(370px);
-    min-width: calc(370px);
+    max-width: 368px;
+    min-width: 368px;
 
 }
 
 .col3 {
-    max-width: calc((100% / 3) - 10px);
-    min-width: calc((100% / 3) - 10px);
+    max-width: 368px;
+    min-width: 368px;
+    // max-width: calc((100% / 3) - 10px);
+    // min-width: calc((100% / 3) - 10px);
 }
 
 .col4 {
-    max-width: calc((100% / 4) - 10px);
-    min-width: calc((100% / 4) - 10px);
+    max-width: calc((100% / 4) - 5px);
+    min-width: calc((100% / 4) - 5px);
     align-self: flex-start;
     align-content: flex-start;
 }
