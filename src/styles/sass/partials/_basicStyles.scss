@@ -10,11 +10,8 @@
 
 html {
     font-size: 100%;
-    // background-color: $background;
     font-family: $fontFamily;
     @include body;
-    // margin: 0;
-    // padding: 0;
 }
 
 .wrapper {
@@ -38,17 +35,9 @@ a {
     display: inline-block;
     font-weight: bold;
     color: $white;
-
-    :hover {
-        opacity: 0.4
-    }
 }
 
 button {
     cursor: pointer;
     text-decoration: none;
-
-    :hover {
-        opacity: 0.6;
-    }
 }

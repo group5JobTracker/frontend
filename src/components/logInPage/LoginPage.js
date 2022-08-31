@@ -5,6 +5,7 @@ import Lottie from 'react-lottie-player';
 import animationData from '../../imgFiles/loadingAnimation.json';
 import emailIcon from '../../imgFiles/email_white_24dp.svg';
 import "./loginPage.css";
+
 const LogInPage = () => {
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({});
@@ -37,7 +38,7 @@ const LogInPage = () => {
             body: JSON.stringify(credentials)
         })
         const data = await response.json()
-        if(data.token) {
+        if (data.token) {
             window.localStorage.setItem('user', JSON.stringify(data.userInfo))
             window.localStorage.setItem('token', data.token)
         }
@@ -52,19 +53,19 @@ const LogInPage = () => {
                     setMessage("")
                     setTimeout(() => {
                         setLoading(false)
-                    },3000)
+                    }, 3000)
                     setTimeout(() => {
                         setMessage(data.message)
-                    },3000)
+                    }, 3000)
                 } else {
                     setMessage('');
                     setTimeout(() => {
                         setLoading(false)
-                    },8000)
+                    }, 8000)
                     setTimeout(() => {
                         navigate('/welcome');
-                    },3000)
-                    
+                    }, 3000)
+
                 }
             })
         }
@@ -81,13 +82,13 @@ const LogInPage = () => {
                     />
                 </Link>
             </div>
-            <div className="center">
+            <div className="center centerCont">
                 <div className="formContainer_LogSignIn center">
                     <h4>Log in</h4>
                     <form onSubmit={handleSubmit}>
                         <div className="center inputFields">
-                            <input  type="text" id="email" name="email" placeholder="   Email" />
-                            <input type="password" id="password" name="password" placeholder="   Password" />
+                            <input type="text" id="email" className="loginEmail" name="email" placeholder="Email" />
+                            <input type="password" id="password" className="loginPswd" name="password" placeholder="Password" />
                         </div>
                         {message && <p>{message}</p>}
                         <div className="center">
@@ -96,11 +97,11 @@ const LogInPage = () => {
                     </form>
                 </div>
             </div>
-            <div className="center">
-                <p className="redirectText">Don't have an account? <span><Link to="/signup">Sign up</Link></span></p>
+            <div className="center lastCont">
+                <p className="redirectText">Don't have an account? <span><Link to="/signup"><span>Sign up</span></Link></span></p>
             </div>
             <div className="animationDiv">
-            {loading && <Lottie loop play animationData={animationData} style= {{height :48, width: 48}}></Lottie>}
+                {loading && <Lottie loop play animationData={animationData} style={{ height: 48, width: 48 }}></Lottie>}
             </div>
         </div>
     )

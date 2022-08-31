@@ -1,7 +1,9 @@
 .pageWrapper {
     align-items: center;
-    background-color: #12152a;
+    background: linear-gradient(180deg, #1A1E4A 0%, #12152A 100%);
+    ;
     height: 100vh;
+    justify-content: space-between;
 
     p {
         color: $white;
@@ -16,9 +18,20 @@
 }
 
 .signUpLogoIcon {
-    margin-top: 60px;
-    margin-bottom: 50px;
+    margin-top: 10vh;
 }
+
+// .topCont {
+//     height: 30vh;
+// }
+
+.centerCont {
+    margin-top: 50px;
+}
+
+// .bottomCont {
+//     height: 20vh;
+// }
 
 .inputFields {
     display: flex;
@@ -37,11 +50,14 @@
     }
 
     li::before {
-        content: "\2022";
-        color: #bf3737;
-        font-weight: bold;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #bf3737;
         display: inline-block;
-        width: 1em;
+        margin-right: 5px;
+
     }
 }
 
@@ -53,23 +69,25 @@
     border-radius: 10px !important;
 
     p {
-        margin-bottom: 10px;
+        margin: 10px 0px;
     }
 
     h4 {
         color: $white;
-        margin-bottom: 20px;
-        margin-top: 20px;
+        margin: 20px 0px 30px 20px;
+        font-size: 32px;
+        align-self: flex-start;
     }
 
     input {
         background-color: #353945;
-        border-radius: 5px !important;
-        height: 35px;
+        border-radius: 10px !important;
+        height: 48px;
         margin-bottom: 10px !important;
         width: 100%;
         padding: 10px;
         color: $white;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
     }
 
     li {
@@ -88,7 +106,6 @@
         margin: 15px 0px;
         width: 130px;
         height: 35px;
-        // align-items: center;
         border-color: #4a52ff;
         border-radius: 10px;
         width: 327px;
@@ -96,6 +113,60 @@
 
 }
 
+.loginName {
+    background-image: url("../imgFiles/person_outline_white_24dp.svg");
+}
+
+.loginName:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginLname {
+    background-image: url("../imgFiles/people_alt_white_24dp.svg");
+}
+
+.loginLname:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginEmail {
+    background-image: url("../imgFiles/email_white_24dp.svg");
+}
+
+.loginEmail:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginPswd {
+    background-image: url("../imgFiles/key_white_24dp.svg");
+}
+
+.loginPswd:active,
+:focus-within,
+:visited {
+    background-image: none;
+}
+
+.loginName,
+.loginLname,
+.loginEmail,
+.loginPswd {
+    background-repeat: no-repeat;
+    background-position: top 10px left 5px;
+    text-indent: 25px;
+}
+
 .redirectText {
     margin-top: 15px;
+
+    span {
+        font-weight: lighter;
+        color: #4AC9FF;
+    }
 }

@@ -8,9 +8,6 @@
         width: 90%;
     }
 
-    // img {
-    //     margin-bottom: 50px
-    // }
 
     h2 {
         @include header2 (3rem, bold);
@@ -35,26 +32,33 @@
     position: absolute;
     top: 25px;
     right: 25px;
-    border: 4px solid white;
+    border: 2px solid white;
     background-color: transparent;
     border-radius: 10px;
     width: 130px;
     height: 40px;
+    transition: 0.6s;
 
+    &:hover,
+    &:focus-within {
+        background-color: white;
+        border: 2px solid #4d50ff;
+
+        span {
+            color: $background;
+        }
+    }
 }
+
 
 .firstPage_landingPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    // width: 100%;
-    // margin-top: 40px;
-
+    height: 100vh;
 }
 
 .logoContainer {
-    // height: 300px;
     margin-top: -150px;
 }
 
@@ -72,11 +76,17 @@
     width: 130px;
     height: 35px;
     align-items: center;
-}
+    transition: 0.6s;
 
-// .Demo {
-//     width: 50%;
-// }
+    &:hover,
+    &:focus-within {
+        background-color: white;
+
+        span {
+            color: #4d50ff;
+        }
+    }
+}
 
 
 
@@ -148,30 +158,3 @@
 // cursor: pointer;
 // }
 // }
-
-.firstPage_landingPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    // margin-top: 40px;
-
-}
-
-.signup-btn-text {
-    background-color: #4d50ff;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: white;
-    border-radius: 10px;
-    width: 130px;
-    height: 35px;
-    align-items: center;
-}
-
-
-
-.last-intro-text {
-    margin-top: 20px;
-    margin-bottom: 30px;
-}

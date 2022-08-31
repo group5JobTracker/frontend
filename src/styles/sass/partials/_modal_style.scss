@@ -91,21 +91,13 @@
     }
 }
 
-// .backgroundBlur {
-//     position: relative;
-//     background-color: $background2;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     height: 100%;
-//     filter: blur(8px);
-// }
 
 .bodyForm {
     // position: relative;
-    background-color: rgba(47, 57, 126, 0.6);
+    // background-color: rgba(47, 57, 126, 0.6);
+    background-color: rgba(106, 110, 218, 0.35);
+    // background-color: rgba(83, 85, 151, 0.3);
     backdrop-filter: blur(4px);
-    // backdrop-filter: brightnpm run startness(100%);
     display: flex;
     padding: 5px 20px 20px 20px;
     width: 100%;
@@ -138,6 +130,18 @@
         padding: 1px 10px;
         color: $white
     }
+
+    option {
+        background-color: #2F397E;
+        // background-color: #878fc3;
+        // opacity: 0.1;
+
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+
+
+
 }
 
 .bodyLeft {
@@ -149,14 +153,20 @@
         display: flex;
     }
 
-    // .inputLeft,
-    // .inputRigh {
-    //     border: 1px solid red;
-    // }
-
     .inputLeft {
         width: 100%;
         min-width: 300px;
+        // position: relative;
+
+        // .customArrow {
+        //     position: absolute;
+        //     top: 10px;
+        //     left: 10px;
+        //     display: block;
+        //     height: 15px;
+        //     width: 15px;
+        //     background-color: red;
+        // }
     }
 
     .inputRight {
@@ -187,12 +197,11 @@
     select {
         color: $white;
         font-weight: 100;
-        // background-color: blueviolet;
+        appearance: none;
     }
 }
 
 .bodyRight {
-
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -287,9 +296,9 @@ input[type=checkbox] {
     width: 150px;
 
 
-    &:checked+.alertLabel::after {
-        right: 3px;
-    }
+    // &:checked+.alertLabel::after {
+    //     right: 3px;
+    // }
 }
 
 
@@ -321,10 +330,26 @@ input[type=checkbox] {
         right: 32.5px;
     }
 
-    &.alerLabel::before {
-        background-color: greenyellow;
+    // &.alerLabel::before {
+    //     background-color: greenyellow;
+    // }
+}
+
+.checked {
+    &.alerLabel:before {
+        background-color: none;
     }
 }
+
+.statusApp::before {
+    content: "";
+    background-image: url("../imgFiles/arrow-up-vector.svg");
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+
 
 
 

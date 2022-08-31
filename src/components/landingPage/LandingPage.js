@@ -11,8 +11,9 @@ const LandingPage = () => {
             <div className='wrapper'>
                 <div className="login-btn">
                     <Button className="login-btn-text" >
-                        <Link to="/login">Log In</Link>
+                        <Link to="/login"><span>Log In</span></Link>
                     </Button>
+
                 </div>
                 <div className="firstPage_landingPage">
                     <section className="mainHeader_landingPage">
@@ -25,14 +26,14 @@ const LandingPage = () => {
                             />
                         </div>
                         <div className='headerTextContainer'>
-                            <h2>Stay on top of you job search</h2>
+                            <h2>Stay on top of your job search</h2>
                             <p className='last-intro-text'>Organize, take notes, set reminders, and keep job descriptions all in one place</p>
 
                         </div>
                         <div className='loginBtnContainer'>
                             <form >
                                 <button className="signup-btn-text">
-                                    <Link to="/signup">Sign up</Link>
+                                    <Link to="/signup"><span>Sign up</span></Link>
                                 </button>
                             </form>
                         </div>
