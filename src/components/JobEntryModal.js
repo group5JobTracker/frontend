@@ -2,8 +2,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import Context from "../context/context"
-import { useContext } from "react";
 
 function JobEntryModal({ setShowJobEntryModal }) {
 
@@ -51,21 +49,6 @@ function JobEntryModal({ setShowJobEntryModal }) {
         })
     }
 
-    // const example = {
-    //     userId: 3, // the ID of the user that is creating the card
-    //     status: 2, // the status of the application
-    //     title: "UX Designer", // the title of the position
-    //     company: "Figma",
-    //     location: "San Diego, CA",
-    //     date: "08/25/22",
-    //     notes: "recruiter really likes pancakes", // can be empty
-    //     contact: "recruiter@figma.com", // email of the recruiter for the job posting
-    //     notif: false, // boolean indicating whether or not the user wants notifications for this application
-    //     color: "#ff0000", // Hex Triplet Color Code for the accent of the card
-    //     desc: "Looking for an entry level UX designer to...",
-    //     tagName: "Remote" // or Office or Hybrid ONLY
-    // }
-
     const createCard = async (application) => {
         const response = await fetch("https://dragonfly.herokuapp.com/applications/create", {
             method: "POST",
@@ -93,17 +76,15 @@ function JobEntryModal({ setShowJobEntryModal }) {
     }
 
     const handleLinkChange = async(e) => {
-        // console.log(e.target.value)
         const parsedLink = e.target.value.split('/')
-        console.log(parsedLink)
-        console.log(validLink(parsedLink));
+
         if(validLink(parsedLink)){
             const formattedLink = parsedLink.slice(0,6).join('/')
             console.log(formattedLink)
             const reqBody = {
                 url : formattedLink
             }
-            const response = await fetch(`http://localhost:3000/applications/auto`,{
+            const response = await fetch(`https://dragonfly.herokuapp.com/applications/auto`,{
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json"
