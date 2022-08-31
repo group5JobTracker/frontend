@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Context from '../context/context';
-// import { axios } from "axios"
 import JobEditModal from "./JobEditModal"
 import CardDisplayed from "./CardDisplayed"
 
 
-function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
+function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm, cardEditModal, setCardEditModal }) {
 
-    const [cardEditModal, setCardEditModal] = useState(false)
+
     const [cardEdited, setCardEdited] = useState({});
     const [userCards, setUserCards] = useState([]);
-    const context = React.useContext(Context)
+
+    const currUser = window.localStorage.getItem("user")
+    const parsedUser = JSON.parse(currUser)
+    const userToken = window.localStorage.getItem('token');
 
 
     const getCards = async (user_id) => {
@@ -20,15 +22,13 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm }) {
     }
 
     useEffect(() => {
-        if (context.userInfo.userInfo) {
-            getCards(context.userInfo.userInfo.user_id)
+        if (parsedUser) {
+            getCards(parsedUser.user_id)
                 .then(data => {
                     setUserCards(data);
                 })
         }
     }, [])
-
-
 
 
     return (

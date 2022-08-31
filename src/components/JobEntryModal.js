@@ -6,12 +6,14 @@ import { useState, useEffect } from "react";
 function JobEntryModal({ setShowJobEntryModal }) {
 
     const [selectedCor, setSelectedCor] = useState(null)
-
     const [appInfo, setAppInfo] = useState({});
+    const [alertToggle, setAlertToggle] = useState(false)
+
 
     const currUser = window.localStorage.getItem("user")
     const parsedUser = JSON.parse(currUser)
     const userToken = window.localStorage.getItem('token');
+
 
     const handleCloseModal = () => {
         setShowJobEntryModal(false);
@@ -21,6 +23,11 @@ function JobEntryModal({ setShowJobEntryModal }) {
         e.preventDefault();
         const cor = e.target.value;
         setSelectedCor(cor)
+    }
+
+    const handleAlertToggle = () => {
+        setAlertToggle(current => !current)
+        console.log(alertToggle);
     }
 
     const handleJobSubmit = (e) => {
@@ -110,6 +117,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
 
             <form action="Sumbit" onSubmit={handleJobSubmit}>
                 <div className="modal_style">
+                    {/* <div className="blur"><p>oi</p></div> */}
                     <div
                         className={selectedCor === "#FE5A5A" ? "headerForm redCorBack" : selectedCor === "#FFAC4A" ? "headerForm orangeCorBack" : selectedCor === "#FFE24A" ? "headerForm yellowCorBack" : selectedCor === "#4AC9FF" ? "headerForm lightBlueCorBack" : selectedCor === "#4A52FF" ? "headerForm darkBlueCorBack" : selectedCor === "#AF4AFF" ? "headerForm purpleCorBack" : selectedCor === "#FF77C9" ? "headerForm pinkCorBack" : "headerForm redCorBack"}
                     >
@@ -125,7 +133,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <button type="submit" className="saveApplication">Save <FontAwesomeIcon icon={faFloppyDisk} /></button>
                         <button className="closeApplication" onClick={() => handleCloseModal()}><FontAwesomeIcon icon={faXmark} /></button>
                     </div>
-
+                    {/* <div className="backgroundBlur"></div> */}
                     <div className="bodyForm">
                         <div className="bodyLeft">
                             <div className="inputForm">
@@ -176,9 +184,13 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                     </div>
 
                                     <div className="minifield alertfield">
-                                        <label htmlFor="alert" className="alertLabel">Reminder Alert</label>
-                                        <input type="checkbox" name="alert" className="alert" />
+                                        <label htmlFor="alert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>Reminder Alert</label>
+                                        <input type="checkbox" name="alert" className="alert" onClick={() => handleAlertToggle()} />
                                     </div>
+                                    {/* <div className="minifield alertfield">
+                                        <label htmlFor="newAlert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>New Alert</label>
+                                        <input type="checkbox" name="newAlert" className="alertNew" onClick={() => handleAlertToggle()} />
+                                    </div> */}
 
 
                                 </div>
@@ -197,7 +209,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                             </div>
                             <div className="leftBottomForm">
                                 <label htmlFor="jobDescription">Job Description</label>
-                                <textarea name="jobDescription" id="jobDescription" cols="30" rows="20"></textarea>
+                                <textarea name="jobDescription" id="jobDescription" cols="30" rows="15"></textarea>
                             </div>
                         </div>
 
