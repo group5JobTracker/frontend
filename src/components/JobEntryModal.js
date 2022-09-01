@@ -63,9 +63,9 @@ function JobEntryModal({ setShowJobEntryModal }) {
 
     const validLink = (parsedLinkInput) => {
         const regex = /^\d+$/
-        if(parsedLinkInput.length >= 6) {
-            if(parsedLinkInput[0] === "https:" && parsedLinkInput[1] === "" && parsedLinkInput[2] === "www.linkedin.com" && parsedLinkInput[3] === "jobs" && parsedLinkInput[4] === "view"){
-                if(parsedLinkInput[5].length === 10 && regex.test(parsedLinkInput[5])){
+        if (parsedLinkInput.length >= 6) {
+            if (parsedLinkInput[0] === "https:" && parsedLinkInput[1] === "" && parsedLinkInput[2] === "www.linkedin.com" && parsedLinkInput[3] === "jobs" && parsedLinkInput[4] === "view") {
+                if (parsedLinkInput[5].length === 10 && regex.test(parsedLinkInput[5])) {
                     return true
                 }
                 return false;
@@ -75,21 +75,21 @@ function JobEntryModal({ setShowJobEntryModal }) {
         return false;
     }
 
-    const handleLinkChange = async(e) => {
+    const handleLinkChange = async (e) => {
         const parsedLink = e.target.value.split('/')
 
-        if(validLink(parsedLink)){
-            const formattedLink = parsedLink.slice(0,6).join('/')
+        if (validLink(parsedLink)) {
+            const formattedLink = parsedLink.slice(0, 6).join('/')
             console.log(formattedLink)
             const reqBody = {
-                url : formattedLink
+                url: formattedLink
             }
-            const response = await fetch(`https://dragonfly.herokuapp.com/applications/auto`,{
-                method : "POST",
-                headers : {
-                    "Content-Type" : "application/json"
+            const response = await fetch(`https://dragonfly.herokuapp.com/applications/auto`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body : JSON.stringify(reqBody)
+                body: JSON.stringify(reqBody)
             })
             const data = await response.json()
             console.log(data)
@@ -187,12 +187,6 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                         <label htmlFor="alert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>Reminder Alert</label>
                                         <input type="checkbox" name="alert" className="alert" onClick={() => handleAlertToggle()} />
                                     </div>
-                                    {/* <div className="minifield alertfield">
-                                        <label htmlFor="newAlert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>New Alert</label>
-                                        <input type="checkbox" name="newAlert" className="alertNew" onClick={() => handleAlertToggle()} />
-                                    </div> */}
-
-
                                 </div>
                             </div>
 
@@ -205,7 +199,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <div className="bodyRight">
                             <div className="rightUpperForm">
                                 <label htmlFor="jobLink">Application Link</label>
-                                <input type="text" id="jobLink" placeholder="https//:...." onChange={handleLinkChange}/>
+                                <input type="text" id="jobLink" placeholder="https//:...." onChange={handleLinkChange} />
                             </div>
                             <div className="leftBottomForm">
                                 <label htmlFor="jobDescription">Job Description</label>
