@@ -8,7 +8,11 @@ body {
     margin-bottom: 20px;
     box-sizing: content-box;
     border-radius: 10px;
+    /* z-index: -1;
+    border: 5px solid yellow; */
+
 }
+
 
 .cardHeader {
     background: rgba(47, 57, 126, 0.4);
@@ -19,6 +23,14 @@ body {
     align-items: center;
     padding-bottom: 10px;
 }
+
+/* .cardOverlay {
+    border: 5px solid yellow;
+    background-color: pink;
+    z-index: 100;
+
+
+} */
 
 .cardBody {
     background: rgba(47, 57, 126, 0.4);
@@ -45,6 +57,10 @@ body {
     margin-top: 20px;
     margin-right: 15.5px;
 }
+
+/* .jobInfo {
+    margin-top: 5px;
+} */
 
 .jobInfo>p {
     margin-bottom: 5px;

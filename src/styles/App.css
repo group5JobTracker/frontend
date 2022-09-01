@@ -782,10 +782,52 @@ button {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 100%;
   color: #FFFFFF;
   -ms-flex-line-pack: start;
       align-content: flex-start;
+}
+
+.cardsCont1 {
+  height: 112px;
+  position: relative;
+}
+.cardsCont1 .card1 {
+  height: 100%;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.cardsCont1 .card1 .cardBody {
+  border-radius: 0px 0px 10px 10px;
+  margin-bottom: -10px;
+  height: 112px;
+}
+.cardsCont1 .card1 .company,
+.cardsCont1 .card1 .location {
+  font-size: 20px;
+}
+.cardsCont1 .card1 .jobInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+.cardsCont1 .card1 .jobInfo .title {
+  font-size: 32px;
+}
+.cardsCont1 .card1 .jobStatus {
+  margin-top: 20px;
+}
+.cardsCont1 .col1 {
+  width: 100%;
+  height: 112px;
+  margin-bottom: 20px;
 }
 
 .cardBody {
@@ -803,13 +845,6 @@ button {
           flex: nowrap;
   height: 200px;
   position: relative;
-}
-
-.col1 {
-  max-width: calc(100% - 10px);
-  min-width: calc(100% - 10px);
-  min-height: 200px;
-  height: 200px;
 }
 
 .col2 {
@@ -835,12 +870,6 @@ button {
       align-self: flex-start;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-}
-
-.cardsCont1 {
-  max-width: 800px;
-  width: 80%;
-  margin: 0 auto;
 }
 
 .cardsCont2 {
@@ -1129,6 +1158,8 @@ input[type=checkbox] {
   position: absolute;
   right: 30px;
   border-radius: 30px;
+  -webkit-transition: 1.35s;
+  transition: 1.35s;
 }
 
 .alertLabel::after {
@@ -1144,12 +1175,15 @@ input[type=checkbox] {
   transition: 0.5s;
 }
 
+input[type=checkbox]:checked ~ .alertLabel::before {
+  background-color: #af4aff;
+}
+
 .checked.alertLabel::after {
   right: 32.5px;
 }
-
-.checked.alerLabel:before {
-  background-color: none;
+.checked.alertLabel::before {
+  background-color: greenyellow;
 }
 
 .statusApp::before {
@@ -1158,4 +1192,86 @@ input[type=checkbox] {
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+
+.selectedColor {
+  height: 24px;
+  width: 24px;
+  background-color: #fe5a5a;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.colorPicker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  position: relative;
+}
+
+.colorPicker:hover > .colorOptions,
+.colorPicker:focus > .colorOptions,
+.colorPicker:focus-within > .colorOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.colorOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 44px;
+  margin-left: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(47, 57, 126, 0.4);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 4px 1px #000000;
+          box-shadow: 0px 2px 4px 1px #000000;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 115px;
+}
+
+.colorOptions input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.colorOptions div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px solid white;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  margin: 0 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+}
+
+.colorOptions div:hover,
+.colorOptions div:focus,
+.colorOptions div:focus-within {
+  scale: 1.3;
 }

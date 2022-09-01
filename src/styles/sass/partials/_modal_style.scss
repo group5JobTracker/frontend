@@ -12,7 +12,6 @@
     textarea {
         color: $white;
         padding: 15px;
-
     }
 }
 
@@ -28,15 +27,6 @@
     // overflow-y: scroll;
 }
 
-// .blur {
-//     background-color: $background2;
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-//     z-index: -2;
-//     backdrop-filter: blur(50px);
-//     border-radius: 20px;
-// }
 
 .headerForm {
     position: relative;
@@ -291,14 +281,8 @@ input[type=checkbox] {
     opacity: 0;
     position: absolute;
     right: 20px;
-    // top: 5px;
     height: 40px;
     width: 150px;
-
-
-    // &:checked+.alertLabel::after {
-    //     right: 3px;
-    // }
 }
 
 
@@ -310,6 +294,7 @@ input[type=checkbox] {
     position: absolute;
     right: 30px;
     border-radius: 30px;
+    transition: 1.35s;
 }
 
 .alertLabel::after {
@@ -322,7 +307,10 @@ input[type=checkbox] {
     border-radius: 50%;
     background-color: $white;
     transition: 0.5s;
+}
 
+input[type=checkbox]:checked~.alertLabel::before {
+    background-color: #af4aff;
 }
 
 .checked {
@@ -330,16 +318,11 @@ input[type=checkbox] {
         right: 32.5px;
     }
 
-    // &.alerLabel::before {
-    //     background-color: greenyellow;
-    // }
-}
-
-.checked {
-    &.alerLabel:before {
-        background-color: none;
+    &.alertLabel::before {
+        background-color: greenyellow;
     }
 }
+
 
 .statusApp::before {
     content: "";
@@ -350,46 +333,93 @@ input[type=checkbox] {
 }
 
 
+.selectedColor {
+    height: 24px;
+    width: 24px;
+    background-color: #fe5a5a;
+    border-radius: 50%;
+    margin-left: 20px;
+}
 
+.colorPicker {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    position: relative;
+}
 
+.colorPicker:hover>.colorOptions,
+.colorPicker:focus>.colorOptions,
+.colorPicker:focus-within>.colorOptions {
+    display: flex;
+}
 
-// .dot {
-//     height: 24px;
-//     width: 24px;
-//     border-radius: 50%;
-//     display: inline-block;
-//     margin-right: 18px;
+.colorOptions {
+    display: flex;
+    height: 44px;
+    margin-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f397e66;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 1px #000000;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 115px;
+}
+
+.colorOptions input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.colorOptions div {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.2s;
+    position: relative;
+}
+
+.colorOptions div:hover,
+.colorOptions div:focus,
+.colorOptions div:focus-within {
+    scale: 1.3;
+}
+
+// .colorOptions div:nth-child(1) {
+//     background-color: #fe5a5a;
 // }
 
-// .redDot {
-//     background-color: #FE5A5A;
+// .colorOptions div:nth-child(2) {
+//     background-color: #ffac4a;
 // }
 
-// .orangeDot {
-//     background-color: #FFAC4A;
+// .colorOptions div:nth-child(3) {
+//     background-color: #ffe24a;
 // }
 
-// .yellowDot {
-//     background-color: #FFE24A;
+// .colorOptions div:nth-child(4) {
+//     background-color: #4ac9ff;
 // }
 
-// .greenDot {
-//     background-color: #63BF37;
+// .colorOptions div:nth-child(5) {
+//     background-color: #4a52ff;
 // }
 
-// .lightBlueDot {
-//     background-color: #4AC9FF;
+// .colorOptions div:nth-child(6) {
+//     background-color: #af4aff;
 // }
 
-// .mediumBlueDot {
-//     background-color: #4A52FF;
-// }
-
-// .purpleDot {
-//     background-color: #AF4AFF;
-// }
-
-// .pinkDot {
-//     background-color: #FF77C9;
-//     margin-right: 0px !important;
+// .colorOptions div:nth-child(7) {
+//     background-color: #ff77c9;
 // }

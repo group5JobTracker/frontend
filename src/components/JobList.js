@@ -43,7 +43,7 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm, cardEditM
             }).map((cardInfo) =>
                 <CardDisplayed cardInfo={cardInfo} showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} setCardEditModal={setCardEditModal} cardEditModal={cardEditModal} key={cardInfo.app_id} />
             )}
-            {/* {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} /> : ""} */}
+            {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} /> : ""}
 
         </div>
     )
