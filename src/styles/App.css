@@ -808,21 +808,29 @@ button {
 .col1 {
   max-width: calc(100% - 10px);
   min-width: calc(100% - 10px);
+  min-height: 200px;
+  height: 200px;
 }
 
 .col2 {
   max-width: 368px;
   min-width: 368px;
+  min-height: 200px;
+  height: 200px;
 }
 
 .col3 {
   max-width: 368px;
   min-width: 368px;
+  min-height: 200px;
+  height: 200px;
 }
 
 .col4 {
   max-width: calc(25% - 5px);
   min-width: calc(25% - 5px);
+  min-height: 200px;
+  height: 200px;
   -ms-flex-item-align: start;
       align-self: flex-start;
   -ms-flex-line-pack: start;

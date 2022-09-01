@@ -50,7 +50,7 @@ function Dashboard() {
 
             {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
 
-            <button className='logOutButton' onClick={handleLogOut}>LOG OUT</button>
+            <button className='logOutButton' onClick={handleLogOut}>Log off</button>
 
             {/* </div> */}
 
