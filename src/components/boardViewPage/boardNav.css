@@ -1,23 +1,29 @@
 .navBarContainer {
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 30px;
     margin-bottom: 40px;
+    /* position: relative; */
 }
 
 .navigationSection {
     display: flex;
+    height: 40px;
     column-gap: 50px;
-    margin-left: 80px;
+    align-items: center;
 }
 
 .navigationSection>p {
     font-size: 16px;
     font-weight: 400;
     color: #FFFFFF;
-    border-bottom: 0.5px solid white;
+    border-bottom: 1px solid white;
     padding-bottom: 5px;
+
 }
 
 .cardViewLink {
@@ -34,6 +40,9 @@
     display: flex;
     margin-right: 80px;
     column-gap: 120px;
+    /* position: absolute;
+    top: 30px;
+    right: 0 */
 }
 
 .addCardButton {
@@ -53,4 +62,7 @@
     color: white;
     border: 2px solid white;
     border-radius: 10px;
+    position: absolute;
+    top: 25px;
+    right: 15px;
 }

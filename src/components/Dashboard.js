@@ -32,27 +32,27 @@ function Dashboard() {
 
     return (
         <div className={showJobEntryModal || cardEditModal ? "dashboardStyle overflowH" : "dashboardStyle"}>
-            <div className="wrapper">
-                <NavBar
-                    setShowJobEntryModal={setShowJobEntryModal}
-                    setCardViewToggle={setCardViewToggle}
-                    cardViewToggle={cardViewToggle}
-                    showCol1={showCol1}
-                    showCol2={showCol2}
-                    showCol3={showCol3}
-                    showCol4={showCol4}
-                    setShowCol1={setShowCol1}
-                    setShowCol2={setShowCol2}
-                    setShowCol3={setShowCol3}
-                    setShowCol4={setShowCol4}
-                    setSearchTerm={setSearchTerm} />
-                {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} searchTerm={searchTerm} cardEditModal={cardEditModal} setCardEditModal={setCardEditModal} /> : <Navigate to={"/boards"} />}
+            {/* <div className="wrapper"> */}
+            <NavBar className="wrapper"
+                setShowJobEntryModal={setShowJobEntryModal}
+                setCardViewToggle={setCardViewToggle}
+                cardViewToggle={cardViewToggle}
+                showCol1={showCol1}
+                showCol2={showCol2}
+                showCol3={showCol3}
+                showCol4={showCol4}
+                setShowCol1={setShowCol1}
+                setShowCol2={setShowCol2}
+                setShowCol3={setShowCol3}
+                setShowCol4={setShowCol4}
+                setSearchTerm={setSearchTerm} />
+            {cardViewToggle ? <JobList showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} showCol4={showCol4} searchTerm={searchTerm} cardEditModal={cardEditModal} setCardEditModal={setCardEditModal} /> : <Navigate to={"/boards"} />}
 
-                {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
+            {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
 
-                <button className='logOutButton' onClick={handleLogOut}>LOG OUT</button>
+            <button className='logOutButton' onClick={handleLogOut}>Log off</button>
 
-            </div>
+            {/* </div> */}
 
         </div>
     )
