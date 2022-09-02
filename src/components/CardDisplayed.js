@@ -4,46 +4,44 @@ import { useEffect } from 'react';
 import JobEditModal from "./JobEditModal"
 import { useState } from 'react';
 
-const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModal, cardEditModal }) => {
+const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModal, cardEditModal, setAppKey }) => {
     const formattedDate = cardInfo.created_at.split("T")[0];
 
-    const [appKey, setAppKey] = useState("")
+    // const [appKey, setAppKey] = useState("")
 
     const handleCardSelected = (e) => {
-        console.log(e);
-        // setAppKey(e.target.__reactFiber$a9o0hl4c2ta.key);
+        // console.log(e.target.id);
+        setAppKey(e.target.id);
         // console.log(e);
     }
-
-    // console.log(appKey);
 
     // key={cardInfo.app_id}
 
     return (
         // <div className='cardOverlay'>
-        <div className={showCol1 ? "card1 col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={(e) => {
-            // handleCardSelected(e)
+        <div id={cardInfo.app_id} className={showCol1 ? "card1 col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={(e) => {
+            handleCardSelected(e)
             setCardEditModal(true)
         }} >
             {/* <div className='cardHeader'> */}
-            <div className="cardBody">
-                <div className="cardTags">
-                    <p className="tagPill" style={cardInfo.tagName === "Remote" ? { background: "#4AC9FF" } : cardInfo.tagName === "Office" ? { background: "#FFE24A" } : { background: "#63BF37" }}>{cardInfo.tagName}</p>
+            <div className="cardBody" id={cardInfo.app_id}>
+                <div className="cardTags" id={cardInfo.app_id}>
+                    <p className="tagPill" id={cardInfo.app_id} style={cardInfo.tagName === "Remote" ? { background: "#4AC9FF" } : cardInfo.tagName === "Office" ? { background: "#FFE24A" } : { background: "#63BF37" }}>{cardInfo.tagName}</p>
                 </div>
 
-                <div className="jobInfo">
-                    <p className="title">{cardInfo.position}</p>
-                    <p className="company">{cardInfo.company}</p>
-                    <p className="location">{cardInfo.location}</p>
+                <div className="jobInfo" id={cardInfo.app_id}>
+                    <p className="title" id={cardInfo.app_id}>{cardInfo.position}</p>
+                    <p className="company" id={cardInfo.app_id}>{cardInfo.company}</p>
+                    <p className="location" id={cardInfo.app_id}>{cardInfo.location}</p>
                 </div>
 
-                <div className="jobStatus">
-                    <p>Date Applied: {formattedDate}</p>
-                    <p>Status: {cardInfo.status}</p>
+                <div className="jobStatus" id={cardInfo.app_id}>
+                    <p id={cardInfo.app_id}>Date Applied: {formattedDate}</p>
+                    <p id={cardInfo.app_id}>Status: {cardInfo.status}</p>
                 </div>
             </div>
             {/* </div> */}
-            <div className="accentColor" style={{ background: cardInfo.card_color_hex }}></div>
+            <div className="accentColor" id={cardInfo.app_id} style={{ background: cardInfo.card_color_hex }}></div>
             {/* {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} appKey={appKey} cardEditModal={cardEditModal} /> : ""} */}
         </div>
         // </div>

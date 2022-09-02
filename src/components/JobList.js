@@ -4,11 +4,12 @@ import JobEditModal from "./JobEditModal"
 import CardDisplayed from "./CardDisplayed"
 
 
-function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm, cardEditModal, setCardEditModal, llave }) {
+function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm, cardEditModal, setCardEditModal }) {
 
 
     const [cardEdited, setCardEdited] = useState({});
     const [userCards, setUserCards] = useState([]);
+    const [appKey, setAppKey] = useState("")
 
     const currUser = window.localStorage.getItem("user")
     const parsedUser = JSON.parse(currUser)
@@ -31,6 +32,8 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm, cardEditM
     }, [])
 
 
+
+
     return (
         <div className={showCol1 ? "jobDisplayed cardsCont1 wrapper" : showCol2 ? "jobDisplayed cardsCont2 wrapper" : showCol3 ? "jobDisplayed cardsCont3 wrapper" : "jobDisplayed cardsCont4 wrapper2"}>
             {userCards.filter((val) => {
@@ -41,9 +44,9 @@ function JobList({ showCol1, showCol2, showCol3, showCol4, searchTerm, cardEditM
                     return val
                 }
             }).map((cardInfo) =>
-                <CardDisplayed cardInfo={cardInfo} showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} setCardEditModal={setCardEditModal} cardEditModal={cardEditModal} key={cardInfo.app_id} />
+                <CardDisplayed cardInfo={cardInfo} showCol1={showCol1} showCol2={showCol2} showCol3={showCol3} setCardEditModal={setCardEditModal} cardEditModal={cardEditModal} setAppKey={setAppKey} key={cardInfo.app_id} />
             )}
-            {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} /> : ""}
+            {cardEditModal ? <JobEditModal setCardEditModal={setCardEditModal} appKey={appKey} /> : ""}
 
         </div>
     )

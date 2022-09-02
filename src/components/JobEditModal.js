@@ -6,7 +6,7 @@ import Context from "../context/context"
 import { useContext } from "react";
 import arrow from "../imgFiles/arrow-up-vector.svg"
 
-function JobEntryModal({ setCardEditModal }) {
+function JobEntryModal({ setCardEditModal, appKey }) {
 
     const [selectedCor, setSelectedCor] = useState(null)
     const [appInfo, setAppInfo] = useState({});
@@ -19,6 +19,8 @@ function JobEntryModal({ setCardEditModal }) {
     const parsedUser = JSON.parse(currUser)
     const userToken = window.localStorage.getItem('token');
 
+    console.log(appKey);
+
 
     // const getCardInfo = async (user_id) => {
     //     const res = await fetch(`https://dragonfly.herokuapp.com/applications/${user_id}`);
@@ -27,20 +29,20 @@ function JobEntryModal({ setCardEditModal }) {
     // }
 
 
-    // const getCardInfo = async (appKey) => {
-    //     const res = await fetch(`https://dragonfly.herokuapp.com/applications/${appKey}`);
-    //     const data = await res.json();
-    //     return data.posts;
-    // }
+    const getCardInfo = async (appKey) => {
+        const res = await fetch(`https://dragonfly.herokuapp.com/applications/${appKey}`);
+        const data = await res.json();
+        return data.posts;
+    }
 
-    // useEffect(() => {
-    //     if (parsedUser) {
-    //         getCardInfo(appKey)
-    //             .then(data => {
-    //                 setCardEdited(data);
-    //             })
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (parsedUser) {
+            getCardInfo(appKey)
+                .then(data => {
+                    setCardEdited(data);
+                })
+        }
+    }, [])
 
     // useEffect(() => {
     //     if (parsedUser) {
@@ -96,10 +98,12 @@ function JobEntryModal({ setCardEditModal }) {
             <form action="Sumbit" onSubmit={handleJobChange}>
                 <div className="modal_style">
                     <div
-                        className={selectedCor === "#FE5A5A" ? "headerForm redCorBack" : selectedCor === "#FFAC4A" ? "headerForm orangeCorBack" : selectedCor === "#FFE24A" ? "headerForm yellowCorBack" : selectedCor === "#4AC9FF" ? "headerForm lightBlueCorBack" : selectedCor === "#4A52FF" ? "headerForm darkBlueCorBack" : selectedCor === "#AF4AFF" ? "headerForm purpleCorBack" : selectedCor === "#FF77C9" ? "headerForm pinkCorBack" : "headerForm redCorBack"}
+                        className="headerForm" style={selectedCor === null ? { backgroundColor: `${cardEdited.card_color_hex}` } : selectedCor === "#FE5A5A" ? { backgroundColor: "#FE5A5A" } : selectedCor === "#FFAC4A" ? { backgroundColor: "#FFAC4A" } : selectedCor === "#FFE24A" ? { backgroundColor: "#FFE24A" } : selectedCor === "#4AC9FF" ? { backgroundColor: "#4AC9FF" } : selectedCor === "#4A52FF" ? { backgroundColor: "#4A52FF" } : selectedCor === "#AF4AFF" ? { backgroundColor: "#AF4AFF" } : selectedCor === "#FF77C9" ? { backgroundColor: "#FF77C9" } : {}}
+                    // className={selectedCor === null ? `${cardEdited.card_color_hex
+                    //     }` : selectedCor === "#FE5A5A" ? "headerForm redCorBack" : selectedCor === "#FFAC4A" ? "headerForm orangeCorBack" : selectedCor === "#FFE24A" ? "headerForm yellowCorBack" : selectedCor === "#4AC9FF" ? "headerForm lightBlueCorBack" : selectedCor === "#4A52FF" ? "headerForm darkBlueCorBack" : selectedCor === "#AF4AFF" ? "headerForm purpleCorBack" : selectedCor === "#FF77C9" ? "headerForm pinkCorBack" : "headerForm redCorBack" }
                     >
                         <label htmlFor="jobTitle" className="sr-only" >Title</label>
-                        <input type="text" id="jobTitle" name="title" placeholder="Position" value={cardEdited.title} />
+                        <input type="text" id="jobTitle" name="title" placeholder="Position" value={cardEdited.position} />
 
                         <label htmlFor="company" className="sr-only" >Job Title</label>
                         <input type="text" id="company" name="company" placeholder="Company" value={cardEdited.company} />
@@ -128,11 +132,11 @@ function JobEntryModal({ setCardEditModal }) {
                                     </div>
                                     <div className="minifield">
                                         <label htmlFor="dateApplied">Date Applied</label>
-                                        <input type="text" id="dateApplied" name="dateApplied" placeholder="MM/DD/YYYY" value={cardEdited.date} />
+                                        <input type="text" id="dateApplied" name="dateApplied" placeholder="MM/DD/YYYY" value={cardEdited.created_at} />
                                     </div>
                                     <div className="minifield">
                                         <label htmlFor="contact">Contact</label>
-                                        <input type="email" id="contact" name="contact" placeholder="youremail@email.com" value={cardEdited.contact} />
+                                        <input type="email" id="contact" name="contact" placeholder="youremail@email.com" value={cardEdited.recruiter_email} />
                                     </div>
                                 </div>
 
@@ -148,7 +152,10 @@ function JobEntryModal({ setCardEditModal }) {
 
                                     <div className="minifield colorPicker">
                                         <legend>Card Color</legend>
-                                        <div class="selectedColor" style={{ backgroundColor: `${selectedCor}` }}></div>
+                                        <div class="selectedColor" style={{
+                                            backgroundColor: `${cardEdited.card_color_hex
+                                                }`
+                                        }}></div>
                                         <div class="colorOptions">
                                             <div className="redCorBack" onChange={(e) => handleColorCard(e)}>
                                                 <label class="sr-only" for="red">Red</label>
