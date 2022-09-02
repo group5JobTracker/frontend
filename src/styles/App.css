@@ -1156,6 +1156,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: relative;
 }
 .minifield input {
   width: 50%;
@@ -1305,4 +1306,58 @@ input[type=checkbox]:checked ~ .alertLabel::before {
 .colorOptions div:focus,
 .colorOptions div:focus-within {
   scale: 1.3;
+}
+
+.statusMinifield {
+  position: relative;
+}
+
+#status {
+  -ms-flex-item-align: center;
+      align-self: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 25px;
+  width: 130px;
+  padding: 0px 10px 0px 10px;
+  background-color: rgba(47, 57, 126, 0.4);
+  position: relative;
+}
+#status option {
+  height: 100px;
+  margin: 55px;
+  padding: 100px;
+  background: transparent;
+}
+#status option-slected {
+  background: transparent;
+}
+
+#cardLabel {
+  -ms-flex-item-align: center;
+      align-self: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 12px;
+  height: 25px;
+  width: 70px;
+  padding-left: 5px;
+  background-color: rgba(47, 57, 126, 0.4);
+  position: relative;
+}
+#cardLabel option {
+  height: 100px;
+  margin: 55px;
+  padding: 100px;
+  background-color: #353945;
+  background: transparent;
+}
+
+#cardLabel::after {
+  content: "+";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
