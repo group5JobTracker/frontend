@@ -138,7 +138,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <div className="bodyLeft">
                             <div className="inputForm">
                                 <div className="inputLeft">
-                                    <div className="minifield">
+                                    <div className="minifield statusMinifield">
                                         <label htmlFor="status">Status</label>
                                         <select name="statusOfApplication" id="status" >
                                             <option value="Need to Apply">Need to Apply</option>
@@ -149,6 +149,17 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                             <option value="Accepted">Accepted</option>
                                         </select>
                                     </div>
+                                    {/* <div className="minifield">
+                                        <label htmlFor="status">Status</label>
+                                        <select name="statusOfApplication" id="status" >
+                                            <option value="Need to Apply">Need to Apply</option>
+                                            <option value="Applied">Applied</option>
+                                            <option value="Screened">Screened</option>
+                                            <option value="Interview Set">Interview Set</option>
+                                            <option value="Rejected">Rejected</option>
+                                            <option value="Accepted">Accepted</option>
+                                        </select>
+                                    </div> */}
                                     <div className="minifield">
                                         <label htmlFor="dateApplied">Date Applied</label>
                                         <input type="text" id="dateApplied" name="dateApplied" placeholder="MM/DD/YYYY" />
@@ -160,7 +171,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                 </div>
 
                                 <div className="inputRight">
-                                    <div className="minifield">
+                                    <div className="minifield workingStatus">
                                         <label htmlFor="labels">Labels</label>
                                         <select name="labels" id="cardLabel">
                                             <option value="Office">Office</option>
