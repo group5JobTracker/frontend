@@ -2,8 +2,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import Context from "../context/context"
-import { useContext } from "react";
 import arrow from "../imgFiles/arrow-up-vector.svg"
 
 function JobEntryModal({ setCardEditModal, appKey }) {
@@ -11,22 +9,12 @@ function JobEntryModal({ setCardEditModal, appKey }) {
     const [selectedCor, setSelectedCor] = useState(null)
     const [appInfo, setAppInfo] = useState({});
     const [alertToggle, setAlertToggle] = useState(false)
-    // const context = useContext(Context)
 
     const [cardEdited, setCardEdited] = useState({});
 
     const currUser = window.localStorage.getItem("user")
     const parsedUser = JSON.parse(currUser)
     const userToken = window.localStorage.getItem('token');
-
-    console.log(appKey);
-
-
-    // const getCardInfo = async (user_id) => {
-    //     const res = await fetch(`https://dragonfly.herokuapp.com/applications/${user_id}`);
-    //     const data = await res.json();
-    //     return data.posts;
-    // }
 
 
     const getCardInfo = async (appKey) => {
@@ -43,18 +31,6 @@ function JobEntryModal({ setCardEditModal, appKey }) {
                 })
         }
     }, [])
-
-    // useEffect(() => {
-    //     if (parsedUser) {
-    //         getCardInfo(parsedUser.user_id)
-    //             .then(data => {
-    //                 setCardEdited(data);
-    //             })
-    //     }
-    // }, [])
-
-
-    // console.log(cardEdited);
 
     const handleCloseModal = () => {
         setCardEditModal(false);
@@ -99,8 +75,6 @@ function JobEntryModal({ setCardEditModal, appKey }) {
                 <div className="modal_style">
                     <div
                         className="headerForm" style={selectedCor === null ? { backgroundColor: `${cardEdited.card_color_hex}` } : selectedCor === "#FE5A5A" ? { backgroundColor: "#FE5A5A" } : selectedCor === "#FFAC4A" ? { backgroundColor: "#FFAC4A" } : selectedCor === "#FFE24A" ? { backgroundColor: "#FFE24A" } : selectedCor === "#4AC9FF" ? { backgroundColor: "#4AC9FF" } : selectedCor === "#4A52FF" ? { backgroundColor: "#4A52FF" } : selectedCor === "#AF4AFF" ? { backgroundColor: "#AF4AFF" } : selectedCor === "#FF77C9" ? { backgroundColor: "#FF77C9" } : {}}
-                    // className={selectedCor === null ? `${cardEdited.card_color_hex
-                    //     }` : selectedCor === "#FE5A5A" ? "headerForm redCorBack" : selectedCor === "#FFAC4A" ? "headerForm orangeCorBack" : selectedCor === "#FFE24A" ? "headerForm yellowCorBack" : selectedCor === "#4AC9FF" ? "headerForm lightBlueCorBack" : selectedCor === "#4A52FF" ? "headerForm darkBlueCorBack" : selectedCor === "#AF4AFF" ? "headerForm purpleCorBack" : selectedCor === "#FF77C9" ? "headerForm pinkCorBack" : "headerForm redCorBack" }
                     >
                         <label htmlFor="jobTitle" className="sr-only" >Title</label>
                         <input type="text" id="jobTitle" name="title" placeholder="Position" value={cardEdited.position} />

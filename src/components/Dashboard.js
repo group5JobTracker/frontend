@@ -24,7 +24,6 @@ function Dashboard() {
     const userTolken = window.localStorage.getItem("tolken");
 
 
-
     const handleLogOut = () => {
         window.localStorage.clear()
         navigate('/', { replace: true })
@@ -32,7 +31,7 @@ function Dashboard() {
 
     return (
         <div className={showJobEntryModal || cardEditModal ? "dashboardStyle overflowH" : "dashboardStyle"}>
-            {/* <div className="wrapper"> */}
+
             <NavBar className="wrapper"
                 setShowJobEntryModal={setShowJobEntryModal}
                 setCardViewToggle={setCardViewToggle}
@@ -51,8 +50,6 @@ function Dashboard() {
             {showJobEntryModal ? <JobEntryModal setShowJobEntryModal={setShowJobEntryModal} /> : ""}
 
             <button className='logOutButton' onClick={handleLogOut}>Log off</button>
-
-            {/* </div> */}
 
         </div>
     )

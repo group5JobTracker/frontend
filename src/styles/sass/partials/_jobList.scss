@@ -2,45 +2,59 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    // height: 100%;
     color: $white;
     align-content: flex-start;
 
 }
-
 
 .cardsCont1 {
     height: 112px;
     position: relative;
 
     .card1 {
-        height: 100%;
-        margin-bottom: 20px;
         display: flex;
         flex-direction: column-reverse;
 
         .cardBody {
             border-radius: 0px 0px 10px 10px;
             margin-bottom: -10px;
-            height: 112px;
+            height: 102px;
+            position: relative;
         }
 
-        .company,
-        .location {
-            font-size: 20px;
+        .cardTags {
+            position: absolute;
+            top: 15px;
+            right: 50px;
         }
 
         .jobInfo {
             display: flex;
-            align-content: flex-start;
+            margin-top: 10px;
 
             .title {
                 font-size: 32px;
             }
+
+            .company,
+            .location {
+                font-size: 20px;
+                align-self: center;
+                margin-bottom: 0px;
+            }
         }
 
         .jobStatus {
-            margin-top: 20px;
+            margin-top: 15px;
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .accentColor {
+            height: 10px;
+            border-radius: 10px 10px 0px 0px;
         }
     }
 

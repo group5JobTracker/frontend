@@ -202,17 +202,6 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                                 <input type="radio" name="color" value="#FF77C9" />
                                             </div>
                                         </div>
-                                        {/* <label htmlFor="cardColor">Card Color</label>
-                                        <select name="cardColor" id="cardColor"
-                                            onChange={(e) => handleColorCard(e)}>
-                                            <option value="#FE5A5A">Red</option>
-                                            <option value="#FFAC4A">Orange</option>
-                                            <option value="#FFE24A">Yellow</option>
-                                            <option value="#4AC9FF">Light Blue</option>
-                                            <option value="#4A52FF">Dark Blue</option>
-                                            <option value="#AF4AFF">Purple</option>
-                                            <option value="#FF77C9">Pink</option>
-                                        </select> */}
                                     </div>
 
                                     <div className="minifield alertfield">

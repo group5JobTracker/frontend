@@ -792,8 +792,6 @@ button {
   position: relative;
 }
 .cardsCont1 .card1 {
-  height: 100%;
-  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -805,24 +803,39 @@ button {
 .cardsCont1 .card1 .cardBody {
   border-radius: 0px 0px 10px 10px;
   margin-bottom: -10px;
-  height: 112px;
+  height: 102px;
+  position: relative;
 }
-.cardsCont1 .card1 .company,
-.cardsCont1 .card1 .location {
-  font-size: 20px;
+.cardsCont1 .card1 .cardTags {
+  position: absolute;
+  top: 15px;
+  right: 50px;
 }
 .cardsCont1 .card1 .jobInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
+  margin-top: 10px;
 }
 .cardsCont1 .card1 .jobInfo .title {
   font-size: 32px;
 }
+.cardsCont1 .card1 .jobInfo .company,
+.cardsCont1 .card1 .jobInfo .location {
+  font-size: 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 0px;
+}
 .cardsCont1 .card1 .jobStatus {
-  margin-top: 20px;
+  margin-top: 15px;
+}
+.cardsCont1 .card1 .jobStatus p {
+  font-size: 16px;
+}
+.cardsCont1 .card1 .accentColor {
+  height: 10px;
+  border-radius: 10px 10px 0px 0px;
 }
 .cardsCont1 .col1 {
   width: 100%;
