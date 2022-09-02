@@ -63,9 +63,9 @@ function JobEntryModal({ setShowJobEntryModal }) {
 
     const validLink = (parsedLinkInput) => {
         const regex = /^\d+$/
-        if(parsedLinkInput.length >= 6) {
-            if(parsedLinkInput[0] === "https:" && parsedLinkInput[1] === "" && parsedLinkInput[2] === "www.linkedin.com" && parsedLinkInput[3] === "jobs" && parsedLinkInput[4] === "view"){
-                if(parsedLinkInput[5].length === 10 && regex.test(parsedLinkInput[5])){
+        if (parsedLinkInput.length >= 6) {
+            if (parsedLinkInput[0] === "https:" && parsedLinkInput[1] === "" && parsedLinkInput[2] === "www.linkedin.com" && parsedLinkInput[3] === "jobs" && parsedLinkInput[4] === "view") {
+                if (parsedLinkInput[5].length === 10 && regex.test(parsedLinkInput[5])) {
                     return true
                 }
                 return false;
@@ -75,21 +75,21 @@ function JobEntryModal({ setShowJobEntryModal }) {
         return false;
     }
 
-    const handleLinkChange = async(e) => {
+    const handleLinkChange = async (e) => {
         const parsedLink = e.target.value.split('/')
 
-        if(validLink(parsedLink)){
-            const formattedLink = parsedLink.slice(0,6).join('/')
+        if (validLink(parsedLink)) {
+            const formattedLink = parsedLink.slice(0, 6).join('/')
             console.log(formattedLink)
             const reqBody = {
-                url : formattedLink
+                url: formattedLink
             }
-            const response = await fetch(`https://dragonfly.herokuapp.com/applications/auto`,{
-                method : "POST",
-                headers : {
-                    "Content-Type" : "application/json"
+            const response = await fetch(`https://dragonfly.herokuapp.com/applications/auto`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body : JSON.stringify(reqBody)
+                body: JSON.stringify(reqBody)
             })
             const data = await response.json()
             console.log(data)
@@ -169,30 +169,45 @@ function JobEntryModal({ setShowJobEntryModal }) {
                                         </select>
                                     </div>
 
-                                    <div className="minifield">
-                                        <label htmlFor="cardColor">Card Color</label>
-                                        <select name="cardColor" id="cardColor"
-                                            onChange={(e) => handleColorCard(e)}>
-                                            <option value="#FE5A5A">Red</option>
-                                            <option value="#FFAC4A">Orange</option>
-                                            <option value="#FFE24A">Yellow</option>
-                                            <option value="#4AC9FF">Light Blue</option>
-                                            <option value="#4A52FF">Dark Blue</option>
-                                            <option value="#AF4AFF">Purple</option>
-                                            <option value="#FF77C9">Pink</option>
-                                        </select>
+                                    <div className="minifield colorPicker">
+                                        <legend>Card Color</legend>
+                                        <div class="selectedColor" style={{ backgroundColor: `${selectedCor}` }}></div>
+                                        <div class="colorOptions">
+                                            <div className="redCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="red">Red</label>
+                                                <input type="radio" name="color" value="#FE5A5A" />
+                                            </div>
+                                            <div className="orangeCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="orange">Orange</label>
+                                                <input type="radio" name="color" value="#FFAC4A" />
+                                            </div>
+                                            <div className="yellowCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="yellow">Yellow</label>
+                                                <input type="radio" name="color" value="#FFE24A" />
+                                            </div>
+                                            <div className="lightBlueCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="light blue">Light Blue</label>
+                                                <input type="radio" name="color" value="#4AC9FF" />
+                                            </div>
+                                            <div className="darkBlueCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="dark blue">Dark Blue</label>
+                                                <input type="radio" name="color" value="#4A52FF" />
+                                            </div>
+                                            <div className="purpleCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="purple">Purple</label>
+                                                <input type="radio" name="color" value="#AF4AFF" />
+                                            </div>
+                                            <div className="pinkCorBack" onChange={(e) => handleColorCard(e)}>
+                                                <label class="sr-only" for="pink">Pink</label>
+                                                <input type="radio" name="color" value="#FF77C9" />
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div className="minifield alertfield">
                                         <label htmlFor="alert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>Reminder Alert</label>
-                                        <input type="checkbox" name="alert" className="alert" onClick={() => handleAlertToggle()} />
+                                        <input type="checkbox" name="alert" className="alert" onClick={() => setAlertToggle(current => !current)} />
                                     </div>
-                                    {/* <div className="minifield alertfield">
-                                        <label htmlFor="newAlert" className={alertToggle ? "alertLabel checked" : "alertLabel"}>New Alert</label>
-                                        <input type="checkbox" name="newAlert" className="alertNew" onClick={() => handleAlertToggle()} />
-                                    </div> */}
-
-
                                 </div>
                             </div>
 
@@ -205,7 +220,7 @@ function JobEntryModal({ setShowJobEntryModal }) {
                         <div className="bodyRight">
                             <div className="rightUpperForm">
                                 <label htmlFor="jobLink">Application Link</label>
-                                <input type="text" id="jobLink" placeholder="https//:...." onChange={handleLinkChange}/>
+                                <input type="text" id="jobLink" placeholder="https//:...." onChange={handleLinkChange} />
                             </div>
                             <div className="leftBottomForm">
                                 <label htmlFor="jobDescription">Job Description</label>

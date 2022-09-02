@@ -357,11 +357,7 @@ button {
   transition: 0.6s;
 }
 .login-btn-text:hover, .login-btn-text:focus-within {
-  background-color: white;
-  border: 2px solid #4d50ff;
-}
-.login-btn-text:hover span, .login-btn-text:focus-within span {
-  color: #12152A;
+  background-color: #646BFF;
 }
 
 .firstPage_landingPage {
@@ -401,10 +397,7 @@ button {
   transition: 0.6s;
 }
 .signup-btn-text:hover, .signup-btn-text:focus-within {
-  background-color: white;
-}
-.signup-btn-text:hover span, .signup-btn-text:focus-within span {
-  color: #4d50ff;
+  background-color: #646BFF;
 }
 
 .pageWrapper {
@@ -689,6 +682,7 @@ button {
   -ms-flex-item-align: end;
       align-self: flex-end;
   position: relative;
+  margin-right: 20px;
 }
 .searchCreate .searchBar :active,
 .searchCreate .searchBar :focus {
@@ -702,7 +696,7 @@ button {
   -webkit-transition: all 0.8s ease-in 0.2s;
   transition: all 0.8s ease-in 0.2s;
   position: absolute;
-  right: 0px;
+  right: 10px;
   background-color: #353945;
 }
 .searchCreate .searchBar button {
@@ -718,6 +712,18 @@ button {
 }
 .searchCreate .newAppBtnContainer button {
   z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 23px;
+}
+.searchCreate .newAppBtnContainer button .shadow {
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-right: 5px;
 }
 .searchCreate .newAppBtnContainer button::before {
   content: "";
@@ -727,8 +733,20 @@ button {
   border-radius: 50%;
   position: absolute;
   top: -5px;
-  right: -12px;
+  right: 0px;
   z-index: -1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.searchCreate .newAppBtnContainer button:hover::before {
+  width: 106px;
+  border-radius: 24px;
+  background-color: #646BFF;
+}
+.searchCreate .newAppBtnContainer button:hover .shadow {
+  opacity: 1;
+  -webkit-transition: 1.1s;
+  transition: 1.1s;
 }
 
 .bottomNavBar {
@@ -782,10 +800,65 @@ button {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 100%;
   color: #FFFFFF;
   -ms-flex-line-pack: start;
       align-content: flex-start;
+}
+
+.cardsCont1 {
+  height: 112px;
+  position: relative;
+}
+.cardsCont1 .card1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.cardsCont1 .card1 .cardBody {
+  border-radius: 0px 0px 10px 10px;
+  margin-bottom: -10px;
+  height: 102px;
+  position: relative;
+}
+.cardsCont1 .card1 .cardTags {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+}
+.cardsCont1 .card1 .jobInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+.cardsCont1 .card1 .jobInfo .title {
+  font-size: 32px;
+}
+.cardsCont1 .card1 .jobInfo .company,
+.cardsCont1 .card1 .jobInfo .location {
+  font-size: 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 0px;
+}
+.cardsCont1 .card1 .jobStatus {
+  margin-top: 15px;
+}
+.cardsCont1 .card1 .jobStatus p {
+  font-size: 16px;
+}
+.cardsCont1 .card1 .accentColor {
+  height: 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+.cardsCont1 .col1 {
+  width: 100%;
+  height: 112px;
+  margin-bottom: 20px;
 }
 
 .cardBody {
@@ -803,13 +876,6 @@ button {
           flex: nowrap;
   height: 200px;
   position: relative;
-}
-
-.col1 {
-  max-width: calc(100% - 10px);
-  min-width: calc(100% - 10px);
-  min-height: 200px;
-  height: 200px;
 }
 
 .col2 {
@@ -835,12 +901,6 @@ button {
       align-self: flex-start;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-}
-
-.cardsCont1 {
-  max-width: 800px;
-  width: 80%;
-  margin: 0 auto;
 }
 
 .cardsCont2 {
@@ -1129,6 +1189,8 @@ input[type=checkbox] {
   position: absolute;
   right: 30px;
   border-radius: 30px;
+  -webkit-transition: 1.35s;
+  transition: 1.35s;
 }
 
 .alertLabel::after {
@@ -1144,12 +1206,15 @@ input[type=checkbox] {
   transition: 0.5s;
 }
 
+input[type=checkbox]:checked ~ .alertLabel::before {
+  background-color: #af4aff;
+}
+
 .checked.alertLabel::after {
   right: 32.5px;
 }
-
-.checked.alerLabel:before {
-  background-color: none;
+.checked.alertLabel::before {
+  background-color: greenyellow;
 }
 
 .statusApp::before {
@@ -1158,4 +1223,86 @@ input[type=checkbox] {
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+
+.selectedColor {
+  height: 24px;
+  width: 24px;
+  background-color: #fe5a5a;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.colorPicker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  position: relative;
+}
+
+.colorPicker:hover > .colorOptions,
+.colorPicker:focus > .colorOptions,
+.colorPicker:focus-within > .colorOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.colorOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 44px;
+  margin-left: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(47, 57, 126, 0.4);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 4px 1px #000000;
+          box-shadow: 0px 2px 4px 1px #000000;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 115px;
+}
+
+.colorOptions input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.colorOptions div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px solid white;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  margin: 0 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+}
+
+.colorOptions div:hover,
+.colorOptions div:focus,
+.colorOptions div:focus-within {
+  scale: 1.3;
 }
