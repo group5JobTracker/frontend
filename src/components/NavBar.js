@@ -14,6 +14,8 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, showC
     const [columnToggle, setColumnToggle] = useState(true);
     const [boardViewToggle, setBoardViewToggle] = useState(false);
     const [sortDropdown, setSortDropdown] = useState(false)
+    // const [searchBar, setSearchBar] = useState(false)
+
 
 
     const handleCardViewBtn = () => {
@@ -73,12 +75,12 @@ function NavBar({ setCardViewToggle, cardViewToggle, setShowJobEntryModal, showC
                 <ul className="searchCreate">
                     <li className="searchBar">
                         <label htmlFor="search" className="sr-only" >Search</label>
-                        <input type="search" id="search" placeholder="Search" on onChange={(e) => setSearchTerm(e.target.value)} />
+                        <input type="search" id="search" placeholder="Search" />
                         <button><img src={search_white} alt="search bottom" /></button>
                     </li>
 
                     <li className="newAppBtnContainer">
-                        <button onClick={() => setShowJobEntryModal(true)}><img src={add_white} alt="add button" />
+                        <button onClick={() => setShowJobEntryModal(true)}><span className="shadow">Create</span><img src={add_white} alt="add button" />
                         </button>
                     </li>
 

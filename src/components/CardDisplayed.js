@@ -9,6 +9,7 @@ const CardDisplayed = ({ cardInfo, showCol1, showCol2, showCol3, setCardEditModa
         setAppKey(e.target.id);
     }
 
+
     return (
         <div id={cardInfo.app_id} className={showCol1 ? "card1 col1" : showCol2 ? "card col2" : showCol3 ? "card col3" : "card col4"} onClick={(e) => {
             handleCardSelected(e)

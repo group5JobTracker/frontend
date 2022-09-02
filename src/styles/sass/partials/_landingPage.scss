@@ -41,12 +41,12 @@
 
     &:hover,
     &:focus-within {
-        background-color: white;
-        border: 2px solid #4d50ff;
+        background-color: #646BFF;
+        // border: 2px solid #4d50ff;
 
-        span {
-            color: $background;
-        }
+        // span {
+        //     color: $background;
+        // }
     }
 }
 
@@ -80,81 +80,10 @@
 
     &:hover,
     &:focus-within {
-        background-color: white;
+        background-color: #646BFF;
 
-        span {
-            color: #4d50ff;
-        }
+        // span {
+        //     color: #4d50ff;
+        // }
     }
 }
-
-
-
-// .mainHeader_landingPage {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     // align-items: center;
-//     height: 80%;
-// }
-
-// .demo {
-//     height: 100%;
-// }
-
-// padding-bottom: 30px;
-
-// border: 4px solid white;
-// background-color: transparent;
-// padding-top: 5px;
-// padding-bottom: 5px;
-// color: white;
-// border-radius: 10px;
-// width: 130px;
-// height: 35px;
-// align-items: center;
-// text-decoration: none;
-// color: inherit;
-
-// }
-
-// .login-btn {
-//     position: absolute;
-//     top: 50px;
-//     right: 25px;
-
-//     :hover {
-//         background-color: $white;
-//         color: $background;
-//     }
-
-//     .login-btn-text {
-//         border: 4px solid white;
-//         background-color: transparent;
-//         border-radius: 10px;
-//         width: 130px;
-//         height: 40px;
-//         padding-bottom: 30px;
-// border: 4px solid white;
-// background-color: transparent;
-// padding-top: 5px;
-// padding-bottom: 5px;
-// color: white;
-// border-radius: 10px;
-// width: 130px;
-// height: 35px;
-// align-items: center;
-// text-decoration: none;
-// color: inherit;
-
-// }
-
-// :hover,
-// :focus-within {
-//     background-color: $white;
-//     color: $background;
-// color: #ffffff;
-// text-decoration: none;
-// cursor: pointer;
-// }
-// }
